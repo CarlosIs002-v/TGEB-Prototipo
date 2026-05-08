@@ -9,7 +9,7 @@
       <li><a class="nav-simulador active" onclick="goToSlide(2)">Simulador</a></li>
       <li><a class="nav-proyectos" onclick="goToSlide(5)">Proyectos</a></li>
       <li><a onclick="alert('Biblioteca en construcción')">Biblioteca</a></li>
-      <li><a onclick="alert('Centro de ayuda en construcción')">Ayuda</a></li>
+      <li><a class="nav-ayuda" style="cursor:pointer;" onclick="goToSlide(6)">Ayuda</a></li>
     </ul>
     <div class="user-controls">
       <div class="bell">🔔</div>
@@ -22,12 +22,12 @@
     <p class="section-subtitle">Selecciona la ciudad en el mapa para calcular clima y radiación.</p>
 
     <div class="map-container">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Mexico_Map.svg/1024px-Mexico_Map.svg.png"
+      <img src="https://raw.githubusercontent.com/djaiss/mapsicon/master/all/mx/vector.svg"
            alt="Mapa de México"
            class="map-bg-img"
-           onerror="this.src='https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?auto=format&fit=crop&w=1000&q=80'; this.style.opacity='0.2';">
+           style="opacity: 0.6;">
 
-      <div class="map-pin" style="top: 35%; right: 35%;">
+      <div class="map-pin" style="top: 36%; left: 56%;">
         <div class="pin-icon">📍</div>
         <div class="pin-info">
           <h4>Monterrey, NL</h4><p>☀️ 27°C Soleado</p>
@@ -35,7 +35,7 @@
         </div>
       </div>
 
-      <div class="map-pin" style="top: 65%; left: 55%;">
+      <div class="map-pin" style="top: 70%; left: 58%;">
         <div class="pin-icon">📍</div>
         <div class="pin-info">
           <h4>CDMX</h4><p>⛅ 23°C Nublado</p>
@@ -43,7 +43,7 @@
         </div>
       </div>
 
-      <div class="map-pin" style="top: 55%; right: 12%;">
+      <div class="map-pin" style="top: 56%; left: 82%;">
         <div class="pin-icon">📍</div>
         <div class="pin-info">
           <h4>Mérida, YUC</h4><p>☀️ 29°C Soleado</p>

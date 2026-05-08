@@ -175,19 +175,20 @@
        SLIDE 2: MAPA DE MÉXICO
        ========================================= */
     .map-container {
-      position: relative; width: 100%; max-width: 1000px; height: 520px;
+      position: relative; width: 100%; max-width: 1000px;
+      aspect-ratio: 1024 / 650;
       background-color: #e8efe9;
       border-radius: 24px; border: 1px solid var(--border); box-shadow: var(--shadow-card);
       overflow: hidden;
+      margin: 0 auto;
     }
 
     /* Imagen del mapa asegurada */
     .map-bg-img {
       position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 95%; height: 95%;
-      object-fit: contain;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
       opacity: 0.8;
       pointer-events: none;
       z-index: 1;
@@ -195,14 +196,15 @@
 
     .map-pin {
       position: absolute; display: flex; align-items: center; gap: 12px;
+      transform: translate(-18px, -18px); /* Centra el ícono en la coordenada (36px/2) */
       background: white; padding: 12px 16px; border-radius: 16px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.15); cursor: pointer;
       transition: transform 0.2s; border: 1px solid var(--border);
       z-index: 10;
     }
-    .map-pin:hover { transform: translateY(-4px); border-color: var(--sage); }
-    .pin-icon { width: 36px; height: 36px; background: var(--sage); border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; }
-    .pin-info h4 { font-size: 15px; color: var(--ink); margin-bottom: 2px; }
+    .map-pin:hover { border-color: var(--sage); z-index: 20; }
+    .pin-icon { width: 36px; height: 36px; background: var(--sage); border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; }
+    .pin-info h4 { font-size: 15px; color: var(--ink); margin-bottom: 2px; white-space: nowrap; }
     .pin-info p { font-size: 12px; color: var(--ink-muted); display: flex; align-items: center; gap: 4px; }
 
     /* =========================================
@@ -249,3 +251,17 @@
     .brands-title { font-size: 14px; font-weight: 600; color: var(--ink-soft); margin-bottom: 16px; }
     .brands-list { display: flex; gap: 20px; align-items: center; }
     .brand-tag { padding: 6px 16px; border-radius: 99px; background: var(--cream); font-size: 13px; font-weight: 600; color: var(--ink); border: 1px solid var(--border); }
+
+/* =========================================
+   SLIDE 6: FAQ / AYUDA
+   ========================================= */
+.faq-container { width: 100%; max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.faq-item { background: white; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: all 0.3s; }
+.faq-item:hover { border-color: var(--sage); box-shadow: 0 4px 12px rgba(95,138,110,0.08); }
+.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; color: var(--ink); cursor: pointer; text-align: left; }
+.faq-question:hover { color: var(--teal); }
+.faq-icon { transition: transform 0.3s; color: var(--sage-dark); flex-shrink: 0; margin-left: 16px;}
+.faq-item.active .faq-icon { transform: rotate(180deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; background: rgba(247,245,240,0.4); }
+.faq-item.active .faq-answer { max-height: 300px; }
+.faq-answer p { padding: 0 24px 20px; font-size: 14px; color: var(--ink-soft); line-height: 1.6; }

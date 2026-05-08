@@ -4,7 +4,7 @@ window.prevSlide = prevSlide;
 window.switchAuthTab = switchAuthTab;
 
 let currSlide = 0;
-  const totalSlides = 6;
+  const totalSlides = 7;
 
   function goToSlide(n) {
     document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
@@ -16,6 +16,7 @@ let currSlide = 0;
     if (n === 0) document.querySelectorAll('.nav-inicio').forEach(a => a.classList.add('active'));
     if (n >= 2 && n <= 4) document.querySelectorAll('.nav-simulador').forEach(a => a.classList.add('active'));
     if (n === 5) document.querySelectorAll('.nav-proyectos').forEach(a => a.classList.add('active'));
+    if (n === 6) document.querySelectorAll('.nav-ayuda').forEach(a => a.classList.add('active'));
   }
 
   function nextSlide() {
@@ -36,6 +37,11 @@ let currSlide = 0;
     document.getElementById('view-login').style.display = mode === 'login' ? 'block' : 'none';
     document.getElementById('view-register').style.display = mode === 'register' ? 'block' : 'none';
   }
+
+  window.toggleFaq = function(btn) {
+    const item = btn.parentElement;
+    item.classList.toggle('active');
+  };
 
   // Inicializar en Landing
   goToSlide(0);
