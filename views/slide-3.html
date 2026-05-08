@@ -1,0 +1,51 @@
+<div class="slide" id="slide-3">
+  <header class="app-header">
+    <a class="nav-logo" onclick="goToSlide(0)">
+      <div class="nav-logo-icon"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor"/></svg></div>
+      <div class="nav-logo-text"><strong>TGEB</strong></div>
+    </a>
+    <ul class="nav-links">
+      <li><a class="nav-inicio" onclick="goToSlide(0)">Inicio</a></li>
+      <li><a class="nav-simulador active" onclick="goToSlide(2)">Simulador</a></li>
+      <li><a class="nav-proyectos" onclick="goToSlide(5)">Proyectos</a></li>
+      <li><a onclick="alert('Biblioteca en construcción')">Biblioteca</a></li>
+      <li><a onclick="alert('Centro de ayuda en construcción')">Ayuda</a></li>
+    </ul>
+    <div class="user-controls">
+      <div class="bell">🔔</div>
+      <div class="avatar" onclick="goToSlide(0)" title="Cerrar Sesión">U</div>
+    </div>
+  </header>
+
+  <div class="app-content">
+    <h2 class="section-title">Selecciona el tipo de edificio</h2>
+    <p class="section-subtitle">Elige el modelo base para continuar con la simulación energética.</p>
+
+    <div class="building-grid">
+      <div class="build-card" onclick="goToSlide(4)">
+        <div class="build-img">🏠</div>
+        <div class="build-info">
+          <h4>Casa habitación</h4><p>Simulación para vivienda unifamiliar.</p>
+        </div>
+      </div>
+      <div class="build-card">
+        <div class="build-img">🏨</div>
+        <div class="build-info">
+          <h4>Hotel</h4><p>Simulación energética para hotel pequeño.</p>
+        </div>
+      </div>
+      <div class="build-card">
+        <div class="build-img">🏢</div>
+        <div class="build-info">
+          <h4>Edificio de oficinas</h4><p>Simulación para edificio corporativo.</p>
+        </div>
+      </div>
+      <div class="build-card">
+        <div class="build-img">🏪</div>
+        <div class="build-info">
+          <h4>Retail</h4><p>Simulación para tiendas o supermercados.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

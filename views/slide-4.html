@@ -1,0 +1,77 @@
+<div class="slide" id="slide-4">
+  <header class="app-header">
+    <a class="nav-logo" onclick="goToSlide(0)">
+      <div class="nav-logo-icon"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor"/></svg></div>
+      <div class="nav-logo-text"><strong>TGEB</strong></div>
+    </a>
+    <ul class="nav-links">
+      <li><a class="nav-inicio" onclick="goToSlide(0)">Inicio</a></li>
+      <li><a class="nav-simulador active" onclick="goToSlide(2)">Simulador</a></li>
+      <li><a class="nav-proyectos" onclick="goToSlide(5)">Proyectos</a></li>
+      <li><a onclick="alert('Biblioteca en construcción')">Biblioteca</a></li>
+      <li><a onclick="alert('Centro de ayuda en construcción')">Ayuda</a></li>
+    </ul>
+    <div class="user-controls">
+      <div class="bell">🔔</div>
+      <div class="avatar" onclick="goToSlide(0)" title="Cerrar Sesión">U</div>
+    </div>
+  </header>
+
+  <div class="app-content">
+    <h2 class="section-title">Resultados de Estrategia - Sombreado en Techo</h2>
+    <p class="section-subtitle">Tipo de edificio: Casa habitación | Ciudad: Seleccionada | Cobertura: 70%</p>
+
+    <div class="results-layout">
+      <div class="res-left">
+        <div class="res-image">🏡☀️</div>
+
+        <div class="savings-box">
+          <div class="save-item">
+            <h5>18.6%</h5><p>Ahorro de Energía</p>
+          </div>
+          <div class="save-item">
+            <h5>18.3%</h5><p>Ahorro en Costo</p>
+          </div>
+          <div class="save-item">
+            <h5>18.4%</h5><p>Reducción CO₂</p>
+          </div>
+        </div>
+
+        <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.6; padding: 16px; background: var(--cream); border-radius: 12px; border: 1px solid var(--border);">
+          <strong>Sombreado en techo:</strong> Alargando aleros para proteger ventanas y terraza del sol, reduciendo la ganancia térmica y mejorando el confort interior.
+        </p>
+      </div>
+
+      <div class="res-right">
+        <h3 style="font-size: 18px; margin-bottom: 16px;">Impacto Energético</h3>
+        <table class="data-table">
+          <thead>
+          <tr><th>Fuente</th><th>Indicador</th><th>Sin sombreado</th><th>Con estrategia</th><th>Ahorro</th></tr>
+          </thead>
+          <tbody>
+          <tr><td>Electricidad</td><td>Consumo (KWH)</td><td>27,390</td><td>22,312</td><td><span class="highlight-green">18.6%</span></td></tr>
+          <tr><td>Electricidad</td><td>Costo anual (MXN)</td><td>$411,903</td><td>$336,112</td><td><span class="highlight-green">18.3%</span></td></tr>
+          <tr><td>Gas</td><td>Emisiones CO₂ (ton)</td><td>13.66</td><td>11.14</td><td><span class="highlight-green">18.4%</span></td></tr>
+          </tbody>
+        </table>
+
+        <h3 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px;">Opciones Tecnológicas</h3>
+        <table class="data-table">
+          <thead>
+          <tr><th>Marca</th><th>Producto</th><th>Reducción Calor</th><th>Inversión est.</th></tr>
+          </thead>
+          <tbody>
+          <tr><td><strong>Kingspan</strong></td><td>Alero metálico</td><td>12%</td><td>$75,000</td></tr>
+          <tr><td><strong>Kalzip</strong></td><td>Alero metálico</td><td>15%</td><td>$78,000</td></tr>
+          <tr><td><strong>Thermote</strong></td><td>Parasoles</td><td>18%</td><td>$85,000</td></tr>
+          </tbody>
+        </table>
+
+        <div style="display: flex; gap: 16px; margin-top: 32px;">
+          <button class="btn-outline" style="flex: 1;" onclick="goToSlide(5)">Guardar en Proyectos</button>
+          <button class="btn-primary" style="flex: 1; margin: 0;" onclick="goToSlide(2)">Nueva Simulación</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

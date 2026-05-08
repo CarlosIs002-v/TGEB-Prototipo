@@ -1,0 +1,66 @@
+<div class="slide" id="slide-1">
+  <header class="app-header">
+    <a class="nav-logo" onclick="goToSlide(0)">
+      <div class="nav-logo-icon"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor"/><path d="M12 2v20M3 7l9 5 9-5" stroke="rgba(255,255,255,0.5)" stroke-width="1"/></svg></div>
+      <div class="nav-logo-text"><strong>TGEB</strong></div>
+    </a>
+    <ul class="nav-links">
+      <li><a class="nav-inicio" onclick="goToSlide(0)">Inicio</a></li>
+      <li><a class="nav-simulador" onclick="goToSlide(2)">Simulador</a></li>
+      <li><a class="nav-proyectos" onclick="goToSlide(5)">Proyectos</a></li>
+      <li><a onclick="alert('Biblioteca en construcción')">Biblioteca</a></li>
+      <li><a onclick="alert('Centro de ayuda en construcción')">Ayuda</a></li>
+    </ul>
+    <div class="nav-auth">
+      <button class="btn-text" onclick="switchAuthTab('login')">Iniciar sesión</button>
+      <button class="btn-outline" onclick="switchAuthTab('register')">Crear cuenta</button>
+    </div>
+  </header>
+
+  <div class="center-layout">
+    <div class="card">
+      <div class="card-tabs">
+        <button class="tab" id="tab-login" onclick="switchAuthTab('login')">Iniciar Sesión</button>
+        <button class="tab active" id="tab-register" onclick="switchAuthTab('register')">Crear Cuenta</button>
+      </div>
+
+      <div class="card-body" id="view-login" style="display:none;">
+        <h1 class="card-heading">Bienvenido de nuevo</h1>
+        <div class="field" style="margin-top: 24px;">
+          <label>Correo electrónico</label>
+          <div class="input-wrap"><input type="email" placeholder="tu@correo.com"></div>
+        </div>
+        <div class="field">
+          <label>Contraseña</label>
+          <div class="input-wrap"><input type="password" placeholder="Tu contraseña"></div>
+        </div>
+        <button class="btn-primary" onclick="goToSlide(2)">Ingresar</button>
+      </div>
+
+      <div class="card-body" id="view-register">
+        <h1 class="card-heading" style="font-size: 24px;">Únete a TGEB</h1>
+        <p class="card-sub" style="margin-bottom: 16px;">Completa el formulario para abrir tu cuenta.</p>
+
+        <div class="field">
+          <label>Nombre completo</label>
+          <div class="input-wrap"><input type="text" placeholder="Tu nombre"></div>
+        </div>
+        <div class="field">
+          <label>Correo electrónico</label>
+          <div class="input-wrap"><input type="email" placeholder="tu@correo.com"></div>
+        </div>
+        <div class="field">
+          <label>Contraseña</label>
+          <div class="input-wrap"><input type="password" placeholder="Mínimo 8 caracteres"></div>
+        </div>
+        <div class="field">
+          <label>Sector</label>
+          <div class="input-wrap">
+            <select><option>Selecciona tu sector</option><option>Energía</option><option>Construcción</option><option>Arquitectura</option></select>
+          </div>
+        </div>
+        <button class="btn-primary" onclick="goToSlide(2)">Registrarme</button>
+      </div>
+    </div>
+  </div>
+</div>

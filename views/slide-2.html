@@ -1,0 +1,55 @@
+<div class="slide" id="slide-2">
+  <header class="app-header">
+    <a class="nav-logo" onclick="goToSlide(0)">
+      <div class="nav-logo-icon"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor"/></svg></div>
+      <div class="nav-logo-text"><strong>TGEB</strong></div>
+    </a>
+    <ul class="nav-links">
+      <li><a class="nav-inicio" onclick="goToSlide(0)">Inicio</a></li>
+      <li><a class="nav-simulador active" onclick="goToSlide(2)">Simulador</a></li>
+      <li><a class="nav-proyectos" onclick="goToSlide(5)">Proyectos</a></li>
+      <li><a onclick="alert('Biblioteca en construcción')">Biblioteca</a></li>
+      <li><a onclick="alert('Centro de ayuda en construcción')">Ayuda</a></li>
+    </ul>
+    <div class="user-controls">
+      <div class="bell">🔔</div>
+      <div class="avatar" onclick="goToSlide(0)" title="Cerrar Sesión">U</div>
+    </div>
+  </header>
+
+  <div class="app-content">
+    <h2 class="section-title">Inicia tu Simulación</h2>
+    <p class="section-subtitle">Selecciona la ciudad en el mapa para calcular clima y radiación.</p>
+
+    <div class="map-container">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Mexico_Map.svg/1024px-Mexico_Map.svg.png"
+           alt="Mapa de México"
+           class="map-bg-img"
+           onerror="this.src='https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?auto=format&fit=crop&w=1000&q=80'; this.style.opacity='0.2';">
+
+      <div class="map-pin" style="top: 35%; right: 35%;">
+        <div class="pin-icon">📍</div>
+        <div class="pin-info">
+          <h4>Monterrey, NL</h4><p>☀️ 27°C Soleado</p>
+          <button class="btn-primary" style="height: 30px; font-size: 12px; margin-top: 6px; padding: 0 12px; border-radius: 6px;" onclick="goToSlide(3)">Seleccionar</button>
+        </div>
+      </div>
+
+      <div class="map-pin" style="top: 65%; left: 55%;">
+        <div class="pin-icon">📍</div>
+        <div class="pin-info">
+          <h4>CDMX</h4><p>⛅ 23°C Nublado</p>
+          <button class="btn-primary" style="height: 30px; font-size: 12px; margin-top: 6px; padding: 0 12px; border-radius: 6px;" onclick="goToSlide(3)">Seleccionar</button>
+        </div>
+      </div>
+
+      <div class="map-pin" style="top: 55%; right: 12%;">
+        <div class="pin-icon">📍</div>
+        <div class="pin-info">
+          <h4>Mérida, YUC</h4><p>☀️ 29°C Soleado</p>
+          <button class="btn-primary" style="height: 30px; font-size: 12px; margin-top: 6px; padding: 0 12px; border-radius: 6px;" onclick="goToSlide(3)">Seleccionar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
