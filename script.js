@@ -14,15 +14,15 @@ try {
   // Actually Webpack injects the script automatically in dev/prod depending on config. Let's leave a comment
   currentHtml = currentHtml.replace(/<script>[\s\S]*?<\/script>/, '<!-- JS is bundled by Webpack -->');
 
-  const containerStyles = [' active', '', '', '', '', ''];
+  const containerStyles = [' active', '', '', '', '', '', '', ''];
 
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 8; i++) {
     const startStr = '<div class="slide' + containerStyles[i] + '" id="slide-' + i + '">';
     const startIndex = currentHtml.indexOf(startStr);
 
     let nextStr = '<div class="slide';
     let endIndex = -1;
-    if (i < 5) {
+    if (i < 7) {
       endIndex = currentHtml.indexOf('<div class="slide', startIndex + 5);
     } else {
       endIndex = currentHtml.indexOf('<!-- JS is bundled by Webpack -->');
