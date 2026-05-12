@@ -55,6 +55,36 @@ window.closeUserSettings = function() {
     userModal.close();
 };
 
+window.openStrategyModal = function(title, icon, desc, benStr, varStr, impact) {
+    document.getElementById('smTitle').innerText = title;
+    document.getElementById('smIcon').innerText = icon;
+    document.getElementById('smDesc').innerText = desc;
+
+    const benList = document.getElementById('smBen');
+    benList.innerHTML = '';
+    benStr.split(',').forEach(item => {
+        let li = document.createElement('li');
+        li.innerText = item.trim();
+        benList.appendChild(li);
+    });
+
+    const varList = document.getElementById('smVar');
+    varList.innerHTML = '';
+    varStr.split(',').forEach(item => {
+        let li = document.createElement('li');
+        li.innerText = item.trim();
+        varList.appendChild(li);
+    });
+
+    document.getElementById('smImp').innerHTML = impact + ' <small style="font-size:12px; font-weight:normal; color:var(--ink-muted);">ahorro energético</small>';
+
+    document.getElementById('strategyModal').showModal();
+};
+
+window.closeStrategyModal = function() {
+    document.getElementById('strategyModal').close();
+};
+
 window.handleAvatarChange = function(event) {
     const file = event.target.files[0];
     if (file) {
