@@ -44,5 +44,76 @@ let currSlide = 0;
     item.classList.toggle('active');
   };
 
+  // ─── Lógica de Configuración de Usuario ───
+  const userModal = document.getElementById('userSettingsModal');
+
+  window.openUserSettings = function() {
+    userModal.showModal();
+  };
+
+  window.closeUserSettings = function() {
+    userModal.close();
+  };
+
+  window.handleAvatarChange = function(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('userAvatarPreview').src = e.target.result;
+        // También actualizar los avatares en la app (opcional para el prototipo)
+        document.querySelectorAll('.avatar').forEach(av => {
+          av.style.backgroundImage = `url(${e.target.result})`;
+          av.style.backgroundSize = 'cover';
+          av.innerText = '';
+        });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  window.saveUserSettings = function(event) {
+    event.preventDefault();
+    const newName = document.getElementById('editName').value;
+    const newEmail = document.getElementById('editEmail').value;
+    const newPass = document.getElementById('editPass').value;
+    const confirmPass = document.getElementById('confirmPass').value;
+
+    // Validación de contraseñas
+    if (newPass || confirmPass) {
+      if (newPass !== confirmPass) {
+        alert('Las contraseñas no coinciden. Por favor, verifica e intenta de nuevo.');
+        return;
+      }
+      if (newPass.length < 8) {
+        alert('La contraseña debe tener al menos 8 caracteres.');
+        return;
+      }
+    }
+
+    // Actualizar UI
+    document.getElementById('userNameDisplay').innerText = newName;
+    document.querySelectorAll('.avatar').forEach(av => {
+        if (!av.style.backgroundImage) av.innerText = newName.charAt(0).toUpperCase();
+    });
+
+    let message = `¡Cambios guardados con éxito!\nNombre: ${newName}\nCorreo: ${newEmail}`;
+    if (newPass) message += `\nContraseña actualizada correctamente.`;
+    
+    alert(message);
+
+    // Limpiar campos de contraseña
+    document.getElementById('editPass').value = '';
+    document.getElementById('confirmPass').value = '';
+
+    closeUserSettings();
+  };
+
+  // Cerrar al hacer clic fuera del modal
+  userModal.onclick = (e) => {
+    if (e.target === userModal) closeUserSettings();
+  };
+
   // Inicializar en Landing
   goToSlide(0);
+
