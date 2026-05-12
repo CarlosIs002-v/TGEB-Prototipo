@@ -42,9 +42,9 @@
     <div class="panel__body">
       <div class="settings-profile">
         <div class="avatar-edit-container">
-          <img src="https://ui-avatars.com/api/?name=Usuario+Estándar&background=5f8a6e&color=fff&size=128" alt="Profile" id="userAvatarPreview" class="settings-avatar">
+          <img src="img/avatar-default.png" alt="Profile" id="userAvatarPreview" class="settings-avatar">
           <label for="avatarInput" class="avatar-edit-badge" title="Cambiar foto">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
             <input type="file" id="avatarInput" hidden accept="image/*" onchange="handleAvatarChange(event)">
           </label>
         </div>
@@ -58,35 +58,35 @@
         <div class="field">
           <label for="editName">Nombre Completo</label>
           <div class="input-wrap">
-            <input type="text" id="editName" value="Usuario Estándar" required>
+            <input type="text" id="editName" value="Usuario Estándar" required placeholder="Ej. Juan Pérez">
           </div>
         </div>
         <div class="field">
           <label for="editEmail">Correo Electrónico</label>
           <div class="input-wrap">
-            <input type="email" id="editEmail" value="usuario@tgeb.mx" required>
+            <input type="email" id="editEmail" value="usuario@tgeb.mx" required placeholder="ejemplo@correo.com">
           </div>
         </div>
 
         <div class="settings-separator"></div>
-        <span class="panel__label">Actualizar Contraseña</span>
+        <span class="panel__label">Seguridad de la Cuenta</span>
 
         <div class="field">
           <label for="editPass">Nueva Contraseña</label>
           <div class="input-wrap">
-            <input type="password" id="editPass" placeholder="••••••••">
+            <input type="password" id="editPass" placeholder="Mínimo 8 caracteres">
           </div>
         </div>
         <div class="field">
           <label for="confirmPass">Confirmar Contraseña</label>
           <div class="input-wrap">
-            <input type="password" id="confirmPass" placeholder="••••••••">
+            <input type="password" id="confirmPass" placeholder="Repite la contraseña">
           </div>
         </div>
 
         <div class="settings-actions">
           <button type="button" class="btn-text" onclick="closeUserSettings()">Cancelar</button>
-          <button type="submit" class="btn-primary">Guardar Cambios</button>
+          <button type="submit" class="btn-primary">Actualizar Perfil</button>
         </div>
       </form>
     </div>

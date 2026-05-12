@@ -1,24 +1,28 @@
 <div class="slide" id="slide-1">
-  <header class="app-header">
-    <a class="nav-logo" onclick="goToSlide(0)">
-      <div class="nav-logo-icon"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor"/><path d="M12 2v20M3 7l9 5 9-5" stroke="rgba(255,255,255,0.5)" stroke-width="1"/></svg></div>
-      <div class="nav-logo-text"><strong>TGEB</strong></div>
+  <header class="app-header" style="background: white; border-bottom: 1px solid var(--border);">
+    <a class="nav-logo" onclick="goToSlide(0)" style="cursor: pointer;">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor" />
+        </svg>
+      </div>
+      <div class="nav-logo-text"><strong>TGEB</strong><span>Total Green Energy Buildings</span></div>
     </a>
     <ul class="nav-links">
-      <li><a class="nav-inicio" onclick="goToSlide(0)">Inicio</a></li>
-      <li><a class="nav-simulador" onclick="goToSlide(2)">Simulador</a></li>
-      <li><a class="nav-proyectos" onclick="goToSlide(5)">Proyectos</a></li>
-      <li><a class="nav-biblioteca" style="cursor:pointer;" onclick="goToSlide(7)">Biblioteca</a></li>
-      <li><a class="nav-ayuda" style="cursor:pointer;" onclick="goToSlide(6)">Ayuda</a></li>
+      <li><a class="nav-inicio" onclick="goToSlide(0)" style="cursor: pointer;">Inicio</a></li>
+      <li><a class="nav-simulador" onclick="goToSlide(8)" style="cursor: pointer;">Simulador</a></li>
+      <li><a class="nav-proyectos" onclick="goToSlide(5)" style="cursor: pointer;">Proyectos</a></li>
+      <li><a class="nav-biblioteca" onclick="goToSlide(7)" style="cursor: pointer;">Biblioteca</a></li>
+      <li><a class="nav-ayuda" onclick="goToSlide(6)" style="cursor: pointer;">Ayuda</a></li>
     </ul>
     <div class="nav-auth">
       <button class="btn-text" onclick="switchAuthTab('login')">Iniciar sesión</button>
-      <button class="btn-outline" onclick="switchAuthTab('register')">Crear cuenta</button>
+      <button class="btn-primary" onclick="switchAuthTab('register')" style="height: 42px; padding: 0 20px;">Crear cuenta</button>
     </div>
   </header>
 
   <div class="center-layout">
-    <div class="card">
+    <div class="card" style="box-shadow: 0 20px 60px rgba(17, 24, 39, 0.1);">
       <div class="card-tabs">
         <button class="tab" id="tab-login" onclick="switchAuthTab('login')">Iniciar Sesión</button>
         <button class="tab active" id="tab-register" onclick="switchAuthTab('register')">Crear Cuenta</button>
@@ -26,6 +30,8 @@
 
       <div class="card-body" id="view-login" style="display:none;">
         <h1 class="card-heading">Bienvenido de nuevo</h1>
+        <p class="card-sub">Ingresa tus credenciales para continuar.</p>
+        
         <div class="field" style="margin-top: 24px;">
           <label>Correo electrónico</label>
           <div class="input-wrap"><input type="email" placeholder="tu@correo.com"></div>
@@ -34,14 +40,14 @@
           <label>Contraseña</label>
           <div class="input-wrap"><input type="password" placeholder="Tu contraseña"></div>
         </div>
-        <button class="btn-primary" onclick="goToSlide(2)">Ingresar</button>
+        <button class="btn-primary" onclick="goToSlide(5)" style="margin-top: 20px;">Ingresar al Dashboard</button>
       </div>
 
       <div class="card-body" id="view-register">
-        <h1 class="card-heading" style="font-size: 24px;">Únete a TGEB</h1>
-        <p class="card-sub" style="margin-bottom: 16px;">Completa el formulario para abrir tu cuenta.</p>
+        <h1 class="card-heading">Únete a TGEB</h1>
+        <p class="card-sub">Forma parte de la red líder en energía sustentable.</p>
 
-        <div class="field">
+        <div class="field" style="margin-top: 24px;">
           <label>Nombre completo</label>
           <div class="input-wrap"><input type="text" placeholder="Tu nombre"></div>
         </div>
@@ -54,12 +60,17 @@
           <div class="input-wrap"><input type="password" placeholder="Mínimo 8 caracteres"></div>
         </div>
         <div class="field">
-          <label>Sector</label>
+          <label>Sector de interés</label>
           <div class="input-wrap">
-            <select><option>Selecciona tu sector</option><option>Energía</option><option>Construcción</option><option>Arquitectura</option></select>
+            <select>
+              <option>Selecciona tu sector</option>
+              <option>Energía Solar</option>
+              <option>Construcción Verde</option>
+              <option>Arquitectura Sustentable</option>
+            </select>
           </div>
         </div>
-        <button class="btn-primary" onclick="goToSlide(2)">Registrarme</button>
+        <button class="btn-primary" onclick="goToSlide(5)" style="margin-top: 20px;">Crear mi cuenta</button>
       </div>
     </div>
   </div>

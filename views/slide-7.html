@@ -1,5 +1,5 @@
 <div class="slide" id="slide-7">
-<header class="app-header" style="background: white; position: relative; z-index: 10;">
+  <header class="app-header" style="background: white; position: relative; z-index: 10;">
     <a class="nav-logo" style="cursor:pointer;" onclick="goToSlide(0)">
       <div class="nav-logo-icon">
         <svg viewBox="0 0 24 24" width="20" height="20">
@@ -15,379 +15,318 @@
       <li><a class="nav-biblioteca" style="cursor:pointer;" onclick="goToSlide(7)">Biblioteca</a></li>
       <li><a class="nav-ayuda" style="cursor:pointer;" onclick="goToSlide(6)">Ayuda</a></li>
     </ul>
-    <div class="nav-auth">
-      <button class="btn-text" onclick="goToSlide(1); switchAuthTab('login');">Iniciar sesión</button>
-      <button class="btn-outline" onclick="goToSlide(1); switchAuthTab('register');">Crear cuenta</button>
+    <div class="user-controls">
+      <div class="bell">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+      </div>
+      <div class="avatar" onclick="openUserSettings()">U</div>
     </div>
   </header>
-<div class="app-content">
-        <div class="section-header-custom">
-            <h2 class="section-title">Nuestros Patrocinadores</h2>
-            <p class="section-subtitle">Alianzas estratégicas con los líderes mundiales en tecnología de energías renovables.</p>
-        </div>
 
-        <div class="sponsors-grid" id="grid-sponsors"></div>
+  <div class="app-content" style="background: var(--page-bg);">
+    <div class="section-header-custom">
+      <h2 class="section-title" style="font-size: 36px; color: var(--text-main);">Directorio de Socios</h2>
+      <p class="section-subtitle" style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Explora las tecnologías y soluciones de las marcas líderes que impulsan la sustentabilidad global.</p>
     </div>
 
-    <!-- Modal nativo: panel lateral -->
-    <dialog id="sponsorModal" class="side-panel">
-        <header class="panel__header">
-            <span class="panel__eyebrow">Perfil del Patrocinador</span>
-            <button class="panel__close" id="modalClose" aria-label="Cerrar panel">✕</button>
-        </header>
-        <div class="panel__body" id="panelContent">
-            <!-- contenido inyectado por JS -->
-        </div>
-    </dialog>
+    <div class="sponsors-grid" id="grid-sponsors"></div>
+  </div>
 
-    <style>
-        /* ─── Ajustes para integrarse al tema Global ─── */
-        #slide-7 .app-content {
-            padding: 40px 6%;
-            max-width: 1400px;
-            margin: 0 auto;
-            width: 100%;
+  <!-- Modal nativo: panel lateral -->
+  <dialog id="sponsorModal" class="side-panel">
+    <header class="panel__header">
+      <span class="panel__eyebrow">Detalle del Socio</span>
+      <button class="panel__close" id="modalClose" aria-label="Cerrar panel">✕</button>
+    </header>
+    <div class="panel__body" id="panelContent">
+      <!-- contenido inyectado por JS -->
+    </div>
+  </dialog>
+
+  <style>
+    #slide-7 .app-content {
+      padding: 60px 6%;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .section-header-custom {
+      margin-bottom: 56px;
+      text-align: center;
+    }
+
+    /* ─── Grid ─── */
+    .sponsors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      width: 100%;
+    }
+
+    /* ─── Card Premium ─── */
+    .sponsor-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px 32px;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .sponsor-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 30px 60px rgba(6, 78, 59, 0.08);
+      border-color: var(--primary-hover);
+    }
+
+    .sponsor-card__logo-wrap {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      background: var(--page-bg);
+      border: 1.5px solid var(--border);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+
+    .sponsor-card:hover .sponsor-card__logo-wrap {
+      border-color: var(--primary-hover);
+      background: white;
+    }
+
+    .sponsor-card__logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 12px;
+    }
+
+    .sponsor-card__name {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .sponsor-card__origin {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--primary);
+      opacity: 0.8;
+    }
+
+    .sponsor-card__specialty {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .sponsor-card__cta {
+      margin-top: auto;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .cta-arrow-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--page-bg);
+      display: grid;
+      place-items: center;
+      transition: all 0.3s;
+    }
+
+    .sponsor-card:hover .cta-arrow-circle {
+      background: var(--primary);
+      color: white;
+      transform: translateX(4px);
+    }
+
+    /* ─── Modal Content Styling ─── */
+    .modal-hero {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .modal-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 12px;
+      background: white;
+    }
+
+    .modal-header-text h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .modal-section {
+      margin-bottom: 32px;
+    }
+
+    .modal-section-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .modal-text {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    .modal-tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .modal-tag {
+      background: rgba(6, 78, 59, 0.05);
+      color: var(--primary);
+      padding: 8px 16px;
+      border-radius: 99px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid rgba(6, 78, 59, 0.1);
+    }
+  </style>
+
+  <script>
+    (function() {
+      const sponsorsData = [
+        {
+          id: 'longi',
+          nombre: 'LONGi Solar',
+          logo: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=LONGi',
+          origen: 'China',
+          especialidad: 'Módulos fotovoltaicos monocristalinos de alta eficiencia.',
+          descripcion: 'LONGi es el líder mundial en tecnología solar, especializado en la fabricación de obleas y celdas monocristalinas que establecen estándares de eficiencia en la industria.',
+          tags: ['Energía Solar', 'I+D Avanzado', 'Escala Global']
+        },
+        {
+          id: 'canadian',
+          nombre: 'Canadian Solar',
+          logo: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=CdnSolar',
+          origen: 'Canadá',
+          especialidad: 'Soluciones solares integradas y almacenamiento BESS.',
+          descripcion: 'Reconocida por su calidad superior, Canadian Solar ofrece desde paneles de alto rendimiento hasta sistemas complejos de almacenamiento de energía.',
+          tags: ['Almacenamiento', 'Infraestructura', 'Sostenibilidad']
+        },
+        {
+          id: 'huawei',
+          nombre: 'Huawei Solar',
+          logo: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=Huawei',
+          origen: 'China',
+          especialidad: 'Inversores inteligentes y digitalización energética.',
+          descripcion: 'Líder en la digitalización de la energía solar, Huawei integra IA para optimizar la generación y el consumo en plantas industriales y residenciales.',
+          tags: ['IA', 'Digitalización', 'Eficiencia']
+        },
+        {
+          id: 'fronius',
+          nombre: 'Fronius',
+          logo: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=Fronius',
+          origen: 'Austria',
+          especialidad: 'Electrónica de potencia e inversores de alta gama.',
+          descripcion: 'Con ingeniería europea de precisión, Fronius es sinónimo de durabilidad y conectividad inteligente para sistemas fotovoltaicos modernos.',
+          tags: ['Calidad Europea', 'Conectividad', 'Residencial']
         }
+      ];
 
-        .section-header-custom {
-            margin-bottom: 48px;
-            text-align: center;
-        }
+      const grid = document.getElementById('grid-sponsors');
+      const modal = document.getElementById('sponsorModal');
+      const content = document.getElementById('panelContent');
+      const closeBtn = document.getElementById('modalClose');
 
-        /* ─── Grid ─── */
-        .sponsors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-            width: 100%;
-        }
+      function render() {
+        grid.innerHTML = sponsorsData.map(s => `
+          <div class="sponsor-card" onclick="openSponsor('${s.id}')">
+            <div class="sponsor-card__logo-wrap">
+              <img src="${s.logo}" alt="${s.nombre}">
+            </div>
+            <div>
+              <p class="sponsor-card__origin">${s.origen}</p>
+              <h3 class="sponsor-card__name">${s.nombre}</h3>
+              <p class="sponsor-card__specialty">${s.especialidad}</p>
+            </div>
+            <div class="sponsor-card__cta">
+              <span>Explorar perfil</span>
+              <div class="cta-arrow-circle">→</div>
+            </div>
+          </div>
+        `).join('');
+      }
 
-        /* ─── Card ─── */
-        .sponsor-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 32px 24px;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 12px rgba(31, 55, 38, 0.04);
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            position: relative;
-            overflow: hidden;
-        }
+      window.openSponsor = function(id) {
+        const s = sponsorsData.find(x => x.id === id);
+        if(!s) return;
 
-        .sponsor-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-card);
-            border-color: var(--sage-light);
-        }
+        content.innerHTML = `
+          <div class="modal-hero">
+            <img src="${s.logo}" class="modal-logo" alt="${s.nombre}">
+            <div class="modal-header-text">
+              <h2>${s.nombre}</h2>
+              <p class="sponsor-card__origin">Sede: ${s.origen}</p>
+            </div>
+          </div>
 
-        .sponsor-card__logo-wrap {
-            width: 64px;
-            height: 64px;
-            border-radius: 12px;
-            background: var(--cream);
-            border: 1px solid var(--border);
-            display: grid;
-            place-items: center;
-            overflow: hidden;
-        }
+          <div class="modal-section">
+            <span class="modal-section-title">Especialidad</span>
+            <p class="modal-text">${s.especialidad}</p>
+          </div>
 
-        .sponsor-card__logo-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 8px;
-        }
+          <div class="modal-section">
+            <span class="modal-section-title">Trayectoria y Visión</span>
+            <p class="modal-text">${s.descripcion}</p>
+          </div>
 
-        .sponsor-card__name {
-            font-family: 'DM Serif Display', serif;
-            font-size: 22px;
-            color: var(--ink);
-            margin-bottom: 4px;
-        }
+          <div class="modal-section">
+            <span class="modal-section-title">Áreas de Enfoque</span>
+            <div class="modal-tag-container">
+              ${s.tags.map(t => `<span class="modal-tag">${t}</span>`).join('')}
+            </div>
+          </div>
 
-        .sponsor-card__origin {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--sage);
-            margin-bottom: 8px;
-        }
+          <button class="btn-primary" style="width: 100%; margin-top: 24px;" onclick="document.getElementById('sponsorModal').close()">
+            Cerrar Detalles
+          </button>
+        `;
+        modal.showModal();
+      };
 
-        .sponsor-card__specialty {
-            font-size: 13px;
-            color: var(--ink-soft);
-            line-height: 1.5;
-        }
+      closeBtn.onclick = () => modal.close();
+      modal.onclick = (e) => { if (e.target === modal) modal.close(); };
 
-        .sponsor-card__cta {
-            margin-top: auto;
-            padding-top: 16px;
-            border-top: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            color: var(--sage-dark);
-            font-weight: 600;
-            font-size: 13px;
-        }
-
-        .cta-arrow {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            border: 1px solid var(--border);
-            display: grid;
-            place-items: center;
-            transition: all 0.2s;
-        }
-
-        .sponsor-card:hover .cta-arrow {
-            background: var(--sage);
-            color: white;
-            border-color: var(--sage);
-        }
-
-        /* ─── Modal / Side Panel ─── */
-        dialog.side-panel {
-            position: fixed;
-            inset: 0 0 0 auto;
-            width: min(440px, 100vw);
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            background: var(--white);
-            border: none;
-            border-left: 1px solid var(--border);
-            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
-            color: var(--ink);
-            overflow-y: auto;
-            translate: 100% 0;
-            transition: translate 0.4s cubic-bezier(0.4, 0, 0.2, 1), overlay 0.4s allow-discrete, display 0.4s allow-discrete;
-        }
-
-        dialog.side-panel[open] {
-            translate: 0 0;
-        }
-
-        dialog.side-panel::backdrop {
-            background: rgba(30, 45, 38, 0.3);
-            backdrop-filter: blur(4px);
-            opacity: 0;
-            transition: opacity 0.4s ease, display 0.4s allow-discrete;
-        }
-
-        dialog.side-panel[open]::backdrop {
-            opacity: 1;
-        }
-
-        .panel__header {
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-            padding: 24px 32px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .panel__eyebrow {
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--sage);
-        }
-
-        .panel__close {
-            background: var(--cream);
-            border: 1px solid var(--border);
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            cursor: pointer;
-            color: var(--ink-soft);
-            transition: all 0.2s;
-        }
-
-        .panel__close:hover {
-            background: #ffebeb;
-            color: #d63031;
-            border-color: #fab1a0;
-        }
-
-        .panel__body {
-            padding: 40px 32px;
-        }
-
-        .panel__logo-lg {
-            width: 80px;
-            height: 80px;
-            border-radius: 16px;
-            background: var(--cream);
-            border: 1px solid var(--border);
-            display: grid;
-            place-items: center;
-            margin-bottom: 24px;
-        }
-
-        .panel__logo-lg img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 12px;
-        }
-
-        .panel__title {
-            font-family: 'DM Serif Display', serif;
-            font-size: 32px;
-            margin-bottom: 8px;
-            color: var(--ink);
-        }
-
-        .panel__location {
-            font-size: 14px;
-            color: var(--ink-muted);
-            margin-bottom: 32px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .panel__label {
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: var(--sage);
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .panel__text-main {
-            font-size: 15px;
-            color: var(--ink-soft);
-            line-height: 1.7;
-            margin-bottom: 32px;
-        }
-
-        .panel__tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .panel__tag {
-            background: var(--cream);
-            border: 1px solid var(--border);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--ink-soft);
-        }
-    </style>
-
-    <script>
-        (function() {
-            const sponsorsData = [
-                {
-                    id: 'longi',
-                    nombre: 'LONGi Solar',
-                    logo: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=LONGi',
-                    origen: 'China',
-                    especialidad: 'Fabricación de módulos fotovoltaicos monocristalinos de alta eficiencia',
-                    descripcion: 'LONGi es el mayor fabricante de obleas y módulos solares del mundo. Se especializa en tecnología monocristalina y ostenta récords mundiales de eficiencia.',
-                    tags: ['Módulos FV', 'I+D', 'Escala']
-                },
-                {
-                    id: 'canadian',
-                    nombre: 'Canadian Solar',
-                    logo: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=CdnSolar',
-                    origen: 'Canadá / China',
-                    especialidad: 'Soluciones solares integradas — módulos y almacenamiento',
-                    descripcion: 'Uno de los mayores fabricantes de paneles solares del mundo, con operaciones en más de 100 países y soluciones de almacenamiento BESS.',
-                    tags: ['BESS', 'Proyectos', 'NASDAQ']
-                },
-                {
-                    id: 'huawei',
-                    nombre: 'Huawei Solar',
-                    logo: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=Huawei',
-                    origen: 'China',
-                    especialidad: 'Inversores string inteligentes y soluciones digitales',
-                    descripcion: 'Líder global en inversores fotovoltaicos con optimización IA y controladores de planta SmartLogger.',
-                    tags: ['Inversores', 'IA', 'Digital']
-                },
-                {
-                    id: 'fronius',
-                    nombre: 'Fronius',
-                    logo: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=Fronius',
-                    origen: 'Austria',
-                    especialidad: 'Inversores residenciales y comerciales de alta calidad',
-                    descripcion: 'Empresa familiar con más de 75 años. Reconocida por la fiabilidad y conectividad de sus series Primo y GEN24.',
-                    tags: ['Calidad', 'Europeo', 'Residencial']
-                }
-            ];
-
-            const grid = document.getElementById('grid-sponsors');
-            const modal = document.getElementById('sponsorModal');
-            const content = document.getElementById('panelContent');
-            const closeBtn = document.getElementById('modalClose');
-
-            function render() {
-                grid.innerHTML = sponsorsData.map(s => `
-                    <div class="sponsor-card" onclick="openSponsor('${s.id}')">
-                        <div class="sponsor-card__logo-wrap">
-                            <img src="${s.logo}" alt="${s.nombre}">
-                        </div>
-                        <div>
-                            <p class="sponsor-card__origin">${s.origen}</p>
-                            <h3 class="sponsor-card__name">${s.nombre}</h3>
-                            <p class="sponsor-card__specialty">${s.especialidad}</p>
-                        </div>
-                        <div class="sponsor-card__cta">
-                            <span>Ver detalles</span>
-                            <div class="cta-arrow">→</div>
-                        </div>
-                    </div>
-                `).join('');
-            }
-
-            window.openSponsor = function(id) {
-                const s = sponsorsData.find(x => x.id === id);
-                if(!s) return;
-
-                content.innerHTML = `
-                    <div class="panel__logo-lg"><img src="${s.logo}"></div>
-                    <h2 class="panel__title">${s.nombre}</h2>
-                    <p class="panel__location">📍 ${s.origen}</p>
-
-                    <span class="panel__label">Especialidad</span>
-                    <p class="panel__text-main">${s.especialidad}</p>
-
-                    <span class="panel__label">Sobre la marca</span>
-                    <p class="panel__text-main">${s.descripcion}</p>
-
-                    <span class="panel__label">Tecnologías</span>
-                    <div class="panel__tags">
-                        ${s.tags.map(t => `<span class="panel__tag">${t}</span>`).join('')}
-                    </div>
-                `;
-                modal.showModal();
-            };
-
-            closeBtn.onclick = () => modal.close();
-
-            modal.onclick = (e) => {
-                if (e.target === modal) modal.close();
-            };
-
-            render();
-        })();
-    </script>
+      render();
+    })();
+  </script>
 </div>

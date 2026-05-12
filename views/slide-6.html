@@ -15,10 +15,12 @@
       <li><a class="nav-biblioteca" style="cursor:pointer;" onclick="goToSlide(7)">Biblioteca</a></li>
       <li><a class="nav-ayuda" style="cursor:pointer;" onclick="goToSlide(6)">Ayuda</a></li>
     </ul>
-<div class="nav-auth">
-      <button class="btn-text" onclick="goToSlide(1); switchAuthTab('login');">Iniciar sesión</button>
-      <button class="btn-outline" onclick="goToSlide(1); switchAuthTab('register');">Crear cuenta</button>
-</div>
+    <div class="user-controls">
+      <div class="bell">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+      </div>
+      <div class="avatar" onclick="openUserSettings()">U</div>
+    </div>
   </header>
 
   <div class="app-content">
@@ -52,7 +54,7 @@
           <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="faq-answer">
-          <p></p>
+          <p>Ofrecemos diferentes planes que se adaptan a tus necesidades, desde acceso básico gratuito para simulaciones individuales hasta planes corporativos con análisis avanzados y gestión de múltiples proyectos.</p>
         </div>
       </div>
 
