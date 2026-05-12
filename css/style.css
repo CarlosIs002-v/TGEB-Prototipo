@@ -6,8 +6,7 @@
       --sage-dark: #3d6b52;
       --teal: #4a7c82;
       --teal-light: #7ab3b9;
-      --cream: #f7f5f0;
-      --white: #ffffff;
+      --cream: #ffffff;
       --ink: #1e2d26;
       --ink-soft: #4a5e52;
       --ink-muted: #8a9e92;
@@ -27,11 +26,7 @@
     /* ─── Background global ─── */
     .bg-canvas {
       position: fixed; inset: 0; z-index: 0;
-      background:
-        radial-gradient(ellipse 70% 60% at 15% 20%, rgba(138,184,154,0.22) 0%, transparent 70%),
-        radial-gradient(ellipse 55% 45% at 85% 75%, rgba(74,124,130,0.18) 0%, transparent 65%),
-        radial-gradient(ellipse 40% 50% at 60% 10%, rgba(95,138,110,0.10) 0%, transparent 60%),
-        radial-gradient(ellipse 80% 80% at 50% 50%, rgba(247,245,240,0.95) 0%, var(--cream) 80%);
+      background: #f5f7fa;
     }
 
     /* ─── Controles de Presentación (Flotando abajo) ─── */

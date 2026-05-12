@@ -1,19 +1,23 @@
 <div class="slide" id="slide-5">
-  <header class="app-header">
-    <a class="nav-logo" onclick="goToSlide(0)">
-      <div class="nav-logo-icon"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor"/></svg></div>
-      <div class="nav-logo-text"><strong>TGEB</strong></div>
+  <header class="app-header" style="background: white; position: relative; z-index: 10;">
+    <a class="nav-logo" style="cursor:pointer;" onclick="goToSlide(0)">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="nav-logo-text"><strong>TGEB</strong><span>Total Green Energy Buildings</span></div>
     </a>
     <ul class="nav-links">
-      <li><a class="nav-inicio" onclick="goToSlide(0)">Inicio</a></li>
-      <li><a class="nav-simulador" onclick="goToSlide(2)">Simulador</a></li>
-      <li><a class="nav-proyectos active" onclick="goToSlide(5)">Proyectos</a></li>
+      <li><a class="nav-inicio active" style="cursor:pointer;" onclick="goToSlide(0)">Inicio</a></li>
+      <li><a class="nav-simulador" style="cursor:pointer;" onclick="goToSlide(8)">Simulador</a></li>
+      <li><a class="nav-proyectos" style="cursor:pointer;" onclick="goToSlide(5)">Proyectos</a></li>
       <li><a class="nav-biblioteca" style="cursor:pointer;" onclick="goToSlide(7)">Biblioteca</a></li>
       <li><a class="nav-ayuda" style="cursor:pointer;" onclick="goToSlide(6)">Ayuda</a></li>
     </ul>
-    <div class="user-controls">
-      <div class="bell">🔔</div>
-      <div class="avatar" onclick="goToSlide(0)" title="Cerrar Sesión">U</div>
+    <div class="nav-auth">
+      <button class="btn-text" onclick="goToSlide(1); switchAuthTab('login');">Iniciar sesión</button>
+      <button class="btn-outline" onclick="goToSlide(1); switchAuthTab('register');">Crear cuenta</button>
     </div>
   </header>
 
