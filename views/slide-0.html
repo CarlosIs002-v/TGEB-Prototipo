@@ -1,13 +1,18 @@
-<div class="slide active" id="slide-0">
-  <nav class="land-nav">
-    <a href="#" class="nav-logo" onclick="goToSlide(0)">
-      <div class="nav-logo-icon"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor"/><path d="M12 2v20M3 7l9 5 9-5" stroke="rgba(255,255,255,0.5)" stroke-width="1"/></svg></div>
+<div class="slide" id="slide-0">
+  <!-- Cabecera limpia y sólida como en el resto de la app -->
+  <header class="app-header" style="background: white; position: relative; z-index: 10;">
+    <a class="nav-logo" style="cursor:pointer;" onclick="goToSlide(0)">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+            <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor"/>
+        </svg>
+      </div>
       <div class="nav-logo-text"><strong>TGEB</strong><span>Total Green Energy Buildings</span></div>
     </a>
     <ul class="nav-links">
-      <li><a class="nav-inicio active" onclick="goToSlide(0)">Inicio</a></li>
-      <li><a class="nav-simulador" onclick="goToSlide(2)">Simulador</a></li>
-      <li><a class="nav-proyectos" onclick="goToSlide(5)">Proyectos</a></li>
+      <li><a class="nav-inicio active" style="cursor:pointer;" onclick="goToSlide(0)">Inicio</a></li>
+      <li><a class="nav-simulador" style="cursor:pointer;" onclick="goToSlide(8)">Simulador</a></li>
+      <li><a class="nav-proyectos" style="cursor:pointer;" onclick="goToSlide(5)">Proyectos</a></li>
       <li><a class="nav-biblioteca" style="cursor:pointer;" onclick="goToSlide(7)">Biblioteca</a></li>
       <li><a class="nav-ayuda" style="cursor:pointer;" onclick="goToSlide(6)">Ayuda</a></li>
     </ul>
@@ -15,37 +20,65 @@
       <button class="btn-text" onclick="goToSlide(1); switchAuthTab('login');">Iniciar sesión</button>
       <button class="btn-outline" onclick="goToSlide(1); switchAuthTab('register');">Crear cuenta</button>
     </div>
-  </nav>
+  </header>
 
-  <main class="hero">
-    <div class="hero-left">
-      <h1>Simula, analiza y <span>optimiza</span> tus edificios.</h1>
-      <p>Selecciona una estrategia para empezar.</p>
-      <button class="btn-primary-large" onclick="goToSlide(1); switchAuthTab('register');">
-        Empezar simulación
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </button>
-    </div>
-    <div class="hero-right">
-      <div class="orbit-container">
-        <div class="orbit-ring"></div>
-        <div class="center-building">
-          <svg viewBox="0 0 100 100" fill="none" stroke="var(--sage-dark)" stroke-width="3" style="width: 70px; height: 70px;">
-            <path d="M10 50 L50 15 L90 50 V90 H10 Z" fill="white"/>
-            <rect x="40" y="60" width="20" height="30" fill="var(--sage-light)"/><rect x="25" y="45" width="15" height="15" fill="var(--teal-light)"/><rect x="60" y="45" width="15" height="15" fill="var(--teal-light)"/>
-            <path d="M55 20 L80 40 L75 45 L50 25 Z" fill="var(--teal)" stroke="none"/>
-            <path d="M5 55 L50 10 L95 55" stroke="var(--teal)" stroke-width="4"/>
-          </svg>
+  <!-- Sección Hero con la imagen de fondo integrada -->
+  <div style="position: relative; width: 100%; min-height: 55vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: url('https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat; text-align: center;">
+
+    <!-- Filtro oscuro para que el texto resalte siempre -->
+    <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.5);"></div>
+
+    <div style="position: relative; z-index: 1; width: 100%; max-width: 800px; padding: 40px 20px;">
+
+        <!-- Barra de búsqueda -->
+        <div style="background: white; border-radius: 8px; width: 100%; display: flex; align-items: center; padding: 16px 24px; margin-bottom: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+            <input type="text" placeholder="Buscar por producto o código" style="border:none; outline:none; flex:1; font-size:16px; font-family:'DM Sans', sans-serif;">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--ink-soft)" stroke-width="2" style="cursor:pointer;">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
         </div>
-        <div class="node" style="top: 0%; left: 50%;"><div class="node-icon">☀️</div><span>Fotovoltaico</span></div>
-        <div class="node" style="top: 15%; left: 85%;"><div class="node-icon">🌳</div><span>Sombreado</span></div>
-        <div class="node" style="top: 50%; left: 100%;"><div class="node-icon">🧱</div><span>Envolvente</span></div>
-        <div class="node" style="top: 85%; left: 85%;"><div class="node-icon">✨</div><span>Reflectancia</span></div>
-        <div class="node" style="top: 100%; left: 50%;"><div class="node-icon">♨️</div><span>Solar térmico</span></div>
-        <div class="node" style="top: 85%; left: 15%;"><div class="node-icon">❄️</div><span>Aire acondicionado</span></div>
-        <div class="node" style="top: 50%; left: 0%;"><div class="node-icon">💡</div><span>Iluminación</span></div>
-        <div class="node" style="top: 15%; left: 15%;"><div class="node-icon">💨</div><span>Ventilación natural</span></div>
-      </div>
+
+        <h1 style="color:white; font-size: 56px; font-family:'DM Sans', sans-serif; font-weight:700; margin-bottom: 20px; line-height: 1.1;">
+            Energía que transforma
+        </h1>
+        <p style="color:white; font-size: 20px; font-family:'DM Sans', sans-serif; font-weight:400; max-width: 600px; margin: 0 auto; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">
+            Descubre nuestras soluciones y simula tus proyectos con la tecnología líder en el mercado.
+        </p>
     </div>
-  </main>
+  </div>
+
+  <!-- Sección inferior "Soluciones" -->
+  <div style="max-width: 1200px; margin: 0 auto; padding: 60px 24px;">
+    <h2 style="font-family:'DM Sans', sans-serif; font-weight:300; font-size:32px; color:var(--teal); margin-bottom: 30px;">Soluciones</h2>
+
+    <div style="display:flex; gap:24px; flex-wrap:wrap;">
+       <!-- Tarjeta 1 -->
+       <div style="flex:1; min-width:300px; height: 260px; background:white; position:relative; overflow:hidden; border-radius:12px; cursor:pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s;" onclick="goToSlide(8)" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='none'">
+         <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=600" style="width:100%; height:140px; object-fit:cover;">
+         <div style="padding: 20px;">
+            <p style="font-size:12px; color:var(--sage); font-weight:700; text-transform:uppercase; margin-bottom:4px;">Arquitectura Sostenible</p>
+            <h3 style="font-size: 20px; font-family:'DM Serif Display'; color:var(--ink);">Análisis de Radiación Solar</h3>
+         </div>
+       </div>
+
+       <!-- Tarjeta 2 -->
+       <div style="flex:1; min-width:300px; height: 260px; background:white; position:relative; overflow:hidden; border-radius:12px; cursor:pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s;" onclick="goToSlide(8)" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='none'">
+         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600" style="width:100%; height:140px; object-fit:cover;">
+         <div style="padding: 20px;">
+            <p style="font-size:12px; color:var(--sage); font-weight:700; text-transform:uppercase; margin-bottom:4px;">Climatización</p>
+            <h3 style="font-size: 20px; font-family:'DM Serif Display'; color:var(--ink);">Optimización de Envolventes</h3>
+         </div>
+       </div>
+
+       <!-- Tarjeta 3 -->
+       <div style="flex:1; min-width:300px; height: 260px; background:white; position:relative; overflow:hidden; border-radius:12px; cursor:pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s;" onclick="goToSlide(8)" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='none'">
+         <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=600" style="width:100%; height:140px; object-fit:cover;">
+         <div style="padding: 20px;">
+            <p style="font-size:12px; color:var(--sage); font-weight:700; text-transform:uppercase; margin-bottom:4px;">Ingeniería Verde</p>
+            <h3 style="font-size: 20px; font-family:'DM Serif Display'; color:var(--ink);">Simulador Termodinámico</h3>
+         </div>
+       </div>
+    </div>
+  </div>
 </div>

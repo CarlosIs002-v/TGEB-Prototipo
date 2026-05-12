@@ -1,0 +1,57 @@
+<div class="slide" id="slide-8">
+  <header class="app-header" style="background: white; position: relative; z-index: 10;">
+    <a class="nav-logo" style="cursor:pointer;" onclick="goToSlide(0)">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="nav-logo-text"><strong>TGEB</strong><span>Total Green Energy Buildings</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a class="nav-inicio active" style="cursor:pointer;" onclick="goToSlide(0)">Inicio</a></li>
+      <li><a class="nav-simulador" style="cursor:pointer;" onclick="goToSlide(8)">Simulador</a></li>
+      <li><a class="nav-proyectos" style="cursor:pointer;" onclick="goToSlide(5)">Proyectos</a></li>
+      <li><a class="nav-biblioteca" style="cursor:pointer;" onclick="goToSlide(7)">Biblioteca</a></li>
+      <li><a class="nav-ayuda" style="cursor:pointer;" onclick="goToSlide(6)">Ayuda</a></li>
+    </ul>
+    <div class="nav-auth">
+      <button class="btn-text" onclick="goToSlide(1); switchAuthTab('login');">Iniciar sesión</button>
+      <button class="btn-outline" onclick="goToSlide(1); switchAuthTab('register');">Crear cuenta</button>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="hero-left">
+      <h1>Simula, analiza y <span>optimiza</span> tus edificios.</h1>
+      <p>Selecciona una estrategia para empezar.</p>
+      <button class="btn-primary-large" onclick="goToSlide(2);">
+        Empezar simulación
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>
+    <div class="hero-right">
+      <div class="orbit-container">
+        <div class="orbit-ring"></div>
+        <div class="center-building">
+          <svg viewBox="0 0 100 100" fill="none" stroke="var(--sage-dark)" stroke-width="3" style="width: 70px; height: 70px;">
+            <path d="M10 50 L50 15 L90 50 V90 H10 Z" fill="white"/>
+            <rect x="40" y="60" width="20" height="30" fill="var(--sage-light)"/><rect x="25" y="45" width="15" height="15" fill="var(--teal-light)"/><rect x="60" y="45" width="15" height="15" fill="var(--teal-light)"/>
+            <path d="M55 20 L80 40 L75 45 L50 25 Z" fill="var(--teal)" stroke="none"/>
+            <path d="M5 55 L50 10 L95 55" stroke="var(--teal)" stroke-width="4"/>
+          </svg>
+        </div>
+        <div class="node" style="top: 0%; left: 50%; cursor:pointer;" onclick="goToSlide(2)"><div class="node-icon">☀️</div><span>Fotovoltaico</span></div>
+        <div class="node" style="top: 15%; left: 85%; cursor:pointer;" onclick="goToSlide(2)"><div class="node-icon">🌳</div><span>Sombreado</span></div>
+        <div class="node" style="top: 50%; left: 100%; cursor:pointer;" onclick="goToSlide(2)"><div class="node-icon">🧱</div><span>Envolvente</span></div>
+        <div class="node" style="top: 85%; left: 85%; cursor:pointer;" onclick="goToSlide(2)"><div class="node-icon">✨</div><span>Reflectancia</span></div>
+        <div class="node" style="top: 100%; left: 50%; cursor:pointer;" onclick="goToSlide(2)"><div class="node-icon">♨️</div><span>Solar térmico</span></div>
+        <div class="node" style="top: 85%; left: 15%; cursor:pointer;" onclick="goToSlide(2)"><div class="node-icon">❄️</div><span>Aire acondicionado</span></div>
+        <div class="node" style="top: 50%; left: 0%; cursor:pointer;" onclick="goToSlide(2)"><div class="node-icon">💡</div><span>Iluminación</span></div>
+        <div class="node" style="top: 15%; left: 15%; cursor:pointer;" onclick="goToSlide(2)"><div class="node-icon">💨</div><span>Ventilación natural</span></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+
