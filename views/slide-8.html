@@ -15,11 +15,14 @@
       <li><a class="nav-biblioteca" style="cursor:pointer;" onclick="goToSlide(7)">Biblioteca</a></li>
       <li><a class="nav-ayuda" style="cursor:pointer;" onclick="goToSlide(6)">Ayuda</a></li>
     </ul>
-    <div class="nav-auth">
-      <button class="btn-text" onclick="goToSlide(1); switchAuthTab('login');">Iniciar sesión</button>
-      <button class="btn-outline" onclick="goToSlide(1); switchAuthTab('register');">Crear cuenta</button>
+    <div class="user-controls">
+      <div class="bell">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+      </div>
+      <div class="avatar" onclick="openUserSettings()">U</div>
     </div>
   </header>
+
   <main class="hero" style="background: repeating-linear-gradient(45deg, rgba(95,138,110,0.03) 0px, rgba(95,138,110,0.03) 1px, transparent 1px, transparent 10px);">
     <div class="hero-left" style="flex: 0 0 40%;">
       <h1 style="font-size: 52px; line-height: 1.1; margin-bottom: 24px;">Simula, analiza y <span style="color: var(--teal);">optimiza</span> tus edificios.</h1>
@@ -29,75 +32,70 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:8px;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </button>
     </div>
+
     <div class="hero-right" style="flex: 1; display: flex; justify-content: center; align-items: center;">
       <div class="sim-orbit-area" style="width: 550px; height: 550px; position: relative;">
-          <div style="position: absolute; inset: 20px; border: 1.5px dashed var(--sage-light); border-radius: 50%; opacity: 0.6;"></div>
-          <!-- Central Graphic -->
-          <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 140px; height: 140px; z-index: 10; display:flex; align-items:center; justify-content:center; background: white; border-radius: 50%; border: 1px solid var(--border); box-shadow: 0 12px 40px rgba(95,138,110,0.15);">
-             <svg viewBox="0 0 100 100" fill="none" stroke="var(--sage-dark)" stroke-width="3" style="width: 60px; height: 60px;">
-                 <path d="M10 50 L50 15 L90 50 V90 H10 Z" fill="white"/>
-                 <rect x="40" y="60" width="20" height="30" fill="var(--sage-light)" stroke="none"/><rect x="25" y="45" width="15" height="15" fill="var(--teal-light)" stroke="none"/><rect x="60" y="45" width="15" height="15" fill="var(--teal-light)" stroke="none"/>
-             </svg>
+        <div style="position: absolute; inset: 20px; border: 1.5px dashed var(--sage-light); border-radius: 50%; opacity: 0.6;"></div>
+
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 140px; height: 140px; z-index: 10; display:flex; align-items:center; justify-content:center; background: white; border-radius: 50%; border: 1px solid var(--border); box-shadow: 0 12px 40px rgba(95,138,110,0.15);">
+          <img src="https://www.pineca.es/media/cache/avp_product_thumbnail/d/b/d/d/dbddc3c9662126be674c77abc95b7a1e721a39c6_600x435.jpeg" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+        </div>
+
+        <div class="node-modern" style="top: 5%; left: 50%;" onclick="openStrategyModal('Fotovoltaico', '☀️', 'Generación de energía eléctrica...', 'energía renovable', 'área de cubierta', '30 - 60%')">
+          <div class="node-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Fixed_Tilt_Solar_panel_at_Canterbury_Municipal_Building_Canterbury_New_Hampshire.jpg" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div> <span class="node-label">Fotovoltaico</span>
+        </div>
+
+        <div class="node-modern" style="top: 20%; left: 85%;" onclick="openStrategyModal('Sombreado', '🌳', 'El sombreado estratégico...', 'control de deslumbramiento', 'tipo de árbol', '15 - 25%')">
+          <div class="node-badge"><img src="https://www.cocinavital.mx/wp-content/uploads/2024/05/arboles-que-dan-sombra-jardineria.jpg" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div> <span class="node-label">Sombreado</span>
+        </div>
+
+        <div class="node-modern" style="top: 50%; left: 100%;" onclick="openStrategyModal('Envolvente', '🧱', 'Una envolvente térmica...', 'mejor aislamiento', 'materiales', '20 - 45%')">
+          <div class="node-badge"><img src="https://b3414173.smushcdn.com/3414173/wp-content/uploads/2024/07/Inercia-termica-300x300.webp" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div> <span class="node-label">Envolvente</span>
+        </div>
+
+        <div class="node-modern" style="top: 80%; left: 85%;" onclick="openStrategyModal('Reflectancia', '✨', 'Uso de materiales reflectantes...', 'reducción del efecto isla', 'color de cubierta', '5 - 15%')">
+          <div class="node-badge"><img src="https://earth.org/wp-content/uploads/2023/12/Untitled-683-x-1024-px-6-1200x900.png" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div> <span class="node-label">Reflectancia</span>
+        </div>
+
+        <div class="node-modern" style="top: 95%; left: 50%;" onclick="openStrategyModal('Solar térmico', '♨️', 'Aprovecha la energía del sol...', 'agua caliente gratis', 'área de captación', '30 - 60%')">
+          <div class="node-badge"><img src="https://powen.es/wp-content/uploads/2021/10/captador-solar-termico.jpg" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div> <span class="node-label">Solar térmico</span>
+        </div>
+
+        <div class="node-modern" style="top: 80%; left: 15%;" onclick="openStrategyModal('Aire acondicionado', '❄️', 'Optimización de equipos...', 'confort total', 'SEER/COP', '20 - 40%')">
+          <div class="node-badge"><img src="https://definicion.de/wp-content/uploads/2011/10/aire-acondicionado.jpg" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div> <span class="node-label">Aire acondicionado</span>
+        </div>
+
+        <div class="node-modern" style="top: 50%; left: 0%;" onclick="openStrategyModal('Iluminación', '💡', 'Maximizacíon de luz natural...', 'ahorro directo', 'niveles de lux', '30 - 50%')">
+          <div class="node-badge"><img src="https://m.media-amazon.com/images/I/71zbPxykA+L._AC_UF894,1000_QL80_.jpg" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div> <span class="node-label">Iluminación</span>
+        </div>
+
+        <div class="node-modern" style="top: 20%; left: 15%;" onclick="openStrategyModal('Ventilación natural', '🌬️', 'La ventilación natural permite reducir el consumo mediante el aire exterior.', 'reducción de carga térmica', 'orientación, aperturas', '10 - 35%')">
+          <div class="node-badge">
+            <img src="https://constructivo.com/imgPosts/1763066948vmaJQvAe.jpg" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
           </div>
-          <!-- Nodos alrededor de la órbita (550px) -->
-          <!-- Posiciones aproximadas distribuidas en el círculo -->
-          <div class="node-modern" style="top: 5%; left: 50%;" onclick="openStrategyModal('Fotovoltaico', '☀️', 'Generación de energía eléctrica a través de paneles solares fotovoltaicos para autoabastecimiento.', 'energía renovable, reducción en factura eléctrica', 'área de cubierta, irradiancia solar', '30 - 60%')">
-              <div class="node-badge" style="width:56px; height:56px; font-size:24px;">☀️</div> <span class="node-label">Fotovoltaico</span>
-          </div>
-          <div class="node-modern" style="top: 20%; left: 85%;" onclick="openStrategyModal('Sombreado', '🌳', 'El sombreado estratégico bloquea la radiación solar directa durante las épocas cálidas, reduciendo la ganancia térmica.', 'control de deslumbramiento, menos carga térmica, mejora visual', 'tipo de árbol, diseño de aleros, orientación', '15 - 25%')">
-              <div class="node-badge" style="width:56px; height:56px; font-size:24px;">🌳</div> <span class="node-label">Sombreado</span>
-          </div>
-          <div class="node-modern" style="top: 50%; left: 100%;" onclick="openStrategyModal('Envolvente', '🧱', 'Una envolvente térmica eficiente aísla el interior, evitando pérdidas de calor en invierno y ganancias extremas en verano.', 'mejor aislamiento, eliminación de puentes térmicos', 'materiales, grosor de aislamiento, tipo de acristalamiento', '20 - 45%')">
-              <div class="node-badge" style="width:56px; height:56px; font-size:24px;">🧱</div> <span class="node-label">Envolvente</span>
-          </div>
-          <div class="node-modern" style="top: 80%; left: 85%;" onclick="openStrategyModal('Reflectancia', '✨', 'Uso de materiales reflectantes (cool roofs) en la cubierta para rebotar la radiación solar antes de que se absorba.', 'reducción del efecto isla de calor, techos fríos', 'color de cubierta, material, emisividad', '5 - 15%')">
-              <div class="node-badge" style="width:56px; height:56px; font-size:24px;">✨</div> <span class="node-label">Reflectancia</span>
-          </div>
-          <div class="node-modern" style="top: 95%; left: 50%;" onclick="openStrategyModal('Solar térmico', '♨️', 'Aprovecha la energía del sol para calentar agua de uso sanitario o calefacción con sistemas pasivos/activos.', 'agua caliente gratis, reducción de consumo de gas', 'área de captación, zona climática', '30 - 60%')">
-              <div class="node-badge" style="width:56px; height:56px; font-size:24px;">♨️</div> <span class="node-label">Solar térmico</span>
-          </div>
-          <div class="node-modern" style="top: 80%; left: 15%;" onclick="openStrategyModal('Aire acondicionado', '❄️', 'Optimización y selección de equipos de climatización altamente eficientes (VRF, aerotermia) para mejorar el rendimiento.', 'control preciso, deshumidificación, confort total', 'SEER/COP, capacidad, zonificación', '20 - 40%')">
-              <div class="node-badge" style="width:56px; height:56px; font-size:24px;">❄️</div> <span class="node-label">Aire acondicionado</span>
-          </div>
-          <div class="node-modern" style="top: 50%; left: 0%;" onclick="openStrategyModal('Iluminación', '💡', 'Maximizacíon de la luz natural y selección de sistemas LED de alta eficacia con controles automatizados.', 'ahorro directo eléctrico, menos calor emitido', 'niveles de lux, tipos de lámpara, sensores', '30 - 50%')">
-              <div class="node-badge" style="width:56px; height:56px; font-size:24px;">💡</div> <span class="node-label">Iluminación</span>
-          </div>
-          <div class="node-modern" style="top: 20%; left: 15%;" onclick="openStrategyModal('Ventilación natural', '🌬️', 'La ventilación natural permite reducir el consumo de energía mediante el aprovechamiento del flujo de aire exterior. Estrategia pasiva que minimiza el uso de sistemas mecánicos.', 'reducción de carga térmica, mejora confort, ahorro energético', 'orientación, aperturas, velocidad viento', '10 - 35%')">
-              <div class="node-badge" style="width:56px; height:56px; font-size:24px;">🌬️</div> <span class="node-label">Ventilación natural</span>
-          </div>
+          <span class="node-label">Ventilación natural</span>
+        </div>
       </div>
     </div>
   </main>
+
   <dialog id="strategyModal" class="side-panel">
     <header class="panel__header">
       <div style="display: flex; align-items: center; gap: 12px;">
         <div id="smIcon" style="font-size: 28px;">🌬️</div>
-        <h3 id="smTitle" style="font-size: 20px; font-family: 'DM Serif Display', serif; color: var(--ink);">Ventilación natural</h3>
+        <h3 id="smTitle" style="font-size: 20px; font-family: 'DM Sans', sans-serif; font-weight: 700;">Ventilación natural</h3>
       </div>
-      <button class="panel__close" onclick="closeStrategyModal()" aria-label="Cerrar panel">✕</button>
+      <button class="panel__close" onclick="closeStrategyModal()">✕</button>
     </header>
     <div class="panel__body">
       <div class="strategy-section-title">Descripción</div>
-      <div class="strategy-desc" id="smDesc">La ventilación natural permite reducir el consumo de energía mediante el aprovechamiento del flujo de aire exterior. Estrategia pasiva que minimiza el uso de sistemas mecánicos.</div>
+      <div class="strategy-desc" id="smDesc">...</div>
       <div class="strategy-section-title">Beneficios</div>
-      <ul class="strategy-list" id="smBen">
-        <li>reducción de carga térmica</li>
-        <li>mejora confort</li>
-        <li>ahorro energético</li>
-      </ul>
-      <div class="strategy-section-title">Variables evaluadas por TGEB</div>
-      <ul class="strategy-list" id="smVar">
-        <li>orientación</li>
-        <li>aperturas</li>
-        <li>velocidad viento</li>
-      </ul>
-      <div class="strategy-impact">
-        Impacto estimado <span id="smImp">10 - 35% <small style="font-size:12px; font-weight:normal; color:var(--ink-muted);">ahorro energético</small></span>
-      </div>
-      <button class="btn-primary" style="margin-top: 20px;" onclick="closeStrategyModal(); goToSlide(2);">
-        Simular estrategia
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
+      <ul class="strategy-list" id="smBen"></ul>
+      <div class="strategy-section-title">Variables</div>
+      <ul class="strategy-list" id="smVar"></ul>
+      <div class="strategy-impact">Impacto estimado <span id="smImp">...</span></div>
+      <button class="btn-primary" style="margin-top: 20px;" onclick="closeStrategyModal(); goToSlide(2);">Simular estrategia</button>
     </div>
   </dialog>
 </div>
