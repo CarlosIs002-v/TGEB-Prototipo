@@ -113,7 +113,7 @@ body {
 
 }
 
-n .slide.active {
+.slide.active {
   opacity: 1;
   pointer-events: auto;
   z-index: 10;
@@ -124,7 +124,7 @@ n .slide.active {
        COMPONENTES COMPARTIDOS (App Interna)
        ========================================= */
 .app-header {
-  height: 70px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
