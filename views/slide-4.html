@@ -1,29 +1,21 @@
 <div class="slide" id="slide-4">
-  <header class="app-header" style="background: white; position: relative; z-index: 10;">
-    <a class="nav-logo" style="cursor:pointer;" onclick="goToSlide(0)">
-      <div class="nav-logo-icon">
-        <svg viewBox="0 0 24 24" width="20" height="20">
-          <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor"/>
-        </svg>
-      </div>
-      <div class="nav-logo-text"><strong>TGEB</strong><span>Total Green Energy Buildings</span></div>
+  <header class="app-header">
+    <a class="nav-logo" onclick="goToSlide(0)">
+      <div class="nav-logo-icon"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor"/></svg></div>
+      <div class="nav-logo-text"><strong>TGEB</strong></div>
     </a>
     <ul class="nav-links">
-      <li><a class="nav-inicio active" style="cursor:pointer;" onclick="goToSlide(0)">Inicio</a></li>
-      <li><a class="nav-simulador" style="cursor:pointer;" onclick="goToSlide(8)">Simulador</a></li>
-      <li><a class="nav-proyectos" style="cursor:pointer;" onclick="goToSlide(5)">Proyectos</a></li>
+      <li><a class="nav-inicio" onclick="goToSlide(0)">Inicio</a></li>
+      <li><a class="nav-simulador active" onclick="goToSlide(2)">Simulador</a></li>
+      <li><a class="nav-proyectos" onclick="goToSlide(5)">Proyectos</a></li>
       <li><a class="nav-biblioteca" style="cursor:pointer;" onclick="goToSlide(7)">Biblioteca</a></li>
       <li><a class="nav-ayuda" style="cursor:pointer;" onclick="goToSlide(6)">Ayuda</a></li>
     </ul>
-<<<<<<< HEAD
     <div class="user-controls">
       <div class="bell">🔔</div>
-      <div class="avatar" style="cursor:pointer;" onclick="openUserSettings()" title="Configuración de Cuenta">U</div>
-=======
-    <div class="nav-auth">
-      <button class="btn-text" onclick="goToSlide(1); switchAuthTab('login');">Iniciar sesión</button>
-      <button class="btn-outline" onclick="goToSlide(1); switchAuthTab('register');">Crear cuenta</button>
->>>>>>> b233b452d5c59c8fbdf2834106150952445e8c7b
+      <div class="avatar" style="cursor:pointer;" onclick="openUserSettings()" title="Configuración de Cuenta">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      </div>
     </div>
   </header>
 

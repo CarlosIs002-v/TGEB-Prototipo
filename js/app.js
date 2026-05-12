@@ -4,7 +4,7 @@ window.prevSlide = prevSlide;
 window.switchAuthTab = switchAuthTab;
 
 let currSlide = 0;
-  const totalSlides = 9;
+  const totalSlides = 8;
 
   function goToSlide(n) {
     document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
@@ -14,7 +14,7 @@ let currSlide = 0;
     // Sincronizar el menú superior activo
     document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
     if (n === 0) document.querySelectorAll('.nav-inicio').forEach(a => a.classList.add('active'));
-    if (n === 8 || (n >= 2 && n <= 4)) document.querySelectorAll('.nav-simulador').forEach(a => a.classList.add('active'));
+    if (n >= 2 && n <= 4) document.querySelectorAll('.nav-simulador').forEach(a => a.classList.add('active'));
     if (n === 5) document.querySelectorAll('.nav-proyectos').forEach(a => a.classList.add('active'));
     if (n === 6) document.querySelectorAll('.nav-ayuda').forEach(a => a.classList.add('active'));
     if (n === 7) document.querySelectorAll('.nav-biblioteca').forEach(a => a.classList.add('active'));
