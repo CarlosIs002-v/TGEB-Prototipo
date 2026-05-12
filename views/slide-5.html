@@ -3,7 +3,7 @@
     <a class="nav-logo" style="cursor:pointer;" onclick="goToSlide(0)">
       <div class="nav-logo-icon">
         <svg viewBox="0 0 24 24" width="20" height="20">
-          <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor"/>
+          <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor" />
         </svg>
       </div>
       <div class="nav-logo-text"><strong>TGEB</strong><span>Total Green Energy Buildings</span></div>
@@ -15,10 +15,16 @@
       <li><a class="nav-biblioteca" style="cursor:pointer;" onclick="goToSlide(7)">Biblioteca</a></li>
       <li><a class="nav-ayuda" style="cursor:pointer;" onclick="goToSlide(6)">Ayuda</a></li>
     </ul>
-<div class="nav-auth">
-      <button class="btn-text" onclick="goToSlide(1); switchAuthTab('login');">Iniciar sesión</button>
-      <button class="btn-outline" onclick="goToSlide(1); switchAuthTab('register');">Crear cuenta</button>
-</div>
+    <div class="user-controls">
+      <div class="bell">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
+      </div>
+      <div class="avatar" onclick="openUserSettings()">U</div>
+    </div>
   </header>
 
   <div class="app-content">
@@ -26,21 +32,33 @@
     <p class="section-subtitle">Gestiona tus simulaciones, capacítate y compara tecnologías.</p>
 
     <div class="dash-grid">
-      <div class="dash-card" onclick="goToSlide(2)">
+      <div class="dash-card" onclick="goToSlide(8)">
         <div class="dash-icon">📊</div>
-        <div class="dash-text"><h3>Nueva Simulación</h3><p>Realiza simulaciones energéticas personalizadas para tipos de edificios.</p></div>
+        <div class="dash-text">
+          <h3>Nueva Simulación</h3>
+          <p>Realiza simulaciones energéticas personalizadas para tipos de edificios.</p>
+        </div>
       </div>
       <div class="dash-card">
         <div class="dash-icon">⚖️</div>
-        <div class="dash-text"><h3>Comparar tecnologías</h3><p>Contrasta y elige las mejores opciones tecnológicas y estrategias.</p></div>
+        <div class="dash-text">
+          <h3>Comparar tecnologías</h3>
+          <p>Contrasta y elige las mejores opciones tecnológicas y estrategias.</p>
+        </div>
       </div>
       <div class="dash-card">
         <div class="dash-icon">🎓</div>
-        <div class="dash-text"><h3>Capacitación</h3><p>Cursos y certificaciones energéticas, fotovoltaicas y sustentables.</p></div>
+        <div class="dash-text">
+          <h3>Capacitación</h3>
+          <p>Cursos y certificaciones energéticas, fotovoltaicas y sustentables.</p>
+        </div>
       </div>
       <div class="dash-card">
         <div class="dash-icon">📚</div>
-        <div class="dash-text"><h3>Catálogos</h3><p>Explora productos y soluciones especiales de nuestros socios.</p></div>
+        <div class="dash-text">
+          <h3>Catálogos</h3>
+          <p>Explora productos y soluciones especiales de nuestros socios.</p>
+        </div>
       </div>
     </div>
 
@@ -50,7 +68,9 @@
         <div class="brand-tag" style="color: #d32f2f;">LONGi</div>
         <div class="brand-tag">Hi-MO 6</div>
         <div class="brand-tag" style="color: #1976d2;">CARRIER</div>
-        <a href="#" style="margin-left: auto; font-size: 13px; color: var(--sage); font-weight: 600; text-decoration: none;">Ver todo ></a>
+        <a href="#"
+          style="margin-left: auto; font-size: 13px; color: var(--sage); font-weight: 600; text-decoration: none;">Ver
+          todo ></a>
       </div>
     </div>
   </div>
