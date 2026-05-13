@@ -144,12 +144,18 @@ userModal.onclick = (e) => {
     if (e.target === userModal) closeUserSettings();
 };
 
+document.addEventListener('click', function(e) {
+    if (e.target && e.target.id === 'strategyModal') {
+        closeStrategyModal();
+    }
+});
+
 // ─── Inyección dinámica de estilos para Scroll ───
 const scrollStyles = document.createElement('style');
 scrollStyles.innerHTML = `
     body { overflow: hidden; margin: 0; }
     .slide { height: 100vh; overflow-y: auto; overflow-x: hidden; }
-    dialog { max-height: 85vh; overflow-y: auto; }
+    dialog:not(.side-panel) { max-height: 85vh; overflow-y: auto; }
 `;
 document.head.appendChild(scrollStyles);
 
