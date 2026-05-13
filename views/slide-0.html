@@ -65,19 +65,19 @@
       <div class="container">
         <div class="stats__grid">
           <div class="stat-item">
-            <span class="stat__value">45%</span>
+            <span class="stat__value">0 </span>
             <span class="stat__label">Ahorro Promedio</span>
           </div>
           <div class="stat-item">
-            <span class="stat__value">200+</span>
+            <span class="stat__value">0</span>
             <span class="stat__label">Proyectos Activos</span>
           </div>
           <div class="stat-item">
-            <span class="stat__value">12k</span>
+            <span class="stat__value">0</span>
             <span class="stat__label">Toneladas CO2</span>
           </div>
           <div class="stat-item">
-            <span class="stat__value">100%</span>
+            <span class="stat__value">0%</span>
             <span class="stat__label">Sustentable</span>
           </div>
         </div>
@@ -86,60 +86,35 @@
 
     <!-- Simulation Section -->
     <section id="simulador-redesign" class="solutions">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-header__title">Simulador de Estrategias</h2>
-          <p class="section-header__desc">Nuestra plataforma permite evaluar múltiples estrategias bioclimáticas para
-            garantizar la eficiencia total.</p>
-        </div>
+      <div style="max-width: 1200px; margin: 0 auto; padding: 60px 24px;">
+        <h2 style="font-family:'DM Sans', sans-serif; font-weight:300; font-size:32px; color:var(--teal); margin-bottom: 30px;">Soluciones</h2>
 
-        <div class="solutions__grid">
-          <!-- Card 1 -->
-          <div class="solution-card" onclick="goToSlide(8)" style="cursor: pointer;">
-            <div class="solution-card__icon">☀️</div>
-            <h3 class="solution-card__title">Sistemas Fotovoltaicos</h3>
-            <p class="solution-card__desc">Generación de energía limpia mediante paneles de última generación para
-              autoabastecimiento eléctrico.</p>
-            <span class="solution-card__link">
-              Configurar Simulación
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </span>
+        <div style="display:flex; gap:24px; flex-wrap:wrap;">
+          <!-- Tarjeta 1 -->
+          <div style="flex:1; min-width:300px; height: 260px; background:white; position:relative; overflow:hidden; border-radius:12px; cursor:pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s;" onclick="goToSlide(8)" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='none'">
+            <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=600" style="width:100%; height:140px; object-fit:cover;">
+            <div style="padding: 20px;">
+              <p style="font-size:12px; color:var(--sage); font-weight:700; text-transform:uppercase; margin-bottom:4px;">Arquitectura Sostenible</p>
+              <h3 style="font-size: 20px; font-family:'DM Serif Display'; color:var(--ink);">Análisis de Radiación Solar</h3>
+            </div>
           </div>
 
-          <!-- Card 2 -->
-          <div class="solution-card" onclick="goToSlide(8)" style="cursor: pointer;">
-            <div class="solution-card__icon">🌬️</div>
-            <h3 class="solution-card__title">Ventilación Natural</h3>
-            <p class="solution-card__desc">Optimización de flujos de aire para reducir la carga térmica y mejorar el
-              confort interior sin consumo eléctrico.</p>
-            <span class="solution-card__link">
-              Ver Impacto
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </span>
+          <!-- Tarjeta 2 -->
+          <div style="flex:1; min-width:300px; height: 260px; background:white; position:relative; overflow:hidden; border-radius:12px; cursor:pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s;" onclick="goToSlide(8)" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='none'">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600" style="width:100%; height:140px; object-fit:cover;">
+            <div style="padding: 20px;">
+              <p style="font-size:12px; color:var(--sage); font-weight:700; text-transform:uppercase; margin-bottom:4px;">Climatización</p>
+              <h3 style="font-size: 20px; font-family:'DM Serif Display'; color:var(--ink);">Optimización de Envolventes</h3>
+            </div>
           </div>
 
-          <!-- Card 3 -->
-          <div class="solution-card" onclick="goToSlide(8)" style="cursor: pointer;">
-            <div class="solution-card__icon">🧱</div>
-            <h3 class="solution-card__title">Envolvente Térmica</h3>
-            <p class="solution-card__desc">Análisis de materiales y aislamiento para minimizar las pérdidas y ganancias
-              de calor extremas.</p>
-            <span class="solution-card__link">
-              Analizar Materiales
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </span>
+          <!-- Tarjeta 3 -->
+          <div style="flex:1; min-width:300px; height: 260px; background:white; position:relative; overflow:hidden; border-radius:12px; cursor:pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s;" onclick="goToSlide(8)" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='none'">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=600" style="width:100%; height:140px; object-fit:cover;">
+            <div style="padding: 20px;">
+              <p style="font-size:12px; color:var(--sage); font-weight:700; text-transform:uppercase; margin-bottom:4px;">Ingeniería Verde</p>
+              <h3 style="font-size: 20px; font-family:'DM Serif Display'; color:var(--ink);">Simulador Termodinámico</h3>
+            </div>
           </div>
         </div>
       </div>
@@ -164,26 +139,8 @@
                   <p>Reducción drástica en facturación eléctrica desde el primer día de operación.</p>
                 </div>
               </div>
-              <div class="feature-item">
-                <div class="feature-item__icon">✔</div>
-                <div class="feature-item__text">
-                  <h3>Solar Térmica</h3>
-                  <p>Calentamiento de agua sanitario y climatización de piscinas con impacto cero.</p>
-                </div>
-              </div>
-              <div class="feature-item">
-                <div class="feature-item__icon">✔</div>
-                <div class="feature-item__text">
-                  <h3>Energía Eólica Urbana</h3>
-                  <p>Aprovechamiento de corrientes de viento en alturas para generación constante.</p>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="features__image">
-            <img src="https://images.unsplash.com/photo-1466611653911-954ff21b6748?auto=format&fit=crop&q=80&w=1200"
-              alt="Energías Renovables">
+            </div>
           </div>
         </div>
       </div>
