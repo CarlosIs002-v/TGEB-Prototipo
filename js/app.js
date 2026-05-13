@@ -39,7 +39,7 @@ function switchAuthTab(mode) {
     document.getElementById('view-register').style.display = mode === 'register' ? 'block' : 'none';
 }
 
-window.toggleFaq = function(btn) {
+window.toggleFaq = function (btn) {
     const item = btn.parentElement;
     item.classList.toggle('active');
 };
@@ -47,15 +47,15 @@ window.toggleFaq = function(btn) {
 // ─── Lógica de Configuración de Usuario ───
 const userModal = document.getElementById('userSettingsModal');
 
-window.openUserSettings = function() {
+window.openUserSettings = function () {
     userModal.showModal();
 };
 
-window.closeUserSettings = function() {
+window.closeUserSettings = function () {
     userModal.close();
 };
 
-window.openStrategyModal = function(title, icon, desc, benStr, varStr, impact) {
+window.openStrategyModal = function (title, icon, desc, benStr, varStr, impact) {
     document.getElementById('smTitle').innerText = title;
     document.getElementById('smIcon').innerText = icon;
     document.getElementById('smDesc').innerText = desc;
@@ -81,15 +81,15 @@ window.openStrategyModal = function(title, icon, desc, benStr, varStr, impact) {
     document.getElementById('strategyModal').showModal();
 };
 
-window.closeStrategyModal = function() {
+window.closeStrategyModal = function () {
     document.getElementById('strategyModal').close();
 };
 
-window.handleAvatarChange = function(event) {
+window.handleAvatarChange = function (event) {
     const file = event.target.files[0];
     if (file) {
         const reader = new FileReader();
-        reader.onload = function(e) {
+        reader.onload = function (e) {
             document.getElementById('userAvatarPreview').src = e.target.result;
             // También actualizar los avatares en la app (opcional para el prototipo)
             document.querySelectorAll('.avatar').forEach(av => {
@@ -102,7 +102,7 @@ window.handleAvatarChange = function(event) {
     }
 };
 
-window.saveUserSettings = function(event) {
+window.saveUserSettings = function (event) {
     event.preventDefault();
     const newName = document.getElementById('editName').value;
     const newEmail = document.getElementById('editEmail').value;
@@ -143,6 +143,15 @@ window.saveUserSettings = function(event) {
 userModal.onclick = (e) => {
     if (e.target === userModal) closeUserSettings();
 };
+
+// ─── Inyección dinámica de estilos para Scroll ───
+const scrollStyles = document.createElement('style');
+scrollStyles.innerHTML = `
+    body { overflow: hidden; margin: 0; }
+    .slide { height: 100vh; overflow-y: auto; overflow-x: hidden; }
+    dialog { max-height: 85vh; overflow-y: auto; }
+`;
+document.head.appendChild(scrollStyles);
 
 // Inicializar en Landing
 goToSlide(0);

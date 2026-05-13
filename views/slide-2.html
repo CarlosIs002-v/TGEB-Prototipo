@@ -3,7 +3,7 @@
     <a class="nav-logo" style="cursor:pointer;" onclick="goToSlide(0)">
       <div class="nav-logo-icon">
         <svg viewBox="0 0 24 24" width="20" height="20">
-          <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor"/>
+          <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor" />
         </svg>
       </div>
       <div class="nav-logo-text"><strong>TGEB</strong><span>Total Green Energy Buildings</span></div>
@@ -17,43 +17,60 @@
     </ul>
     <div class="user-controls">
       <div class="bell">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
       </div>
       <div class="avatar" onclick="openUserSettings()">U</div>
     </div>
   </header>
 
-  <div class="app-content">
+  <div class="app-content" style="overflow-y: auto; width: 100%; overflow-x: hidden;">
     <h2 class="section-title">Inicia tu Simulación</h2>
     <p class="section-subtitle">Selecciona la ciudad en el mapa para calcular clima y radiación.</p>
 
     <div class="map-container">
-      <img src="https://raw.githubusercontent.com/djaiss/mapsicon/master/all/mx/vector.svg"
-           alt="Mapa de México"
-           class="map-bg-img"
-           style="opacity: 0.6;">
+      <img src="https://raw.githubusercontent.com/djaiss/mapsicon/master/all/mx/vector.svg" alt="Mapa de México"
+        class="map-bg-img" style="opacity: 0.6; position: absolute; top: 0; left: 0">
 
       <div class="map-pin" style="top: 36%; left: 56%;">
-        <div class="pin-icon"><img width=40px height=40px src="https://png.pngtree.com/png-vector/20240509/ourmid/pngtree-location-pin-vector-icon-symbol-png-image_12378264.png"></div>
+        <div class="pin-icon"><img width=40px height=40px
+            src="https://png.pngtree.com/png-vector/20240509/ourmid/pngtree-location-pin-vector-icon-symbol-png-image_12378264.png">
+        </div>
         <div class="pin-info">
-          <h4>Monterrey, NL</h4><p>☀️ 27°C Soleado</p>
-          <button class="btn-primary" style="height: 30px; font-size: 12px; margin-top: 6px; padding: 0 12px; border-radius: 6px;" onclick="goToSlide(3)">Seleccionar</button>
+          <h4>Monterrey, NL</h4>
+          <p>☀️ 27°C Soleado</p>
+          <button class="btn-primary"
+            style="height: 30px; font-size: 12px; margin-top: 6px; padding: 0 12px; border-radius: 6px;"
+            onclick="goToSlide(3)">Seleccionar</button>
         </div>
       </div>
 
       <div class="map-pin" style="top: 70%; left: 58%;">
-        <div class="pin-icon"><img width=40px height=40px src="https://png.pngtree.com/png-vector/20240509/ourmid/pngtree-location-pin-vector-icon-symbol-png-image_12378264.png"></div>
+        <div class="pin-icon"><img width=40px height=40px
+            src="https://png.pngtree.com/png-vector/20240509/ourmid/pngtree-location-pin-vector-icon-symbol-png-image_12378264.png">
+        </div>
         <div class="pin-info">
-          <h4>CDMX</h4><p>⛅ 23°C Nublado</p>
-          <button class="btn-primary" style="height: 30px; font-size: 12px; margin-top: 6px; padding: 0 12px; border-radius: 6px;" onclick="goToSlide(3)">Seleccionar</button>
+          <h4>CDMX</h4>
+          <p>⛅ 23°C Nublado</p>
+          <button class="btn-primary"
+            style="height: 30px; font-size: 12px; margin-top: 6px; padding: 0 12px; border-radius: 6px;"
+            onclick="goToSlide(3)">Seleccionar</button>
         </div>
       </div>
 
       <div class="map-pin" style="top: 56%; left: 82%;">
-        <div class="pin-icon"><img width=40px height=40px src="https://png.pngtree.com/png-vector/20240509/ourmid/pngtree-location-pin-vector-icon-symbol-png-image_12378264.png"></div>
+        <div class="pin-icon"><img width=40px height=40px
+            src="https://png.pngtree.com/png-vector/20240509/ourmid/pngtree-location-pin-vector-icon-symbol-png-image_12378264.png">
+        </div>
         <div class="pin-info">
-          <h4>Mérida, YUC</h4><p>☀️ 29°C Soleado</p>
-          <button class="btn-primary" style="height: 30px; font-size: 12px; margin-top: 6px; padding: 0 12px; border-radius: 6px;" onclick="goToSlide(3)">Seleccionar</button>
+          <h4>Mérida, YUC</h4>
+          <p>☀️ 29°C Soleado</p>
+          <button class="btn-primary"
+            style="height: 30px; font-size: 12px; margin-top: 6px; padding: 0 12px; border-radius: 6px;"
+            onclick="goToSlide(3)">Seleccionar</button>
         </div>
       </div>
     </div>
