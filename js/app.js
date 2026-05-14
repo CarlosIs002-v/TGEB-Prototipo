@@ -127,10 +127,10 @@ window.saveUserSettings = function (event) {
         if (!av.style.backgroundImage) av.innerText = newName.charAt(0).toUpperCase();
     });
 
-    let message = `¡Cambios guardados con éxito!\nNombre: ${newName}\nCorreo: ${newEmail}`;
+
     if (newPass) message += `\nContraseña actualizada correctamente.`;
 
-    alert(message);
+
 
     // Limpiar campos de contraseña
     document.getElementById('editPass').value = '';
@@ -144,7 +144,7 @@ userModal.onclick = (e) => {
     if (e.target === userModal) closeUserSettings();
 };
 
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
     if (e.target && e.target.id === 'strategyModal') {
         closeStrategyModal();
     }
