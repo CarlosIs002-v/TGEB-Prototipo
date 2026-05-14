@@ -27,37 +27,122 @@
     </div>
   </header>
 
-  <div class="app-content">
-    <h2 class="section-title">Mis Proyectos & Herramientas</h2>
-    <p class="section-subtitle">Gestiona tus simulaciones, capacítate y compara tecnologías.</p>
+  <div class="app-content app-content-proyectos" style="padding: 60px 24px; position: relative; z-index: 5;">
 
-    <div class="dash-grid">
-      <div class="dash-card" onclick="goToSlide(8)">
-        <div class="dash-icon">📊</div>
-        <div class="dash-text">
-          <h3>Nueva Simulación</h3>
-          <p>Realiza simulaciones energéticas personalizadas para tipos de edificios.</p>
-        </div>
-      </div>
-      <div class="dash-card">
-        <div class="dash-icon">⚖️</div>
-        <div class="dash-text">
-          <h3>Comparar tecnologías</h3>
-          <p>Contrasta y elige las mejores opciones tecnológicas y estrategias.</p>
-        </div>
-      </div>
+    <div class="proyectos-header" style="text-align: center; margin-bottom: 48px;">
+      <h2 class="section-title saas-title">Mis Proyectos & Herramientas</h2>
+      <p class="section-subtitle saas-subtitle" style="margin: 0 auto;">Gestiona tus simulaciones, compara tecnologías y accede a tu historial.</p>
     </div>
 
-    <div class="brands-section">
-      <h3 class="brands-title">Casos reales & tutoriales por marca</h3>
-      <div class="brands-list">
-        <div class="brand-tag" style="color: #d32f2f;">LONGi</div>
-        <div class="brand-tag">Hi-MO 6</div>
-        <div class="brand-tag" style="color: #1976d2;">CARRIER</div>
-        <a href="#"
-          style="margin-left: auto; font-size: 13px; color: var(--sage); font-weight: 600; text-decoration: none;">Ver
-          todo ></a>
+    <div class="saas-stack" style="max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
+      <!-- Card 1: Simulación -->
+      <div class="saas-card" onclick="goToSlide(8)">
+        <div class="saas-card-icon-wrapper" style="color: var(--teal); background: rgba(81,181,164,0.1);">
+          <svg class="saas-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+        </div>
+        <div class="saas-card-content">
+          <h3>Nueva Simulación</h3>
+          <p>Realiza simulaciones energéticas avanzadas para optimizar nuevos espacios.</p>
+        </div>
+      </div>
+
+      <!-- Card 2: Proyectos Guardados -->
+      <div class="saas-card" onclick="goToSlide(9)">
+        <div class="saas-card-icon-wrapper" style="color: var(--sage); background: rgba(95,138,110,0.1);">
+          <svg class="saas-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+        </div>
+        <div class="saas-card-content">
+          <h3>Proyectos Guardados</h3>
+          <p>Accede y continúa trabajando en tus simulaciones almacenadas.</p>
+        </div>
+      </div>
+
+      <!-- Card 3: Comparar -->
+      <div class="saas-card" onclick="goToSlide(7)">
+        <div class="saas-card-icon-wrapper" style="color: var(--ink); background: rgba(0,0,0,0.04);">
+          <svg class="saas-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+        </div>
+        <div class="saas-card-content">
+          <h3>Comparar tecnologías</h3>
+          <p>Contrasta métricas de rendimiento y elige las características adecuadas.</p>
+        </div>
       </div>
     </div>
   </div>
+
+  <style>
+    .app-content-proyectos {
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .saas-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 38px;
+      color: var(--ink);
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .saas-subtitle {
+      font-size: 15px;
+      color: var(--ink-soft);
+      max-width: 600px;
+      line-height: 1.5;
+    }
+
+    .saas-card {
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      border-radius: 16px;
+      padding: 32px 32px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .saas-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(95,138,110,0.08);
+      border-color: rgba(95,138,110,0.1);
+    }
+
+    .saas-card-icon-wrapper {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .saas-card:hover .saas-card-icon-wrapper {
+      transform: scale(1.05);
+    }
+
+    .saas-card-icon {
+      width: 22px;
+      height: 22px;
+    }
+
+    .saas-card-content h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .saas-card-content p {
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      line-height: 1.5;
+      margin: 0;
+    }
+  </style>
 </div>
