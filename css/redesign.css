@@ -184,6 +184,8 @@ html {
     radial-gradient(circle at 20% 80%, rgba(2, 132, 199, 0.1), transparent 40%);
   padding-top: 120px;
   overflow: hidden;
+  max-width: none;
+  margin: 0;
 }
 
 .hero__content {
