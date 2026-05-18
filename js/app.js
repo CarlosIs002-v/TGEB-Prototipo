@@ -4,7 +4,7 @@ window.prevSlide = prevSlide;
 window.switchAuthTab = switchAuthTab;
 
 let currSlide = 0;
-const totalSlides = 9;
+const totalSlides = 11;
 
 function goToSlide(n) {
     document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
@@ -18,6 +18,7 @@ function goToSlide(n) {
     if (n === 5) document.querySelectorAll('.nav-proyectos').forEach(a => a.classList.add('active'));
     if (n === 6) document.querySelectorAll('.nav-ayuda').forEach(a => a.classList.add('active'));
     if (n === 7) document.querySelectorAll('.nav-biblioteca').forEach(a => a.classList.add('active'));
+    if (n === 10) document.querySelectorAll('.nav-tecnicos').forEach(a => a.classList.add('active'));
 }
 
 function nextSlide() {

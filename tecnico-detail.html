@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Técnico - TGEB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/redesign.css">
+  <style>
+    body {
+      background: var(--page-bg);
+    }
+    .app-header {
+      background: white;
+      position: relative;
+      z-index: 10;
+    }
+    .app-content {
+      padding: 60px 6%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .modal-hero {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+    .modal-logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      padding: 4px;
+      background: white;
+      object-fit: cover;
+    }
+    .modal-header-text h2 {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+    .sponsor-card__origin {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary);
+      opacity: 0.8;
+    }
+    .modal-section {
+      margin-bottom: 32px;
+      background: white;
+      padding: 24px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+    .modal-section-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .modal-text {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+    .modal-tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .modal-tag {
+      background: rgba(6, 78, 59, 0.05);
+      color: var(--primary);
+      padding: 8px 16px;
+      border-radius: 99px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid rgba(6, 78, 59, 0.1);
+    }
+    .back-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 24px;
+        color: var(--text-main);
+        text-decoration: none;
+        font-weight: 600;
+    }
+    .tech-header-card {
+      background: white;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      padding: 32px;
+      margin-bottom: 32px;
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+      position: relative;
+      overflow: hidden;
+    }
+    .tech-hero-left {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      flex: 1;
+    }
+    .tech-avatar-container {
+      position: relative;
+    }
+    .tech-avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 16px;
+      border: 3px solid var(--primary);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .tech-hero-info {
+      flex: 1;
+    }
+    .tech-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--primary);
+      padding: 8px 14px;
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+    .tech-name {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tech-title {
+      font-size: 16px;
+      color: var(--ink-soft);
+      margin-bottom: 16px;
+    }
+    .tech-meta {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+      color: var(--ink-muted);
+      margin-bottom: 16px;
+    }
+    .tech-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tech-hero-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 16px;
+    }
+    .tech-rating {
+      text-align: center;
+    }
+    .tech-stars {
+      font-size: 24px;
+      color: #FDB022;
+    }
+    .tech-rating-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-top: 4px;
+    }
+    .tech-rating-count {
+      font-size: 12px;
+      color: var(--ink-muted);
+    }
+    .tech-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .tech-stat {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+    }
+    .tech-stat-number {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+      font-family: 'DM Serif Display', serif;
+    }
+    .tech-stat-label {
+      font-size: 13px;
+      color: var(--ink-muted);
+    }
+    .tech-section {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .tech-section-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tech-certs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .tech-cert-item {
+      background: rgba(6, 78, 59, 0.05);
+      border: 1px solid rgba(6, 78, 59, 0.1);
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .tech-cert-icon {
+      font-size: 24px;
+    }
+    .tech-cert-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .tech-services-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .tech-service-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px;
+      background: rgba(6, 78, 59, 0.03);
+      border-radius: 8px;
+    }
+    .tech-service-check {
+      color: var(--primary);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .tech-service-name {
+      font-size: 14px;
+      color: var(--ink);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="app-header">
+    <a class="nav-logo" href="index.html" onclick="goToSlide(9)">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="nav-logo-text"><strong>TGEB</strong><span>The Green Energy Box</span></div>
+    </a>
+     <ul class="nav-links">
+      <li><a class="nav-inicio" href="index.html">Inicio</a></li>
+      <li><a class="nav-simulador" href="index.html">Simulador</a></li>
+      <li><a class="nav-proyectos" href="index.html">Proyectos</a></li>
+      <li><a class="nav-tecnicos active" href="index.html">Técnicos</a></li>
+      <li><a class="nav-biblioteca" href="index.html">Biblioteca</a></li>
+      <li><a class="nav-ayuda" href="index.html">Ayuda</a></li>
+    </ul>
+    <div class="user-controls">
+      <div class="bell">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+      </div>
+      <div class="avatar">U</div>
+    </div>
+  </header>
+
+  <div class="app-content" id="tecnico-detail-content">
+      <!-- Technician details will be rendered here -->
+  </div>
+
+  <script>
+    const tecnicosData = [
+        {
+          id: 'tecnico1',
+          nombre: 'Dr. Carlos Mendoza',
+          foto: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=CM',
+          titulo: 'Doctor en Energías Renovables',
+          especialidad: 'Diseño e implementación de sistemas fotovoltaicos a gran escala.',
+          descripcion: 'El Dr. Mendoza cuenta con más de 15 años de experiencia en el sector de las energías renovables. Ha liderado múltiples proyectos de investigación y desarrollo en optimización de eficiencia energética y es un instructor certificado internacionalmente.',
+          certificaciones: ['Certificación NABCEP', 'Auditor Energético ISO 50001', 'Especialista en Sistemas Interconectados']
+        },
+        {
+          id: 'tecnico2',
+          nombre: 'Ing. Ana Torres',
+          foto: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=AT',
+          titulo: 'Ingeniera Eléctrica',
+          especialidad: 'Almacenamiento de energía y sistemas híbridos BESS.',
+          descripcion: 'Con maestría en sistemas de almacenamiento, Ana es especialista en la integración de baterías de litio y tecnologías híbridas. Su enfoque práctico garantiza capacitaciones orientadas a la resolución de problemas reales en campo.',
+          certificaciones: ['Especialista en BESS', 'Normativas Eléctricas Internacionales', 'Gestión de Proyectos PMP']
+        },
+        {
+          id: 'tecnico3',
+          nombre: 'Msc. Javier Robles',
+          foto: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=JR',
+          titulo: 'Maestría en Gestión Energética',
+          especialidad: 'Mantenimiento preventivo, monitoreo y diagnóstico de inversores.',
+          descripcion: 'Experto en la parte operativa y mantenimiento de plantas solares. Javier destaca por su habilidad para diagnosticar fallas complejas y su experiencia en el uso de herramientas de monitoreo avanzadas e IA aplicada al sector.',
+          certificaciones: ['Experto en Inversores Tier 1', 'Termografía Infrarroja Nivel 2', 'Seguridad Eléctrica Avanzada']
+        },
+        {
+          id: 'tecnico4',
+          nombre: 'Ing. Elena Gómez',
+          foto: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=EG',
+          titulo: 'Ingeniera en Energías Renovables',
+          especialidad: 'Sistemas aislados (Off-Grid) y micro-redes.',
+          descripcion: 'Elena ha dedicado su carrera a llevar energía a zonas rurales mediante sistemas aislados y micro-redes. Es una apasionada de la capacitación técnica y tiene una amplia trayectoria formando instaladores en todo el país.',
+          certificaciones: ['Diseño de Sistemas Off-Grid', 'Especialista en Baterías de Plomo y Litio', 'Instructor Certificado STPS']
+        }
+      ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const tecnicoId = params.get('id');
+      const tecnico = tecnicosData.find(t => t.id === tecnicoId);
+      const content = document.getElementById('tecnico-detail-content');
+
+      if (tecnico) {
+        content.innerHTML = `
+            <a href="index.html" class="back-button">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Volver a Técnicos
+            </a>
+
+            <div class="tech-header-card">
+              <div class="tech-hero-left">
+                <div class="tech-avatar-container">
+                  <img src="${tecnico.foto}" class="tech-avatar" alt="${tecnico.nombre}">
+                </div>
+                <div class="tech-hero-info">
+                  <span class="tech-badge">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    Técnico Certificado Premium
+                  </span>
+                  <h2 class="tech-name">
+                    ${tecnico.nombre}
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="color: var(--primary);"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  </h2>
+                  <p class="tech-title">${tecnico.titulo}</p>
+                  <div class="tech-meta">
+                    <span class="tech-meta-item">
+                      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" opacity="0.6"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg>
+                      Monterrey, N.L., México
+                    </span>
+                    <span class="tech-meta-item">
+                      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" opacity="0.6"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                      8 años de experiencia
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="tech-hero-right">
+                <div class="tech-rating">
+                  <div class="tech-stars">
+                    ⭐ 4.9
+                  </div>
+                  <div class="tech-rating-text">Evaluación Técnica</div>
+                  <div class="tech-rating-count">23 evaluaciones</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tech-stats">
+              <div class="tech-stat">
+                <div class="tech-stat-number">+120</div>
+                <div class="tech-stat-label">Sistemas Instalados</div>
+              </div>
+              <div class="tech-stat">
+                <div class="tech-stat-number">450 kW</div>
+                <div class="tech-stat-label">Potencia Supervinstalada</div>
+              </div>
+              <div class="tech-stat">
+                <div class="tech-stat-number">38</div>
+                <div class="tech-stat-label">Proyectos Residenciales</div>
+              </div>
+              <div class="tech-stat">
+                <div class="tech-stat-number">12</div>
+                <div class="tech-stat-label">Proyectos Comerciales</div>
+              </div>
+            </div>
+
+            <div class="tech-section">
+                <span class="tech-section-title">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="color: var(--primary);"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S15.33 8 14.5 8 13 8.67 13 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S8.33 8 7.5 8 6 8.67 6 9.5 6.67 11 7.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg>
+                  Especialidad
+                </span>
+                <p class="modal-text">${tecnico.especialidad}</p>
+            </div>
+
+            <div class="tech-section">
+                <span class="tech-section-title">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="color: var(--primary);"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S15.33 8 14.5 8 13 8.67 13 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S8.33 8 7.5 8 6 8.67 6 9.5 6.67 11 7.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg>
+                  Experiencia y Perfil
+                </span>
+                <p class="modal-text">${tecnico.descripcion}</p>
+            </div>
+
+            <div class="tech-section">
+                <span class="tech-section-title">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="color: var(--primary);"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S15.33 8 14.5 8 13 8.67 13 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S8.33 8 7.5 8 6 8.67 6 9.5 6.67 11 7.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg>
+                  Certificaciones Destacadas
+                </span>
+                <div class="tech-certs-grid">
+                ${tecnico.certificaciones.map(cert => `
+                  <div class="tech-cert-item">
+                    <div class="tech-cert-icon">✓</div>
+                    <div class="tech-cert-name">${cert}</div>
+                  </div>
+                `).join('')}
+                </div>
+            </div>
+
+            <div class="tech-section">
+                <span class="tech-section-title">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="color: var(--primary);"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S15.33 8 14.5 8 13 8.67 13 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S8.33 8 7.5 8 6 8.67 6 9.5 6.67 11 7.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg>
+                  Servicios que Ofrezco
+                </span>
+                <div class="tech-services-list">
+                  <div class="tech-service-item">
+                    <div class="tech-service-check">✓</div>
+                    <div class="tech-service-name">Diseño Fotovoltaico</div>
+                  </div>
+                  <div class="tech-service-item">
+                    <div class="tech-service-check">✓</div>
+                    <div class="tech-service-name">Estudios de Sombrado</div>
+                  </div>
+                  <div class="tech-service-item">
+                    <div class="tech-service-check">✓</div>
+                    <div class="tech-service-name">Trámites CFE</div>
+                  </div>
+                  <div class="tech-service-item">
+                    <div class="tech-service-check">✓</div>
+                    <div class="tech-service-name">Puesta en Marcha</div>
+                  </div>
+                  <div class="tech-service-item">
+                    <div class="tech-service-check">✓</div>
+                    <div class="tech-service-name">UVE</div>
+                  </div>
+                  <div class="tech-service-item">
+                    <div class="tech-service-check">✓</div>
+                    <div class="tech-service-name">Diagnóstico de Fallas</div>
+                  </div>
+                  <div class="tech-service-item">
+                    <div class="tech-service-check">✓</div>
+                    <div class="tech-service-name">Supervisión de obra</div>
+                  </div>
+                  <div class="tech-service-item">
+                    <div class="tech-service-check">✓</div>
+                    <div class="tech-service-name">Asesoría energética</div>
+                  </div>
+                </div>
+            </div>
+        `;
+      } else {
+        content.innerHTML = '<p>Técnico no encontrado.</p>';
+      }
+    });
+  </script>
+
+</body>
+</html>

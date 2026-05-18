@@ -1,0 +1,248 @@
+﻿<div class="slide" id="slide-10">
+  <header class="app-header" style="background: white; position: relative; z-index: 10;">
+    <a class="nav-logo" style="cursor:pointer;" onclick="goToSlide(0)">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="nav-logo-text"><strong>TGEB</strong><span>The Green Energy Box</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a class="nav-inicio" style="cursor:pointer;" onclick="goToSlide(0)">Inicio</a></li>
+      <li><a class="nav-simulador" style="cursor:pointer;" onclick="goToSlide(8)">Simulador</a></li>
+      <li><a class="nav-proyectos" style="cursor:pointer;" onclick="goToSlide(5)">Proyectos</a></li>
+      <li><a class="nav-tecnicos active" onclick="goToSlide(10)" style="cursor: pointer;">Técnicos</a></li>
+      <li><a class="nav-biblioteca" style="cursor:pointer;" onclick="goToSlide(7)">Biblioteca</a></li>
+
+      <li><a class="nav-ayuda" style="cursor:pointer;" onclick="goToSlide(6)">Ayuda</a></li>
+    </ul>
+    <div class="user-controls">
+      <div class="bell">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+      </div>
+      <div class="avatar" onclick="openUserSettings()">U</div>
+    </div>
+  </header>
+
+  <div class="app-content" style="background: var(--page-bg);">
+    <div class="section-header-custom" style="margin-bottom: 40px;">
+      <h2 class="section-title" style="font-size: 40px; font-weight: 700; color: var(--text-main); letter-spacing: -0.5px;">Técnicos</h2>
+      <p class="section-subtitle" style="color: var(--text-secondary); max-width: 600px; margin: 12px auto 0; font-size: 16px; line-height: 1.6;">
+        Todos nuestros instructores cuentan con posgrado en energía, experiencia en campo y cuentan con las certificaciones pertinentes para capacitar.
+      </p>
+    </div>
+
+    <div id="grid-tecnicos" class="sponsors-grid">
+      <!-- Tecnicos cards will be rendered here -->
+    </div>
+  </div>
+
+
+  <style>
+    #slide-10 .app-content {
+      padding: 60px 6%;
+      width: 100%;
+    }
+
+    .section-header-custom {
+      margin-bottom: 56px;
+      text-align: center;
+      width: 100%;
+      max-width: 1400px;
+    }
+
+    /* ─── Grid ─── */
+    .sponsors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* ─── Card Premium ─── */
+    .sponsor-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 20px;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .sponsor-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(6, 78, 59, 0.08);
+      border-color: var(--primary-hover);
+    }
+
+    .sponsor-card__logo-wrap {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--page-bg);
+      border: 1.5px solid var(--border);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      transition: all 0.3s;
+      margin: 0 auto;
+    }
+
+    .sponsor-card:hover .sponsor-card__logo-wrap {
+      border-color: var(--primary-hover);
+      background: white;
+    }
+
+    .sponsor-card__logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .sponsor-card__name {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--text-main);
+      margin-bottom: 2px;
+      text-align: center;
+    }
+
+    .sponsor-card__origin {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--primary);
+      opacity: 0.8;
+      text-align: center;
+    }
+
+    .sponsor-card__specialty {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .sponsor-card__cta {
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .cta-arrow-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--page-bg);
+      display: grid;
+      place-items: center;
+      transition: all 0.3s;
+    }
+
+    .sponsor-card:hover .cta-arrow-circle {
+      background: var(--primary);
+      color: white;
+      transform: translateX(4px);
+    }
+
+    /* ─── Media Queries Responsive ─── */
+    @media (max-width: 900px) {
+      .section-header-custom .section-title {
+        font-size: 32px !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .sponsors-grid {
+        grid-template-columns: 1fr; /* Una sola columna en celulares */
+      }
+
+      .app-content {
+        padding: 40px 4% !important;
+      }
+    }
+  </style>
+
+  <script>
+    (function() {
+      const tecnicosData = [
+        {
+          id: 'tecnico1',
+          nombre: 'Dr. Carlos Mendoza',
+          foto: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=CM',
+          titulo: 'Doctor en Energías Renovables',
+          especialidad: 'Diseño e implementación de sistemas fotovoltaicos a gran escala.',
+          descripcion: 'El Dr. Mendoza cuenta con más de 15 años de experiencia en el sector de las energías renovables. Ha liderado múltiples proyectos de investigación y desarrollo en optimización de eficiencia energética y es un instructor certificado internacionalmente.',
+          certificaciones: ['Certificación NABCEP', 'Auditor Energético ISO 50001', 'Especialista en Sistemas Interconectados']
+        },
+        {
+          id: 'tecnico2',
+          nombre: 'Ing. Ana Torres',
+          foto: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=AT',
+          titulo: 'Ingeniera Eléctrica',
+          especialidad: 'Almacenamiento de energía y sistemas híbridos BESS.',
+          descripcion: 'Con maestría en sistemas de almacenamiento, Ana es especialista en la integración de baterías de litio y tecnologías híbridas. Su enfoque práctico garantiza capacitaciones orientadas a la resolución de problemas reales en campo.',
+          certificaciones: ['Especialista en BESS', 'Normativas Eléctricas Internacionales', 'Gestión de Proyectos PMP']
+        },
+        {
+          id: 'tecnico3',
+          nombre: 'Msc. Javier Robles',
+          foto: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=JR',
+          titulo: 'Maestría en Gestión Energética',
+          especialidad: 'Mantenimiento preventivo, monitoreo y diagnóstico de inversores.',
+          descripcion: 'Experto en la parte operativa y mantenimiento de plantas solares. Javier destaca por su habilidad para diagnosticar fallas complejas y su experiencia en el uso de herramientas de monitoreo avanzadas e IA aplicada al sector.',
+          certificaciones: ['Experto en Inversores Tier 1', 'Termografía Infrarroja Nivel 2', 'Seguridad Eléctrica Avanzada']
+        },
+        {
+          id: 'tecnico4',
+          nombre: 'Ing. Elena Gómez',
+          foto: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=EG',
+          titulo: 'Ingeniera en Energías Renovables',
+          especialidad: 'Sistemas aislados (Off-Grid) y micro-redes.',
+          descripcion: 'Elena ha dedicado su carrera a llevar energía a zonas rurales mediante sistemas aislados y micro-redes. Es una apasionada de la capacitación técnica y tiene una amplia trayectoria formando instaladores en todo el país.',
+          certificaciones: ['Diseño de Sistemas Off-Grid', 'Especialista en Baterías de Plomo y Litio', 'Instructor Certificado STPS']
+        }
+      ];
+
+      const grid = document.getElementById('grid-tecnicos');
+
+      function render() {
+        grid.innerHTML = tecnicosData.map(s => `
+          <div class="sponsor-card" onclick="window.location.href='tecnico-detail.html?id=${s.id}'">
+            <div class="sponsor-card__logo-wrap">
+              <img src="${s.foto}" alt="${s.nombre}">
+            </div>
+            <div>
+              <h3 class="sponsor-card__name">${s.nombre}</h3>
+              <p class="sponsor-card__origin">${s.titulo}</p>
+              <br>
+              <p class="sponsor-card__specialty">${s.especialidad}</p>
+            </div>
+            <div class="sponsor-card__cta">
+              <span>Ver perfil técnico</span>
+              <div class="cta-arrow-circle">→</div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      render();
+    })();
+  </script>
+</div>
