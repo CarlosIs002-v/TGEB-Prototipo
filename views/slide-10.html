@@ -3,7 +3,7 @@
     <a class="nav-logo" style="cursor:pointer;" onclick="goToSlide(0)">
       <div class="nav-logo-icon">
         <svg viewBox="0 0 24 24" width="20" height="20">
-          <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor"/>
+          <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor" />
         </svg>
       </div>
       <div class="nav-logo-text"><strong>TGEB</strong><span>The Green Energy Box</span></div>
@@ -19,7 +19,11 @@
     </ul>
     <div class="user-controls">
       <div class="bell">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
       </div>
       <div class="avatar" onclick="openUserSettings()">U</div>
     </div>
@@ -27,9 +31,12 @@
 
   <div class="app-content" style="background: var(--page-bg);">
     <div class="section-header-custom" style="margin-bottom: 40px;">
-      <h2 class="section-title" style="font-size: 40px; font-weight: 700; color: var(--text-main); letter-spacing: -0.5px;">Técnicos</h2>
-      <p class="section-subtitle" style="color: var(--text-secondary); max-width: 600px; margin: 12px auto 0; font-size: 16px; line-height: 1.6;">
-        Todos nuestros instructores cuentan con posgrado en energía, experiencia en campo y cuentan con las certificaciones pertinentes para capacitar.
+      <h2 class="section-title"
+        style="font-size: 40px; font-weight: 700; color: var(--text-main); letter-spacing: -0.5px;">Técnicos</h2>
+      <p class="section-subtitle"
+        style="color: var(--text-secondary); max-width: 600px; margin: 12px auto 0; font-size: 16px; line-height: 1.6;">
+        Todos nuestros instructores cuentan con posgrado en energía, experiencia en campo y cuentan con las
+        certificaciones pertinentes para capacitar.
       </p>
     </div>
 
@@ -170,7 +177,8 @@
 
     @media (max-width: 600px) {
       .sponsors-grid {
-        grid-template-columns: 1fr; /* Una sola columna en celulares */
+        grid-template-columns: 1fr;
+        /* Una sola columna en celulares */
       }
 
       .app-content {
@@ -180,15 +188,15 @@
   </style>
 
   <script>
-    (function() {
+    (function () {
       const tecnicosData = [
         {
           id: 'tecnico1',
-          nombre: 'Dr. Carlos Mendoza',
+          nombre: 'Ing. Carlos Mendoza',
           foto: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=CM',
-          titulo: 'Doctor en Energías Renovables',
+          titulo: 'Ingeniero en Energías Renovables',
           especialidad: 'Diseño e implementación de sistemas fotovoltaicos a gran escala.',
-          descripcion: 'El Dr. Mendoza cuenta con más de 15 años de experiencia en el sector de las energías renovables. Ha liderado múltiples proyectos de investigación y desarrollo en optimización de eficiencia energética y es un instructor certificado internacionalmente.',
+          descripcion: 'El Ing. Mendoza cuenta con más de 15 años de experiencia en el sector de las energías renovables. Ha liderado múltiples proyectos de investigación y desarrollo en optimización de eficiencia energética y es un instructor certificado internacionalmente.',
           certificaciones: ['Certificación NABCEP', 'Auditor Energético ISO 50001', 'Especialista en Sistemas Interconectados']
         },
         {
@@ -202,9 +210,9 @@
         },
         {
           id: 'tecnico3',
-          nombre: 'Msc. Javier Robles',
+          nombre: 'Ing. Javier Robles',
           foto: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=JR',
-          titulo: 'Maestría en Gestión Energética',
+          titulo: 'Ingeniero en Gestión Energética',
           especialidad: 'Mantenimiento preventivo, monitoreo y diagnóstico de inversores.',
           descripcion: 'Experto en la parte operativa y mantenimiento de plantas solares. Javier destaca por su habilidad para diagnosticar fallas complejas y su experiencia en el uso de herramientas de monitoreo avanzadas e IA aplicada al sector.',
           certificaciones: ['Experto en Inversores Tier 1', 'Termografía Infrarroja Nivel 2', 'Seguridad Eléctrica Avanzada']
