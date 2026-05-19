@@ -24,70 +24,23 @@
     }
 
     /* 2. Barra de Navegación Superior */
-    #slide-11 .app-header {
-      background: var(--card-bg);
-      padding: 16px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--border-color);
-    }
+    
 
-    #slide-11 .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: var(--text-dark);
-      font-weight: 700;
-      font-family: 'Manrope', sans-serif;
-    }
+    
 
-    #slide-11 .nav-logo-icon {
-      width: 20px;
-      height: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+    
 
-    #slide-11 .nav-logo-text strong {
-      font-weight: 800;
-      color: var(--primary);
-    }
+    
 
-    #slide-11 .nav-logo-text span {
-      font-weight: 400;
-      color: var(--text-muted);
-      font-size: 12px;
-      margin-left: 4px;
-    }
+    
 
-    #slide-11 .nav-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
+    
 
-    #slide-11 .nav-links a {
-      text-decoration: none;
-      color: var(--text-muted);
-      font-size: 14px;
-      font-weight: 500;
-    }
+    
 
-    #slide-11 .nav-links a.active {
-      color: var(--primary);
-      font-weight: 600;
-    }
+    
 
-    #slide-11 .user-controls {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
+    
 
     #slide-11 .avatar-circle {
       width: 40px;
@@ -615,10 +568,10 @@
       <div class="nav-logo-text"><strong>TGEB</strong><span>The Green Energy Box</span></div>
     </a>
     <ul class="nav-links">
-      <li><a class="nav-inicio active" style="cursor:pointer;" onclick="goToSlide(0)">Inicio</a></li>
+      <li><a class="nav-inicio" style="cursor:pointer;" onclick="goToSlide(0)">Inicio</a></li>
       <li><a class="nav-simulador" style="cursor:pointer;" onclick="goToSlide(8)">Simulador</a></li>
       <li><a class="nav-proyectos" style="cursor:pointer;" onclick="goToSlide(5)">Proyectos</a></li>
-      <li><a class="nav-tecnicos" onclick="goToSlide(10)" style="cursor: pointer;">Técnicos</a></li>
+      <li><a class="nav-tecnicos active" onclick="goToSlide(10)" style="cursor: pointer;">Técnicos</a></li>
       <li><a class="nav-biblioteca" style="cursor:pointer;" onclick="goToSlide(7)">Biblioteca</a></li>
 
       <li><a class="nav-ayuda" style="cursor:pointer;" onclick="goToSlide(6)">Ayuda</a></li>
