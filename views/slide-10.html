@@ -232,7 +232,7 @@
 
       function render() {
         grid.innerHTML = tecnicosData.map(s => `
-          <div class="sponsor-card" onclick="window.location.href='tecnico-detail.html?id=${s.id}'">
+          <div class="sponsor-card" onclick="window.verDetalleTecnico('${s.id}')">
             <div class="sponsor-card__logo-wrap">
               <img src="${s.foto}" alt="${s.nombre}">
             </div>

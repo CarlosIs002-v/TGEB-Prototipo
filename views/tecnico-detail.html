@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detalle del Técnico - TGEB</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
-    rel="stylesheet">
+<div class="slide" id="slide-11">
   <style>
-    :root {
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+    #slide-11 {
       --primary: #064E3B;
       --bg-page: #F8F9FA;
       --card-bg: #FFFFFF;
@@ -20,7 +11,7 @@
       --success: #10B981;
     }
 
-    body {
+    #slide-11 {
       background: var(--bg-page);
       font-family: 'Inter', sans-serif;
       color: var(--text-dark);
@@ -28,16 +19,12 @@
       padding: 0;
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    .font-heading {
+    #slide-11 h1, #slide-11 h2, #slide-11 h3, #slide-11 h4, #slide-11 .font-heading {
       font-family: 'Manrope', sans-serif;
     }
 
     /* 2. Barra de Navegación Superior */
-    .app-header {
+    #slide-11 .app-header {
       background: var(--card-bg);
       padding: 16px 24px;
       display: flex;
@@ -46,7 +33,7 @@
       border-bottom: 1px solid var(--border-color);
     }
 
-    .nav-logo {
+    #slide-11 .nav-logo {
       display: flex;
       align-items: center;
       gap: 10px;
@@ -56,7 +43,7 @@
       font-family: 'Manrope', sans-serif;
     }
 
-    .nav-logo-icon {
+    #slide-11 .nav-logo-icon {
       width: 20px;
       height: 20px;
       display: flex;
@@ -64,19 +51,19 @@
       justify-content: center;
     }
 
-    .nav-logo-text strong {
+    #slide-11 .nav-logo-text strong {
       font-weight: 800;
       color: var(--primary);
     }
 
-    .nav-logo-text span {
+    #slide-11 .nav-logo-text span {
       font-weight: 400;
       color: var(--text-muted);
       font-size: 12px;
       margin-left: 4px;
     }
 
-    .nav-links {
+    #slide-11 .nav-links {
       display: flex;
       gap: 24px;
       list-style: none;
@@ -84,25 +71,25 @@
       padding: 0;
     }
 
-    .nav-links a {
+    #slide-11 .nav-links a {
       text-decoration: none;
       color: var(--text-muted);
       font-size: 14px;
       font-weight: 500;
     }
 
-    .nav-links a.active {
+    #slide-11 .nav-links a.active {
       color: var(--primary);
       font-weight: 600;
     }
 
-    .user-controls {
+    #slide-11 .user-controls {
       display: flex;
       align-items: center;
       gap: 16px;
     }
 
-    .avatar-circle {
+    #slide-11 .avatar-circle {
       width: 40px;
       height: 40px;
       background: #10B981;
@@ -116,14 +103,14 @@
     }
 
     /* 1. Estructura Global */
-    .main-container {
+    #slide-11 .main-container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 24px 40px 24px;
     }
 
     /* 3. Encabezado de Navegación Interna */
-    .breadcrumb {
+    #slide-11 .breadcrumb {
       display: flex;
       align-items: center;
       gap: 8px;
@@ -138,7 +125,7 @@
     }
 
     /* 4. Bloque 1: Tarjeta Principal del Perfil */
-    .hero-card {
+    #slide-11 .hero-card {
       background: var(--card-bg);
       border-radius: 12px;
       padding: 24px;
@@ -148,13 +135,13 @@
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
-    .hero-left {
+    #slide-11 .hero-left {
       display: flex;
       gap: 20px;
       align-items: center;
     }
 
-    .avatar-square {
+    #slide-11 .avatar-square {
       width: 100px;
       height: 100px;
       background: var(--primary);
@@ -169,13 +156,13 @@
       flex-shrink: 0;
     }
 
-    .hero-info {
+    #slide-11 .hero-info {
       display: flex;
       flex-direction: column;
       gap: 4px;
     }
 
-    .hero-info h1 {
+    #slide-11 .hero-info h1 {
       font-size: 24px;
       font-weight: 700;
       margin: 0;
@@ -184,18 +171,18 @@
       gap: 8px;
     }
 
-    .hero-info .subtitle {
+    #slide-11 .hero-info .subtitle {
       color: var(--text-muted);
       font-size: 14px;
     }
 
-    .badges {
+    #slide-11 .badges {
       display: flex;
       gap: 8px;
       margin-top: 8px;
     }
 
-    .badge {
+    #slide-11 .badge {
       padding: 4px 12px;
       border-radius: 4px;
       font-size: 11px;
@@ -203,12 +190,12 @@
       text-transform: uppercase;
     }
 
-    .badge-premium {
+    #slide-11 .badge-premium {
       background: var(--primary);
       color: white;
     }
 
-    .badge-rating {
+    #slide-11 .badge-rating {
       background: rgba(16, 185, 129, 0.1);
       color: #047857;
       display: flex;
@@ -216,7 +203,7 @@
       gap: 4px;
     }
 
-    .meta-items {
+    #slide-11 .meta-items {
       display: flex;
       gap: 16px;
       font-size: 14px;
@@ -224,20 +211,20 @@
       margin-top: 12px;
     }
 
-    .meta-item {
+    #slide-11 .meta-item {
       display: flex;
       align-items: center;
       gap: 6px;
     }
 
-    .hero-right {
+    #slide-11 .hero-right {
       display: flex;
       flex-direction: column;
       gap: 12px;
       min-width: 220px;
     }
 
-    .btn {
+    #slide-11 .btn {
       padding: 12px 24px;
       border-radius: 6px;
       font-size: 12px;
@@ -249,13 +236,13 @@
       text-decoration: none;
     }
 
-    .btn-primary {
+    #slide-11 .btn-primary {
       background: var(--primary);
       color: white;
       border: none;
     }
 
-    .btn-secondary {
+    #slide-11 .btn-secondary {
       background: transparent;
       color: var(--primary);
       border: 1px solid var(--primary);
@@ -266,7 +253,7 @@
       margin-top: 40px;
     }
 
-    .section-title {
+    #slide-11 .section-title {
       font-size: 22px;
       font-weight: 700;
       margin-bottom: 20px;
@@ -328,7 +315,7 @@
       margin-top: 24px;
     }
 
-    .card {
+    #slide-11 .card {
       background: var(--card-bg);
       border-radius: 12px;
       padding: 32px;
@@ -367,7 +354,7 @@
       color: white;
     }
 
-    .certs-card .section-title {
+    .certs-card #slide-11 .section-title {
       color: white;
     }
 
@@ -408,7 +395,7 @@
     }
 
     /* ─── Modal / Side Panel (Global) ─── */
-    dialog.side-panel {
+    #slide-11 dialog.side-panel {
       position: fixed;
       inset: 0 0 0 auto;
       width: min(440px, 100vw);
@@ -425,22 +412,22 @@
       transition: translate 0.5s cubic-bezier(0.16, 1, 0.3, 1), overlay 0.5s allow-discrete, display 0.5s allow-discrete;
     }
 
-    dialog.side-panel[open] {
+    #slide-11 dialog.side-panel[open] {
       translate: 0 0;
     }
 
-    dialog.side-panel::backdrop {
+    #slide-11 dialog.side-panel::backdrop {
       background: rgba(17, 24, 39, 0.4);
       backdrop-filter: blur(8px);
       opacity: 0;
       transition: opacity 0.5s ease, display 0.5s allow-discrete;
     }
 
-    dialog.side-panel[open]::backdrop {
+    #slide-11 dialog.side-panel[open]::backdrop {
       opacity: 1;
     }
 
-    .panel__header {
+    #slide-11 .panel__header {
       position: sticky;
       top: 0;
       z-index: 10;
@@ -453,7 +440,7 @@
       justify-content: space-between;
     }
 
-    .panel__eyebrow {
+    #slide-11 .panel__eyebrow {
       font-size: 12px;
       font-weight: 700;
       text-transform: uppercase;
@@ -461,7 +448,7 @@
       color: var(--primary);
     }
 
-    .panel__close {
+    #slide-11 .panel__close {
       background: white;
       border: 1px solid var(--border-color);
       width: 36px;
@@ -475,19 +462,19 @@
       font-size: 18px;
     }
 
-    .panel__close:hover {
+    #slide-11 .panel__close:hover {
       background: #FEF2F2;
       color: #EF4444;
       border-color: #FEE2E2;
       transform: rotate(90deg);
     }
 
-    .panel__body {
+    #slide-11 .panel__#slide-11 {
       padding: 40px 32px;
     }
 
     /* ─── User Settings Specific ─── */
-    .settings-profile {
+    #slide-11 .settings-profile {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -496,13 +483,13 @@
       text-align: center;
     }
 
-    .avatar-edit-container {
+    #slide-11 .avatar-edit-container {
       position: relative;
       width: 140px;
       height: 140px;
     }
 
-    .settings-avatar {
+    #slide-11 .settings-avatar {
       width: 100%;
       height: 100%;
       border-radius: 24px;
@@ -511,7 +498,7 @@
       box-shadow: 0 12px 32px rgba(17, 24, 39, 0.12);
     }
 
-    .avatar-edit-badge {
+    #slide-11 .avatar-edit-badge {
       position: absolute;
       bottom: -8px;
       right: -8px;
@@ -528,12 +515,12 @@
       box-shadow: 0 4px 12px rgba(6, 78, 59, 0.3);
     }
 
-    .avatar-edit-badge:hover {
+    #slide-11 .avatar-edit-badge:hover {
       transform: scale(1.1) rotate(5deg);
       background: #047857;
     }
 
-    .settings-user-info h3 {
+    #slide-11 .settings-user-info h3 {
       font-family: 'DM Sans', sans-serif;
       font-weight: 700;
       font-size: 26px;
@@ -541,7 +528,7 @@
       margin-bottom: 6px;
     }
 
-    .badge-role {
+    #slide-11 .badge-role {
       font-size: 13px;
       font-weight: 600;
       color: var(--primary);
@@ -552,13 +539,13 @@
       letter-spacing: 0.5px;
     }
 
-    .settings-form {
+    #slide-11 .settings-form {
       display: flex;
       flex-direction: column;
       gap: 24px;
     }
 
-    .field label {
+    #slide-11 .field label {
       display: block;
       font-size: 13px;
       font-weight: 600;
@@ -566,7 +553,7 @@
       margin-bottom: 10px;
     }
 
-    .input-wrap input {
+    #slide-11 .input-wrap input {
       width: 100%;
       height: 52px;
       padding: 0 20px;
@@ -580,19 +567,19 @@
       transition: all 0.2s;
     }
 
-    .input-wrap input:focus {
+    #slide-11 .input-wrap input:focus {
       border-color: var(--primary);
       box-shadow: 0 0 0 4px rgba(6, 78, 59, 0.08);
     }
 
-    .panel__label {
+    #slide-11 .panel__label {
       font-size: 14px;
       font-weight: 700;
       color: var(--text-dark);
       margin-top: 8px;
     }
 
-    .settings-actions {
+    #slide-11 .settings-actions {
       display: flex;
       gap: 16px;
       margin-top: 32px;
@@ -600,7 +587,7 @@
       border-top: 1px solid var(--border-color);
     }
 
-    .settings-separator {
+    #slide-11 .settings-separator {
       height: 1px;
       background: var(--border-color);
       margin: 8px 0;
@@ -615,13 +602,11 @@
       font-size: 14px;
     }
   </style>
-</head>
 
-<body>
 
   <!-- 2. Barra de Navegación Superior -->
-  <header class="app-header">
-    <a class="nav-logo" href="index.html" style="cursor: pointer;">
+  <header class="app-header" style="background: white; position: relative; z-index: 10;">
+    <a class="nav-logo" style="cursor:pointer;" onclick="goToSlide(0)">
       <div class="nav-logo-icon">
         <svg viewBox="0 0 24 24" width="20" height="20">
           <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor" />
@@ -630,21 +615,23 @@
       <div class="nav-logo-text"><strong>TGEB</strong><span>The Green Energy Box</span></div>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="index.html">Simulador</a></li>
-      <li><a href="index.html">Proyectos</a></li>
-      <li><a href="index.html" class="active">Técnicos</a></li>
-      <li><a href="index.html">Biblioteca</a></li>
-      <li><a href="index.html">Ayuda</a></li>
+      <li><a class="nav-inicio active" style="cursor:pointer;" onclick="goToSlide(0)">Inicio</a></li>
+      <li><a class="nav-simulador" style="cursor:pointer;" onclick="goToSlide(8)">Simulador</a></li>
+      <li><a class="nav-proyectos" style="cursor:pointer;" onclick="goToSlide(5)">Proyectos</a></li>
+      <li><a class="nav-tecnicos" onclick="goToSlide(10)" style="cursor: pointer;">Técnicos</a></li>
+      <li><a class="nav-biblioteca" style="cursor:pointer;" onclick="goToSlide(7)">Biblioteca</a></li>
+
+      <li><a class="nav-ayuda" style="cursor:pointer;" onclick="goToSlide(6)">Ayuda</a></li>
     </ul>
     <div class="user-controls">
-      <div class="bell" style="cursor: pointer; color: var(--text-muted);">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+      <div class="bell">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
           <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
           <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
         </svg>
       </div>
-      <div class="avatar-circle" onclick="openUserSettings()" style="cursor: pointer;">JD</div>
+      <div class="avatar" onclick="openUserSettings()">U</div>
     </div>
   </header>
 
@@ -652,7 +639,7 @@
   <div class="main-container">
 
     <!-- 3. Encabezado de Navegación Interna -->
-    <a href="index.html" class="breadcrumb">
+    <a onclick="goToSlide(10)" style="cursor:pointer;" class="breadcrumb">
       <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M15 19l-7-7 7-7"></path>
       </svg>
@@ -664,70 +651,7 @@
     </div>
 
   </div>
-
-  <!-- Modal de Configuración de Usuario -->
-  <dialog id="userSettingsModal" class="side-panel">
-    <header class="panel__header">
-      <span class="panel__eyebrow">Configuración de Cuenta</span>
-      <button class="panel__close" onclick="closeUserSettings()" aria-label="Cerrar panel">✕</button>
-    </header>
-    <div class="panel__body">
-      <div class="settings-profile">
-        <div class="avatar-edit-container">
-          <img src="img/avatar-default.png" alt="Profile" id="userAvatarPreview" class="settings-avatar">
-          <label for="avatarInput" class="avatar-edit-badge" title="Cambiar foto">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-              <circle cx="12" cy="13" r="4"></circle>
-            </svg>
-            <input type="file" id="avatarInput" hidden accept="image/*" onchange="handleAvatarChange(event)">
-          </label>
-        </div>
-        <div class="settings-user-info">
-          <h3 id="userNameDisplay">Usuario Estándar</h3>
-          <span class="badge-role">Rol: Estándar</span>
-        </div>
-      </div>
-
-      <form class="settings-form" onsubmit="saveUserSettings(event)">
-        <div class="field">
-          <label for="editName">Nombre Completo</label>
-          <div class="input-wrap">
-            <input type="text" id="editName" value="Usuario Estándar" required placeholder="Ej. Juan Pérez">
-          </div>
-        </div>
-        <div class="field">
-          <label for="editEmail">Correo Electrónico</label>
-          <div class="input-wrap">
-            <input type="email" id="editEmail" value="usuario@tgeb.mx" required placeholder="ejemplo@correo.com">
-          </div>
-        </div>
-
-        <div class="settings-separator"></div>
-        <span class="panel__label">Seguridad de la Cuenta</span>
-
-        <div class="field">
-          <label for="editPass">Nueva Contraseña</label>
-          <div class="input-wrap">
-            <input type="password" id="editPass" placeholder="Mínimo 8 caracteres">
-          </div>
-        </div>
-        <div class="field">
-          <label for="confirmPass">Confirmar Contraseña</label>
-          <div class="input-wrap">
-            <input type="password" id="confirmPass" placeholder="Repite la contraseña">
-          </div>
-        </div>
-
-        <div class="settings-actions">
-          <button type="button" class="btn-text" onclick="closeUserSettings()">Cancelar</button>
-          <button type="submit" class="btn-primary">Actualizar Perfil</button>
-        </div>
-      </form>
-    </div>
-  </dialog>
-
+  <!-- Settings Modal removed since it's global now -->
   <script>
     const tecnicosData = [
       {
@@ -755,12 +679,8 @@
       }
     ];
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const params = new URLSearchParams(window.location.search);
-      let tecnicoId = params.get('id');
-
-      // Forzar a tecnico2 para el demo según la imagen
-      tecnicoId = 'tecnico2';
+    window.verDetalleTecnico = function(tecnicoId) {
+      if (!tecnicoId) tecnicoId = 'tecnico2'; // default if none provided
 
       const tecnico = tecnicosData.find(t => t.id === tecnicoId);
       const content = document.getElementById('tecnico-detail-content');
@@ -804,7 +724,7 @@
           <!-- 5. Sección de Contenido Inferior -->
           <div class="content-sections">
             <h2 class="section-title">Rendimiento Técnico</h2>
-            
+
             <!-- Grid A: Fila de KPIs -->
             <div class="stats-grid">
               ${tecnico.stats.map(stat => `
@@ -855,71 +775,9 @@
       } else {
         content.innerHTML = '<p>Técnico no encontrado.</p>';
       }
-    });
 
-    // ─── Lógica de Configuración de Usuario ───
-    const userModal = document.getElementById('userSettingsModal');
-
-    window.openUserSettings = function () {
-      userModal.showModal();
+      goToSlide(11); // Add jump here
     };
 
-    window.closeUserSettings = function () {
-      userModal.close();
-    };
-
-    window.handleAvatarChange = function (event) {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          document.getElementById('userAvatarPreview').src = e.target.result;
-          document.querySelectorAll('.avatar-circle').forEach(av => {
-            av.innerText = '';
-            av.style.backgroundImage = `url(${e.target.result})`;
-            av.style.backgroundSize = 'cover';
-          });
-        };
-        reader.readAsDataURL(file);
-      }
-    };
-
-    window.saveUserSettings = function (event) {
-      event.preventDefault();
-      const newName = document.getElementById('editName').value;
-      const newEmail = document.getElementById('editEmail').value;
-      const newPass = document.getElementById('editPass').value;
-      const confirmPass = document.getElementById('confirmPass').value;
-
-      if (newPass || confirmPass) {
-        if (newPass !== confirmPass) {
-          alert('Las contraseñas no coinciden. Por favor, verifica e intenta de nuevo.');
-          return;
-        }
-        if (newPass.length < 8) {
-          alert('La contraseña debe tener al menos 8 caracteres.');
-          return;
-        }
-      }
-
-      document.getElementById('userNameDisplay').innerText = newName;
-      document.querySelectorAll('.avatar-circle').forEach(av => {
-        av.style.backgroundImage = '';
-        av.innerText = newName.charAt(0).toUpperCase();
-      });
-
-      document.getElementById('editPass').value = '';
-      document.getElementById('confirmPass').value = '';
-
-      closeUserSettings();
-    };
-
-    // Cerrar al hacer clic fuera del modal
-    userModal.onclick = (e) => {
-      if (e.target === userModal) closeUserSettings();
-    };
   </script>
-
-</body>
-
-</html>
+</div>
