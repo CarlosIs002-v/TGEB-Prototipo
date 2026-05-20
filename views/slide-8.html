@@ -28,11 +28,8 @@
   <main class="hero" style="background: repeating-linear-gradient(45deg, rgba(95,138,110,0.03) 0px, rgba(95,138,110,0.03) 1px, transparent 1px, transparent 10px);">
     <div class="hero-left" style="flex: 0 0 40%;">
       <h1 style="font-size: 52px; line-height: 1.1; margin-bottom: 24px;">Simula, analiza y <span style="color: var(--teal);">optimiza</span> tus edificios.</h1>
+      <br>
       <p style="font-size: 18px; color: var(--ink-soft); margin-bottom: 40px; padding-left: 16px; border-left: 3px solid var(--sage-light);">Selecciona una estrategia para empezar.</p>
-      <button class="btn-primary-large" onclick="goToSlide(2);" style="padding: 14px 28px; font-size: 16px;">
-        Empezar simulación
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:8px;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </button>
     </div>
 
     <div class="hero-right" style="flex: 1; display: flex; justify-content: center; align-items: center;">
@@ -44,7 +41,7 @@
         </div>
 
         <div class="node-modern" style="top: 5%; left: 50%;" onclick="openStrategyModal('Fotovoltaico', '☀️', 'Generación de energía eléctrica...', 'energía renovable', 'área de cubierta', '30 - 60%')">
-          <div class="node-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Fixed_Tilt_Solar_panel_at_Canterbury_Municipal_Building_Canterbury_New_Hampshire.jpg" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div> <span class="node-label">Fotovoltaico</span>
+            <div class="node-badge"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Fixed_Tilt_Solar_panel_at_Canterbury_Municipal_Building_Canterbury_New_Hampshire.jpg" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div> <span class="node-label">Generación de energía</span>
         </div>
 
         <div class="node-modern" style="top: 20%; left: 85%;" onclick="openStrategyModal('Sombreado', '🌳', 'El sombreado estratégico...', 'control de deslumbramiento', 'tipo de árbol', '15 - 25%')">
@@ -60,7 +57,7 @@
         </div>
 
         <div class="node-modern" style="top: 95%; left: 50%;" onclick="openStrategyModal('Solar térmico', '♨️', 'Aprovecha la energía del sol...', 'agua caliente gratis', 'área de captación', '30 - 60%')">
-          <div class="node-badge"><img src="https://powen.es/wp-content/uploads/2021/10/captador-solar-termico.jpg" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div> <span class="node-label">Solar térmico</span>
+          <div class="node-badge"><img src="https://powen.es/wp-content/uploads/2021/10/captador-solar-termico.jpg" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div> <span class="node-label">Vidrio </span>
         </div>
 
         <div class="node-modern" style="top: 80%; left: 15%;" onclick="openStrategyModal('Aire acondicionado', '❄️', 'Optimización de equipos...', 'confort total', 'SEER/COP', '20 - 40%')">
@@ -68,14 +65,14 @@
         </div>
 
         <div class="node-modern" style="top: 50%; left: 0%;" onclick="openStrategyModal('Iluminación', '💡', 'Maximizacíon de luz natural...', 'ahorro directo', 'niveles de lux', '30 - 50%')">
-          <div class="node-badge"><img src="https://m.media-amazon.com/images/I/71zbPxykA+L._AC_UF894,1000_QL80_.jpg" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div> <span class="node-label">Iluminación</span>
+          <div class="node-badge"><img src="https://m.media-amazon.com/images/I/71zbPxykA+L._AC_UF894,1000_QL80_.jpg" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></div> <span class="node-label">Equipos eléctricos</span>
         </div>
 
         <div class="node-modern" style="top: 20%; left: 15%;" onclick="openStrategyModal('Ventilación natural', '🌬️', 'La ventilación natural permite reducir el consumo mediante el aire exterior.', 'reducción de carga térmica', 'orientación, aperturas', '10 - 35%')">
           <div class="node-badge">
             <img src="https://constructivo.com/imgPosts/1763066948vmaJQvAe.jpg" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
           </div>
-          <span class="node-label">Ventilación natural</span>
+          <span class="node-label">Ventilación <natural></natural></span>
         </div>
       </div>
     </div>

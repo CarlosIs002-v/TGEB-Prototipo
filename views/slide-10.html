@@ -197,34 +197,34 @@
           titulo: 'Ingeniero en Energías Renovables',
           especialidad: 'Diseño e implementación de sistemas fotovoltaicos a gran escala.',
           descripcion: 'El Ing. Mendoza cuenta con más de 15 años de experiencia en el sector de las energías renovables. Ha liderado múltiples proyectos de investigación y desarrollo en optimización de eficiencia energética y es un instructor certificado internacionalmente.',
-          certificaciones: ['Certificación NABCEP', 'Auditor Energético ISO 50001', 'Especialista en Sistemas Interconectados']
+          certificaciones: ['EC 1023']
         },
-        {
+        {        
           id: 'tecnico2',
           nombre: 'Ing. Ana Torres',
           foto: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=AT',
           titulo: 'Ingeniera Eléctrica',
-          especialidad: 'Almacenamiento de energía y sistemas híbridos BESS.',
+          especialidad: 'Almacenamiento de energía.',
           descripcion: 'Con maestría en sistemas de almacenamiento, Ana es especialista en la integración de baterías de litio y tecnologías híbridas. Su enfoque práctico garantiza capacitaciones orientadas a la resolución de problemas reales en campo.',
-          certificaciones: ['Especialista en BESS', 'Normativas Eléctricas Internacionales', 'Gestión de Proyectos PMP']
+          certificaciones: ['EC 0118']
         },
         {
           id: 'tecnico3',
           nombre: 'Ing. Javier Robles',
           foto: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=JR',
           titulo: 'Ingeniero en Gestión Energética',
-          especialidad: 'Mantenimiento preventivo, monitoreo y diagnóstico de inversores.',
+          especialidad: 'Instalación Cargadores EV.',
           descripcion: 'Experto en la parte operativa y mantenimiento de plantas solares. Javier destaca por su habilidad para diagnosticar fallas complejas y su experiencia en el uso de herramientas de monitoreo avanzadas e IA aplicada al sector.',
-          certificaciones: ['Experto en Inversores Tier 1', 'Termografía Infrarroja Nivel 2', 'Seguridad Eléctrica Avanzada']
+          certificaciones: ['EC 1641']
         },
         {
           id: 'tecnico4',
           nombre: 'Ing. Elena Gómez',
           foto: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=EG',
           titulo: 'Ingeniera en Energías Renovables',
-          especialidad: 'Sistemas aislados (Off-Grid) y micro-redes.',
-          descripcion: 'Elena ha dedicado su carrera a llevar energía a zonas rurales mediante sistemas aislados y micro-redes. Es una apasionada de la capacitación técnica y tiene una amplia trayectoria formando instaladores en todo el país.',
-          certificaciones: ['Diseño de Sistemas Off-Grid', 'Especialista en Baterías de Plomo y Litio', 'Instructor Certificado STPS']
+          especialidad: 'Mantenimiento Eléctrico.',
+          descripcion: 'Elena ha dedicado su carrera a llevar energía a zonas rurales mediante sistemas aislados. Es una apasionada de la capacitación técnica y tiene una amplia trayectoria formando instaladores en todo el país.',
+          certificaciones: ['EC 1023']
         }
       ];
 
@@ -232,7 +232,7 @@
 
       function render() {
         grid.innerHTML = tecnicosData.map(s => `
-          <div class="sponsor-card" onclick="window.location.href='tecnico-detail.html?id=${s.id}'">
+          <div class="sponsor-card" onclick="window.verDetalleTecnico('${s.id}')">
             <div class="sponsor-card__logo-wrap">
               <img src="${s.foto}" alt="${s.nombre}">
             </div>
