@@ -1,0 +1,764 @@
+﻿<div class="slide" id="slide-11">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+    #slide-11 {
+      --primary: #064E3B;
+      --bg-page: #F8F9FA;
+      --card-bg: #FFFFFF;
+      --border-color: #E5E7EB;
+      --text-dark: #1F2937;
+      --text-muted: #6B7280;
+      --success: #10B981;
+    }
+
+    #slide-11 {
+      background: var(--bg-page);
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      margin: 0;
+      padding: 0;
+    }
+
+    #slide-11 h1, #slide-11 h2, #slide-11 h3, #slide-11 h4, #slide-11 .font-heading {
+      font-family: 'Manrope', sans-serif;
+    }
+
+    /* 2. Barra de Navegación Superior */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #slide-11 .avatar-circle {
+      width: 40px;
+      height: 40px;
+      background: #10B981;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    /* 1. Estructura Global */
+    #slide-11 .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px 40px 24px;
+    }
+
+    /* 3. Encabezado de Navegación Interna */
+    #slide-11 .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 32px;
+      margin-bottom: 24px;
+    }
+
+    /* 4. Bloque 1: Tarjeta Principal del Perfil */
+    #slide-11 .hero-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    #slide-11 .hero-left {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    #slide-11 .avatar-square {
+      width: 100px;
+      height: 100px;
+      background: var(--primary);
+      color: white;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 700;
+      font-family: 'Manrope', sans-serif;
+      flex-shrink: 0;
+    }
+
+    #slide-11 .hero-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    #slide-11 .hero-info h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #slide-11 .hero-info .subtitle {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    #slide-11 .badges {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    #slide-11 .badge {
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    #slide-11 .badge-premium {
+      background: var(--primary);
+      color: white;
+    }
+
+    #slide-11 .badge-rating {
+      background: rgba(16, 185, 129, 0.1);
+      color: #047857;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    #slide-11 .meta-items {
+      display: flex;
+      gap: 16px;
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+
+    #slide-11 .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    #slide-11 .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 100px;
+      align-items: flex-end;
+    }
+
+    #slide-11 .btn {
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    #slide-11 .hero-right .btn {
+      padding: 10px 18px;
+      font-size: 11px;
+      height: auto;
+      line-height: normal;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(6, 78, 59, 0.15);
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #slide-11 .btn-primary {
+      background: var(--primary);
+      color: white;
+      border: none;
+    }
+
+    #slide-11 .btn-secondary {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+
+    /* 5. Sección de Contenido Inferior */
+    .content-sections {
+      margin-top: 40px;
+    }
+
+    #slide-11 .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    /* Grid A: Fila de KPIs */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    }
+
+    .stat-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: #E5E7EB;
+    }
+
+    .stat-card.active::after {
+      background: var(--primary);
+    }
+
+    .stat-icon {
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .stat-number {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    /* Grid B: Bloques de Detalle Técnico */
+    .content-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    #slide-11 .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      max-width: none;
+      width: 100%;
+    }
+
+    #slide-11 .card .section-title {
+      text-align: center;
+    }
+
+    #slide-11 .expertise-content-wrapper {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .expertise-text {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      text-align: justify;
+    }
+
+    .check-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .check-icon {
+      color: var(--success);
+      flex-shrink: 0;
+    }
+
+    #slide-11 .card.certs-card {
+      background: var(--primary);
+      color: white;
+    }
+
+    #slide-11 .card.certs-card .section-title {
+      color: white;
+    }
+
+    .cert-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+
+    .cert-icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cert-info h4 {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #A7F3D0;
+      margin: 0 0 4px 0;
+    }
+
+    .cert-info p {
+      font-size: 14px;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .verified-icon {
+      color: var(--success);
+    }
+
+    /* ─── Modal / Side Panel (Global) ─── */
+    #slide-11 dialog.side-panel {
+      position: fixed;
+      inset: 0 0 0 auto;
+      width: min(440px, 100vw);
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: var(--bg-page);
+      border: none;
+      border-left: 1px solid var(--border-color);
+      box-shadow: -15px 0 50px rgba(17, 24, 39, 0.08);
+      color: var(--text-dark);
+      overflow-y: auto;
+      translate: 100% 0;
+      transition: translate 0.5s cubic-bezier(0.16, 1, 0.3, 1), overlay 0.5s allow-discrete, display 0.5s allow-discrete;
+    }
+
+    #slide-11 dialog.side-panel[open] {
+      translate: 0 0;
+    }
+
+    #slide-11 dialog.side-panel::backdrop {
+      background: rgba(17, 24, 39, 0.4);
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      transition: opacity 0.5s ease, display 0.5s allow-discrete;
+    }
+
+    #slide-11 dialog.side-panel[open]::backdrop {
+      opacity: 1;
+    }
+
+    #slide-11 .panel__header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(248, 250, 251, 0.8);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    #slide-11 .panel__eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--primary);
+    }
+
+    #slide-11 .panel__close {
+      background: white;
+      border: 1px solid var(--border-color);
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.2s;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+    }
+
+    #slide-11 .panel__close:hover {
+      background: #FEF2F2;
+      color: #EF4444;
+      border-color: #FEE2E2;
+      transform: rotate(90deg);
+    }
+
+    #slide-11 .panel__#slide-11 {
+      padding: 40px 32px;
+    }
+
+    /* ─── User Settings Specific ─── */
+    #slide-11 .settings-profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+
+    #slide-11 .avatar-edit-container {
+      position: relative;
+      width: 140px;
+      height: 140px;
+    }
+
+    #slide-11 .settings-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 24px;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 12px 32px rgba(17, 24, 39, 0.12);
+    }
+
+    #slide-11 .avatar-edit-badge {
+      position: absolute;
+      bottom: -8px;
+      right: -8px;
+      width: 44px;
+      height: 44px;
+      background: var(--primary);
+      color: white;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      border: 4px solid var(--bg-page);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      box-shadow: 0 4px 12px rgba(6, 78, 59, 0.3);
+    }
+
+    #slide-11 .avatar-edit-badge:hover {
+      transform: scale(1.1) rotate(5deg);
+      background: #047857;
+    }
+
+    #slide-11 .settings-user-info h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 26px;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    #slide-11 .badge-role {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
+      background: rgba(16, 185, 129, 0.12);
+      padding: 6px 16px;
+      border-radius: 99px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    #slide-11 .settings-form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    #slide-11 .field label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    #slide-11 .input-wrap input {
+      width: 100%;
+      height: 52px;
+      padding: 0 20px;
+      border: 1.5px solid var(--border-color);
+      border-radius: 14px;
+      background: white;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      color: var(--text-dark);
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    #slide-11 .input-wrap input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(6, 78, 59, 0.08);
+    }
+
+    #slide-11 .panel__label {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-top: 8px;
+    }
+
+    #slide-11 .settings-actions {
+      display: flex;
+      gap: 16px;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    #slide-11 .settings-separator {
+      height: 1px;
+      background: var(--border-color);
+      margin: 8px 0;
+    }
+
+    .btn-text {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  </style>
+
+
+  <!-- 2. Barra de Navegación Superior -->
+  <header class="app-header" style="background: white; position: relative; z-index: 10;">
+    <a class="nav-logo" style="cursor:pointer;" onclick="goToSlide(0)">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="currentColor" />
+        </svg>
+      </div>
+      <div class="nav-logo-text"><strong>TGEB</strong><span>The Green Energy Box</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a class="nav-inicio" style="cursor:pointer;" onclick="goToSlide(0)">Inicio</a></li>
+      <li><a class="nav-simulador" style="cursor:pointer;" onclick="goToSlide(8)">Simulador</a></li>
+      <li><a class="nav-proyectos" style="cursor:pointer;" onclick="goToSlide(5)">Proyectos</a></li>
+      <li><a class="nav-biblioteca" style="cursor:pointer;" onclick="goToSlide(7)">Biblioteca</a></li>
+      <li><a class="nav-plan active" style="cursor:pointer;" onclick="goToSlide(12)">Plan</a></li>
+
+      <li><a class="nav-ayuda" style="cursor:pointer;" onclick="goToSlide(6)">Ayuda</a></li>
+    </ul>
+    <div class="user-controls">
+      <div class="bell">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
+      </div>
+      <div class="avatar" onclick="openUserSettings()">U</div>
+    </div>
+  </header>
+
+  <!-- 1. Estructura Global -->
+  <div class="main-container">
+
+    <!-- 3. Encabezado de Navegación Interna -->
+    <a onclick="goToSlide(7)" style="cursor:pointer;" class="breadcrumb">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M15 19l-7-7 7-7"></path>
+      </svg>
+      Volver a Técnicos
+    </a>
+
+    <div id="tecnico-detail-content">
+      <!-- Contenido dinámico -->
+    </div>
+
+  </div>
+  <!-- Settings Modal removed since it's global now -->
+  <script>
+    const tecnicosData = [
+      {
+        id: 'tecnico2',
+        nombre: 'Ing. Ana Torres',
+        titulo: 'Ingeniera Eléctrica, Especialista en sistemas fotovoltaicos',
+        descripcion: 'Ingeniera Eléctrica con alta especialización en el diseño, dimensionamiento e implementación de sistemas solares híbridos y off-grid. Con más de 8 años en la industria, ha liderado proyectos de gran envergadura para el sector comercial e industrial en el norte del país, garantizando siempre la máxima eficiencia energética y cumplimiento de normativas vigentes.',
+        certificaciones: [
+          { org: 'SOLAR ENERGY TECH', name: 'Instalador Fotovoltaico Nivel 3' },
+          { org: 'IEEE MEXICO', name: 'Mantenimiento de Transformadores' },
+          { org: 'CONOCER', name: 'EC0586.01 - Instalación de SFV' }
+        ],
+        expertise: [
+          'Diseño de Planos Eléctricos',
+          'Auditoría Energética Industrial',
+          'Certificación DC-3',
+          'Gestión de Trámites ante CFE'
+        ],
+        stats: [
+          { icon: '⚙️', num: '0', label: 'Sistemas Instalados', active: true },
+          { icon: '⚡', num: '0 kW', label: 'Potencia Superinstalada', active: false },
+          { icon: '🏠', num: '0', label: 'Proyectos Residenciales', active: false },
+          { icon: '🏢', num: '0', label: 'Proyectos Comerciales', active: false }
+        ]
+      }
+    ];
+
+    window.verDetalleTecnico = function(tecnicoId) {
+      if (!tecnicoId) tecnicoId = 'tecnico2'; // default if none provided
+
+      const tecnico = tecnicosData.find(t => t.id === tecnicoId);
+      const content = document.getElementById('tecnico-detail-content');
+
+      if (tecnico) {
+        content.innerHTML = `
+          <!-- 4. Bloque 1: Tarjeta Principal del Perfil -->
+          <div class="hero-card">
+            <div class="hero-left">
+              <div class="avatar-square">AT</div>
+              <div class="hero-info">
+                <h1>
+                  ${tecnico.nombre}
+                  <svg class="verified-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+                </h1>
+                <div class="subtitle">${tecnico.titulo}</div>
+                <div class="badges">
+                  <span class="badge badge-premium">Técnico Certificado Premium</span>
+                  <span class="badge badge-rating">
+                    <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+                    0.0 (0 Evaluaciones)
+                  </span>
+                </div>
+                <div class="meta-items">
+                  <div class="meta-item">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    Monterrey, N.L., México
+                  </div>
+                  <div class="meta-item">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    8 años de experiencia
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hero-right">
+              <a href="#" class="btn btn-primary">Contactar Profesional</a>
+            </div>
+          </div>
+
+          <!-- 5. Sección de Contenido Inferior -->
+          <div class="content-sections">
+            <h2 class="section-title">Rendimiento Técnico</h2>
+
+            <!-- Grid A: Fila de KPIs -->
+            <div class="stats-grid">
+              ${tecnico.stats.map(stat => `
+                <div class="stat-card ${stat.active ? 'active' : ''}">
+                  <div class="stat-icon">${stat.icon}</div>
+                  <div class="stat-number">${stat.num}</div>
+                  <div class="stat-label">${stat.label}</div>
+                </div>
+              `).join('')}
+            </div>
+
+            <!-- Grid B: Bloques de Detalle Técnico -->
+            <div class="content-layout">
+              <div class="card">
+                <h2 class="section-title">Descripción Técnica</h2>
+                <div class="expertise-content-wrapper">
+                  <div class="expertise-text">
+                    ${tecnico.descripcion}
+                  </div>
+                  <div class="check-list">
+                    ${tecnico.expertise.map(item => `
+                      <div class="check-item">
+                        <svg class="check-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+                        ${item}
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              </div>
+
+              <div class="card certs-card">
+                <h2 class="section-title">Certificaciones</h2>
+                <div class="certs-list">
+                  ${tecnico.certificaciones.map(cert => `
+                    <div class="cert-item">
+                      <div class="cert-icon">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+                      </div>
+                      <div class="cert-info">
+                        <h4>${cert.org}</h4>
+                        <p>${cert.name}</p>
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      } else {
+        content.innerHTML = '<p>Técnico no encontrado.</p>';
+      }
+
+      goToSlide(11); // Add jump here
+    };
+
+  </script>
+</div>
