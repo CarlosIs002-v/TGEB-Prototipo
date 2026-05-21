@@ -1,4 +1,4 @@
-<div class="slide" id="slide-7">
+﻿<div class="slide" id="slide-7">
   <header class="app-header" style="background: white; position: relative; z-index: 10;">
     <a class="nav-logo" style="cursor:pointer;" onclick="goToSlide(0)">
       <div class="nav-logo-icon">
@@ -12,7 +12,6 @@
       <li><a class="nav-inicio active" style="cursor:pointer;" onclick="goToSlide(0)">Inicio</a></li>
       <li><a class="nav-simulador" style="cursor:pointer;" onclick="goToSlide(8)">Simulador</a></li>
       <li><a class="nav-proyectos" style="cursor:pointer;" onclick="goToSlide(5)">Proyectos</a></li>
-
       <li><a class="nav-biblioteca" style="cursor:pointer;" onclick="goToSlide(7)">Biblioteca</a></li>
       <li><a class="nav-plan" style="cursor:pointer;" onclick="goToSlide(12)">Plan</a></li>
       <li><a class="nav-ayuda" style="cursor:pointer;" onclick="goToSlide(6)">Ayuda</a></li>
@@ -25,7 +24,11 @@
     </div>
   </header>
 
-  <div class="app-content" style="background: var(--page-bg);">
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- VISTA PRINCIPAL DE BIBLIOTECA                   -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div id="library-main-view">
+    <div class="app-content" style="background: var(--page-bg);">
     <div class="section-header-custom" style="margin-bottom: 40px;">
       <h2 class="section-title" style="font-size: 40px; font-weight: 700; color: var(--text-main); letter-spacing: -0.5px;">Biblioteca</h2>
       <p class="section-subtitle" style="color: var(--text-secondary); max-width: 600px; margin: 12px auto 0; font-size: 16px; line-height: 1.6;">
@@ -97,7 +100,7 @@
         </div>
         <div class="banner-visual">
           <div class="floating-card c1">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
             <span>Técnicos Expertos</span>
           </div>
           <div class="floating-card c2">
@@ -109,22 +112,392 @@
       <div class="sponsors-grid" id="grid-plan"></div>
     </div>
 
+    </div>
   </div>
+  <!-- FIN VISTA PRINCIPAL DE BIBLIOTECA -->
 
-  <!-- Modal nativo: panel lateral -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- VISTA: PERFIL DE PATROCINADOR PREMIUM           -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div id="sponsor-profile-view" style="display: none;">
+    <div class="sp-wrapper">
+
+      <!-- Breadcrumb / Back -->
+      <div class="sp-breadcrumb">
+        <button class="sp-back-btn" onclick="backToLibrary()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+          Volver a Biblioteca
+        </button>
+        <span class="sp-breadcrumb-trail">Biblioteca &gt; Catálogos de Socios &gt; <span id="sp-breadcrumb-name">SolarMax Energy</span></span>
+      </div>
+
+      <!-- Main 2-Column Grid -->
+      <div class="sp-grid">
+
+        <!-- ── COLUMNA IZQUIERDA (3fr) ── -->
+        <div class="sp-col-main">
+
+          <!-- A. HERO CARD -->
+          <div class="sp-hero-card">
+            <div class="sp-hero-left">
+              <div class="sp-hero-logo-row">
+                <div class="sp-hero-logo" id="sp-hero-logo">
+                  <svg viewBox="0 0 48 48" width="48" height="48"><rect width="48" height="48" rx="8" fill="#064E3B"/><text x="24" y="30" text-anchor="middle" fill="white" font-size="18" font-family="Manrope, sans-serif" font-weight="700">S</text></svg>
+                </div>
+                <div>
+                  <h1 class="sp-hero-name" id="sp-hero-name">SolarMax Energy <svg width="18" height="18" viewBox="0 0 24 24" fill="#064E3B"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></h1>
+                  <span class="sp-badge-premium">★ PARTNER PREMIUM</span>
+                </div>
+              </div>
+              <p class="sp-hero-desc" id="sp-hero-desc">Fabricante global de soluciones solares.<br>Alta eficiencia, calidad y confiabilidad para proyectos residenciales, comerciales e industriales.</p>
+              <div class="sp-hero-meta">
+                <span class="sp-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span id="sp-hero-location">Guadalajara, Jalisco, México</span>
+                </span>
+                <span class="sp-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  <a href="#" id="sp-hero-web" style="color: #064E3B; text-decoration: none;">www.solarmax.com</a>
+                </span>
+                <span class="sp-meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  Desde 2015
+                </span>
+              </div>
+            </div>
+            <div class="sp-hero-right">
+              <div class="sp-hero-banner" style="background: linear-gradient(135deg, rgba(6,78,59,0.15) 0%, rgba(6,78,59,0.05) 100%);">
+                <div class="sp-hero-banner-overlay">
+                  <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(6,78,59,0.3)" stroke-width="1"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- B. KPIs ROW (Solo 2 tarjetas) -->
+          <div class="sp-kpi-row">
+            <div class="sp-kpi-card">
+              <div class="sp-kpi-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <div class="sp-kpi-data">
+                <span class="sp-kpi-number">0.0</span>
+                <span class="sp-kpi-label">Calificación promedio</span>
+                <div class="sp-stars">★★★★★</div>
+                <span class="sp-kpi-sub">(128 evaluaciones)</span>
+              </div>
+            </div>
+            <div class="sp-kpi-card">
+              <div class="sp-kpi-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <div class="sp-kpi-data">
+                <span class="sp-kpi-number">0</span>
+                <span class="sp-kpi-label">Visitas al perfil</span>
+                <span class="sp-kpi-growth">↑ 5% <small>últimos 30 días</small></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- C. PRODUCTOS + NOVEDADES -->
+          <div class="sp-dual-row">
+            <!-- Productos destacados -->
+            <div class="sp-section-card">
+              <div class="sp-section-header">
+                <h3>Productos destacados en simulaciones TGEB</h3>
+                <a href="#" class="sp-link-small">Ver todos</a>
+              </div>
+              <div class="sp-products-grid">
+                <div class="sp-product-item">
+                  <div class="sp-product-thumb">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+                  </div>
+                  <span class="sp-product-name">Panel Solar</span>
+                  <span class="sp-product-model">SMX-550W</span>
+                  <span class="sp-product-spec">550 W</span>
+                </div>
+                <div class="sp-product-item">
+                  <div class="sp-product-thumb">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><circle cx="12" cy="16" r="2"/></svg>
+                  </div>
+                  <span class="sp-product-name">Inversor</span>
+                  <span class="sp-product-model">SMX-80K</span>
+                  <span class="sp-product-spec">60 kW</span>
+                </div>
+                <div class="sp-product-item">
+                  <div class="sp-product-thumb">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="1.5"><path d="M4 21V7l8-5 8 5v14"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="12" y1="2" x2="12" y2="21"/></svg>
+                  </div>
+                  <span class="sp-product-name">Estructura</span>
+                  <span class="sp-product-model">SMX-AL-01</span>
+                  <span class="sp-product-spec">Aluminio</span>
+                </div>
+                <div class="sp-product-item">
+                  <div class="sp-product-thumb">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="1.5"><rect x="6" y="4" width="12" height="16" rx="2"/><line x1="10" y1="4" x2="10" y2="20"/><line x1="14" y1="4" x2="14" y2="20"/><path d="M6 8h12"/><path d="M6 16h12"/></svg>
+                  </div>
+                  <span class="sp-product-name">Batería</span>
+                  <span class="sp-product-model">SMX-10KWH</span>
+                  <span class="sp-product-spec">18.4 kWh</span>
+                </div>
+                <div class="sp-product-item">
+                  <div class="sp-product-thumb">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                  </div>
+                  <span class="sp-product-name">Cargador EV</span>
+                  <span class="sp-product-model">SMG-3.4KW</span>
+                  <span class="sp-product-spec">7.4 kW</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Novedades -->
+            <div class="sp-section-card">
+              <div class="sp-section-header">
+                <h3>Novedades y Lanzamientos</h3>
+                <a href="#" class="sp-link-small">Ver todos</a>
+              </div>
+              <div class="sp-news-feed">
+                <div class="sp-news-item">
+                  <div class="sp-news-icon sp-news-icon--launch">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 3 0 3 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-3 0-3"/></svg>
+                  </div>
+                  <div class="sp-news-content">
+                    <span class="sp-news-date">22 de 2024</span>
+                    <p class="sp-news-title">Lanzamiento Inversor SMX-120K - Nuevas capacidades de potencia.</p>
+                  </div>
+                </div>
+                <div class="sp-news-item">
+                  <div class="sp-news-icon sp-news-icon--video">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                  </div>
+                  <div class="sp-news-content">
+                    <span class="sp-news-date">15 de 2024</span>
+                    <p class="sp-news-title">Webinar: Optimización Fotovoltaica 2024 - Registro abierto.</p>
+                  </div>
+                </div>
+                <div class="sp-news-item">
+                  <div class="sp-news-icon sp-news-icon--update">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <div class="sp-news-content">
+                    <span class="sp-news-date">23 de 2024</span>
+                    <p class="sp-news-title">Actualización: Nuevas Garantías SMX - Mayor cobertura y rapidez.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- D. CERTIFICACIONES + CASOS DE ÉXITO -->
+          <div class="sp-dual-row">
+            <!-- Certificaciones -->
+            <div class="sp-section-card">
+              <div class="sp-section-header">
+                <h3>Certificaciones y cumplimiento</h3>
+                <a href="#" class="sp-link-small">Ver todos</a>
+              </div>
+              <div class="sp-certs-grid">
+                <div class="sp-cert-item">
+                  <div class="sp-cert-logo">UL</div>
+                  <span>CERTIFIED</span>
+                </div>
+                <div class="sp-cert-item">
+                  <div class="sp-cert-logo">IEC</div>
+                  <span>IEC 61215</span>
+                </div>
+                <div class="sp-cert-item">
+                  <div class="sp-cert-logo">NOM</div>
+                  <span>NOM-001-SEDE</span>
+                </div>
+                <div class="sp-cert-item">
+                  <div class="sp-cert-logo">ISO</div>
+                  <span>ISO 9001:2025</span>
+                </div>
+                <div class="sp-cert-item">
+                  <div class="sp-cert-logo">CFE</div>
+                  <span>Interconexión</span>
+                </div>
+                <div class="sp-cert-item">
+                  <div class="sp-cert-logo">✓</div>
+                  <span>Cumplimiento</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Casos de éxito -->
+            <div class="sp-section-card">
+              <div class="sp-section-header">
+                <h3>Casos de éxito</h3>
+                <a href="#" class="sp-link-small">Ver todos</a>
+              </div>
+              <div class="sp-cases-grid">
+                <div class="sp-case-item">
+                  <div class="sp-case-thumb" style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9);">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                  </div>
+                  <span class="sp-case-name">Hotel Cancún</span>
+                  <span class="sp-case-location">Cancún, Q. Roo</span>
+                  <span class="sp-case-power">507 MWp</span>
+                </div>
+                <div class="sp-case-item">
+                  <div class="sp-case-thumb" style="background: linear-gradient(135deg, #e3f2fd, #bbdefb);">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M12 7V3"/><path d="M8 7V5"/><path d="M16 7V5"/></svg>
+                  </div>
+                  <span class="sp-case-name">Nave Industrial</span>
+                  <span class="sp-case-location">Monterrey, NL</span>
+                  <span class="sp-case-power">1.2 MWp</span>
+                </div>
+                <div class="sp-case-item">
+                  <div class="sp-case-thumb" style="background: linear-gradient(135deg, #fff3e0, #ffe0b2);">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="1.5"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/></svg>
+                  </div>
+                  <span class="sp-case-name">Plaza Comercial</span>
+                  <span class="sp-case-location">Guadalajara, Jal.</span>
+                  <span class="sp-case-power">300 MWp</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- E. BANNER INFERIOR -->
+          <div class="sp-brand-banner">
+            <div class="sp-brand-info">
+              <h4>Tu marca dentro de TGEB</h4>
+              <p>Aparece como opción recomendada en simulaciones, proyectos y marketplace masivo.</p>
+            </div>
+            <div class="sp-brand-stats">
+              <div class="sp-brand-stat">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#064E3B" stroke="none"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none"/></svg>
+                <div><strong>356</strong><span>Productos activos</span></div>
+              </div>
+              <div class="sp-brand-stat">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#064E3B" stroke="none"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none"/></svg>
+                <div><strong>12</strong><span>Categorías</span></div>
+              </div>
+              <div class="sp-brand-stat">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#064E3B" stroke="none"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none"/></svg>
+                <div><strong>98%</strong><span>Disponibilidad</span></div>
+              </div>
+              <div class="sp-brand-stat">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#064E3B" stroke="none"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none"/></svg>
+                <div><strong>24</strong><span>Países</span></div>
+              </div>
+              <div class="sp-brand-badge-wrap">
+                <div class="sp-brand-badge">
+                  <span class="sp-brand-badge-label">Partner Premium</span>
+                  <span class="sp-brand-badge-sub">Máxima visibilidad</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- FIN COLUMNA IZQUIERDA -->
+
+        <!-- ── COLUMNA DERECHA (1fr) ── -->
+        <div class="sp-col-side">
+
+          <!-- A. MURO DE TESTIMONIOS -->
+          <div class="sp-section-card sp-testimonials-section">
+            <h3 class="sp-testimonials-title">Muro de Testimonios Técnicos<br><small>(Peer-to-Peer)</small></h3>
+            <div class="sp-testimonials-stack">
+              <div class="sp-testimonial-card">
+                <div class="sp-testimonial-header">
+                  <div class="sp-testimonial-avatar">RL</div>
+                  <div>
+                    <span class="sp-testimonial-name">Ing. Roberto L.</span>
+                    <div class="sp-testimonial-rating">★★★★★ <strong>5.0</strong></div>
+                  </div>
+                </div>
+                <p class="sp-testimonial-text">Excelente soporte técnico durante la instalación. Muy eficiente.</p>
+                <span class="sp-testimonial-author">- Ing. Roberto L.</span>
+              </div>
+              <div class="sp-testimonial-card">
+                <div class="sp-testimonial-header">
+                  <div class="sp-testimonial-avatar">CM</div>
+                  <div>
+                    <span class="sp-testimonial-name">Arq. Carla M.</span>
+                    <div class="sp-testimonial-rating">★★★★★ <strong>5.0</strong></div>
+                  </div>
+                </div>
+                <p class="sp-testimonial-text">Inversores de alta durabilidad. Mis clientes están satisfechos.</p>
+                <span class="sp-testimonial-author">- Arq. Carla M.</span>
+              </div>
+              <div class="sp-testimonial-card">
+                <div class="sp-testimonial-header">
+                  <div class="sp-testimonial-avatar">MH</div>
+                  <div>
+                    <span class="sp-testimonial-name">Téc. Miguel H.</span>
+                    <div class="sp-testimonial-rating">★★★★★ <strong>5.0</strong></div>
+                  </div>
+                </div>
+                <p class="sp-testimonial-text">Mejora mi eficiencia y tiempos de diseño. Soporte de primer nivel. Garantías claras y rápidas. Fiable en el campo.</p>
+                <span class="sp-testimonial-author">- Ing. Silvia G.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- B. CONTACTO A SOPORTE -->
+          <div class="sp-section-card sp-contact-card">
+            <h3 class="sp-contact-title">Contacto a Soporte</h3>
+            <div class="sp-contact-profile">
+              <div class="sp-contact-avatar">AL</div>
+              <div>
+                <span class="sp-contact-name">Andrea López</span>
+                <span class="sp-contact-role">Account Manager</span>
+              </div>
+            </div>
+            <div class="sp-contact-details">
+              <a href="tel:+528112345378" class="sp-contact-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#064E3B" stroke="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                +52 81 1234 5378
+              </a>
+              <a href="mailto:andrea.lopez2@tgeb.com" class="sp-contact-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                andrea.lopez2@tgeb.com
+              </a>
+            </div>
+            <button class="sp-cta-btn" onclick="alert('Función de contacto en desarrollo')">Contactar Soporte</button>
+          </div>
+
+        </div>
+        <!-- FIN COLUMNA DERECHA -->
+
+      </div>
+      <!-- FIN GRID -->
+
+      <!-- FOOTER GLOBAL -->
+      <footer class="sp-footer">
+        <span>© 2024 TGEB — Total Green Energy Buildings. Todos los derechos reservados.</span>
+        <div class="sp-footer-links">
+          <a href="#">Privacidad</a>
+          <a href="#">Términos</a>
+          <a href="#">Contacto</a>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+  <!-- FIN VISTA PERFIL DE PATROCINADOR -->
+
+  <!-- Modal nativo: panel lateral (solo para Plan/Técnicos) -->
   <dialog id="sponsorModal" class="side-panel">
-
     <header class="panel__header">
       <span class="panel__eyebrow">Detalle del Socio</span>
       <button class="panel__close" id="modalClose" aria-label="Cerrar panel">✕</button>
     </header>
-
     <div class="panel__body" id="panelContent">
       <!-- contenido inyectado por JS -->
     </div>
   </dialog>
 
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- ESTILOS                                          -->
+  <!-- ═══════════════════════════════════════════════ -->
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
     #slide-7 .app-content {
       padding: 60px 6%;
       width: 100%;
@@ -441,8 +814,864 @@
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    /* ═══════════════════════════════════════════════════════════ */
+    /*  SPONSOR PROFILE VIEW — ESTILOS DEDICADOS                  */
+    /* ═══════════════════════════════════════════════════════════ */
+
+    #sponsor-profile-view {
+      animation: spFadeIn 0.4s ease-out;
+    }
+
+    @keyframes spFadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .sp-wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px 32px 0;
+      background: #F8F9FA;
+    }
+
+    .sp-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .sp-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #4b9f79 0%, #0c6b4e 100%);
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 20px rgba(6,78,59,0.15);
+    }
+
+    .sp-back-btn:hover {
+      background: linear-gradient(135deg, #0c6b4e 0%, #064e3b 100%);
+      color: white;
+      box-shadow: 0 8px 20px rgba(6,78,59,0.25);
+    }
+
+    .sp-back-btn:hover svg { stroke: white; }
+
+    .sp-breadcrumb-trail {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    .sp-breadcrumb-trail span {
+      color: #1e293b;
+      font-weight: 600;
+    }
+
+    .sp-grid {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 24px;
+    }
+
+    .sp-col-main {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .sp-col-side {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .sp-hero-card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      display: flex;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+
+    .sp-hero-left {
+      flex: 1;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .sp-hero-logo-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .sp-hero-logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      background: #f0fdf4;
+      border: 1.5px solid #e2e8f0;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .sp-hero-name {
+      font-family: 'Manrope', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: #1e293b;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sp-badge-premium {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #064E3B;
+      color: white;
+      padding: 5px 14px;
+      border-radius: 99px;
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-top: 6px;
+    }
+
+    .sp-hero-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #64748b;
+      margin: 0;
+    }
+
+    .sp-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .sp-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    .sp-hero-right {
+      width: 340px;
+      min-height: 220px;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sp-hero-banner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sp-hero-banner-overlay {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      opacity: 0.6;
+    }
+
+    .sp-kpi-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .sp-kpi-card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      padding: 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      transition: all 0.3s ease;
+    }
+
+    .sp-kpi-card:hover {
+      box-shadow: 0 8px 30px rgba(6,78,59,0.08);
+      transform: translateY(-2px);
+    }
+
+    .sp-kpi-icon {
+      width: 48px;
+      height: 48px;
+      background: #f0fdf4;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .sp-kpi-data {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sp-kpi-number {
+      font-family: 'Manrope', sans-serif;
+      font-size: 36px;
+      font-weight: 800;
+      color: #1e293b;
+      line-height: 1.1;
+    }
+
+    .sp-kpi-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: #64748b;
+      margin-top: 4px;
+    }
+
+    .sp-stars {
+      color: #f59e0b;
+      font-size: 16px;
+      letter-spacing: 2px;
+      margin-top: 6px;
+    }
+
+    .sp-kpi-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    .sp-kpi-growth {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #10b981;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    .sp-kpi-growth small {
+      font-weight: 400;
+      color: #94a3b8;
+      margin-left: 4px;
+    }
+
+    .sp-dual-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .sp-section-card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+
+    .sp-section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .sp-section-header h3 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 0;
+    }
+
+    .sp-link-small {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #064E3B;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .sp-link-small:hover { opacity: 0.7; }
+
+    .sp-products-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .sp-product-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 16px 8px;
+      border-radius: 12px;
+      border: 1px solid #f1f5f9;
+      background: #fafbfc;
+      transition: all 0.25s ease;
+      gap: 6px;
+    }
+
+    .sp-product-item:hover {
+      background: #f0fdf4;
+      border-color: rgba(6,78,59,0.15);
+      transform: translateY(-2px);
+    }
+
+    .sp-product-thumb {
+      width: 56px;
+      height: 56px;
+      border-radius: 10px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      display: grid;
+      place-items: center;
+      margin-bottom: 4px;
+    }
+
+    .sp-product-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .sp-product-model {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: #94a3b8;
+    }
+
+    .sp-product-spec {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    .sp-news-feed {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .sp-news-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .sp-news-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .sp-news-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .sp-news-icon--launch { background: #fef3c7; color: #d97706; }
+    .sp-news-icon--video { background: #dbeafe; color: #2563eb; }
+    .sp-news-icon--update { background: #d1fae5; color: #059669; }
+
+    .sp-news-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .sp-news-date {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: #94a3b8;
+      font-weight: 600;
+    }
+
+    .sp-news-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #334155;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .sp-certs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .sp-cert-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 16px 8px;
+      border-radius: 12px;
+      border: 1px solid #f1f5f9;
+      background: #fafbfc;
+      gap: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .sp-cert-item:hover {
+      background: #f0fdf4;
+      border-color: rgba(6,78,59,0.15);
+    }
+
+    .sp-cert-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: white;
+      border: 1.5px solid #e2e8f0;
+      display: grid;
+      place-items: center;
+      font-family: 'Manrope', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      color: #064E3B;
+    }
+
+    .sp-cert-item span {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      color: #64748b;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .sp-cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .sp-case-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .sp-case-item:hover { transform: translateY(-3px); }
+
+    .sp-case-thumb {
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 4px;
+    }
+
+    .sp-case-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .sp-case-location {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: #94a3b8;
+    }
+
+    .sp-case-power {
+      font-family: 'Manrope', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: #064E3B;
+    }
+
+    .sp-brand-banner {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      padding: 28px 32px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+
+    .sp-brand-info {
+      flex-shrink: 0;
+      max-width: 240px;
+    }
+
+    .sp-brand-info h4 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 0 0 6px;
+    }
+
+    .sp-brand-info p {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      color: #94a3b8;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .sp-brand-stats {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex: 1;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .sp-brand-stat {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sp-brand-stat div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sp-brand-stat strong {
+      font-family: 'Manrope', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: #1e293b;
+    }
+
+    .sp-brand-stat span {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: #94a3b8;
+    }
+
+    .sp-brand-badge-wrap {
+      margin-left: 8px;
+    }
+
+    .sp-brand-badge {
+      background: linear-gradient(135deg, #064E3B, #0d7a5f);
+      border-radius: 14px;
+      padding: 14px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .sp-brand-badge-label {
+      font-family: 'Manrope', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .sp-brand-badge-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .sp-testimonials-section {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+    }
+
+    .sp-testimonials-title {
+      font-family: 'Manrope', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: #1e293b;
+      margin: 0 0 16px;
+    }
+
+    .sp-testimonials-title small {
+      font-size: 13px;
+      font-weight: 500;
+      color: #94a3b8;
+    }
+
+    .sp-testimonials-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .sp-testimonial-card {
+      background: #064E3B;
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .sp-testimonial-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(6,78,59,0.3);
+    }
+
+    .sp-testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sp-testimonial-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      display: grid;
+      place-items: center;
+      font-family: 'Manrope', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .sp-testimonial-name {
+      font-family: 'Manrope', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .sp-testimonial-rating {
+      font-size: 12px;
+      color: #f59e0b;
+      letter-spacing: 1px;
+    }
+
+    .sp-testimonial-rating strong {
+      color: white;
+      margin-left: 4px;
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .sp-testimonial-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.85);
+      margin: 0;
+    }
+
+    .sp-testimonial-author {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .sp-contact-card {
+      text-align: left;
+    }
+
+    .sp-contact-title {
+      font-family: 'Manrope', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 0 0 20px;
+    }
+
+    .sp-contact-profile {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .sp-contact-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #064E3B, #0d7a5f);
+      display: grid;
+      place-items: center;
+      font-family: 'Manrope', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .sp-contact-name {
+      font-family: 'Manrope', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #1e293b;
+      display: block;
+    }
+
+    .sp-contact-role {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    .sp-contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .sp-contact-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: #064E3B;
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .sp-contact-link:hover { opacity: 0.7; }
+
+    .sp-cta-btn {
+      width: 100%;
+      background: #064E3B;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 24px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 16px rgba(6,78,59,0.25);
+    }
+
+    .sp-cta-btn:hover {
+      background: #053f30;
+      box-shadow: 0 8px 24px rgba(6,78,59,0.35);
+      transform: translateY(-1px);
+    }
+
+    .sp-footer {
+      margin-top: 40px;
+      padding: 28px 0;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    .sp-footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .sp-footer-links a {
+      color: #64748b;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .sp-footer-links a:hover { color: #064E3B; }
+
+    @media (max-width: 1100px) {
+      .sp-grid {
+        grid-template-columns: 1fr;
+      }
+      .sp-col-side {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .sp-testimonials-section,
+      .sp-contact-card {
+        flex: 1;
+        min-width: 280px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sp-wrapper { padding: 16px; }
+      .sp-hero-card { flex-direction: column; }
+      .sp-hero-right { width: 100%; min-height: 160px; }
+      .sp-kpi-row { grid-template-columns: 1fr; }
+      .sp-dual-row { grid-template-columns: 1fr; }
+      .sp-products-grid { grid-template-columns: repeat(3, 1fr); }
+      .sp-brand-banner { flex-direction: column; text-align: center; }
+      .sp-brand-stats { justify-content: center; }
+      .sp-brand-info { max-width: 100%; }
+      .sp-footer { flex-direction: column; gap: 12px; text-align: center; }
+      .sp-col-side { flex-direction: column; }
+    }
+
+    @media (max-width: 480px) {
+      .sp-products-grid { grid-template-columns: repeat(2, 1fr); }
+      .sp-certs-grid { grid-template-columns: repeat(2, 1fr); }
+      .sp-cases-grid { grid-template-columns: 1fr; }
+    }
   </style>
 
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- SCRIPTS                                          -->
+  <!-- ═══════════════════════════════════════════════ -->
   <script>
     (function() {
       const sponsorsData = [
@@ -624,37 +1853,20 @@
         const s = sponsorsData.find(x => x.id === id);
         if(!s) return;
 
-        content.innerHTML = `
-          <div class="modal-hero">
-            <img src="${s.logo}" class="modal-logo" alt="${s.nombre}">
-            <div class="modal-header-text">
-              <h2>${s.nombre}</h2>
-              <p class="sponsor-card__origin">Sede: ${s.origen}</p>
-            </div>
-          </div>
+        document.getElementById('sp-breadcrumb-name').textContent = s.nombre;
+        document.getElementById('sp-hero-name').innerHTML = s.nombre + ' <svg width="18" height="18" viewBox="0 0 24 24" fill="#064E3B"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>';
+        document.getElementById('sp-hero-desc').innerHTML = s.descripcion;
+        document.getElementById('sp-hero-location').textContent = 'Sede: ' + s.origen;
 
-          <div class="modal-section">
-            <span class="modal-section-title">Especialidad</span>
-            <p class="modal-text">${s.especialidad}</p>
-          </div>
+        document.getElementById('library-main-view').style.display = 'none';
+        document.getElementById('sponsor-profile-view').style.display = 'block';
+        document.getElementById('slide-7').scrollTop = 0;
+      };
 
-          <div class="modal-section">
-            <span class="modal-section-title">Trayectoria y Visión</span>
-            <p class="modal-text">${s.descripcion}</p>
-          </div>
-
-          <div class="modal-section">
-            <span class="modal-section-title">Áreas de Enfoque</span>
-            <div class="modal-tag-container">
-              ${s.tags.map(t => `<span class="modal-tag">${t}</span>`).join('')}
-            </div>
-          </div>
-
-          <button class="btn-primary" style="width: 100%; margin-top: 24px;" onclick="document.getElementById('sponsorModal').close()">
-            Cerrar Detalles
-          </button>
-        `;
-        modal.showModal();
+      window.backToLibrary = function() {
+        document.getElementById('sponsor-profile-view').style.display = 'none';
+        document.getElementById('library-main-view').style.display = 'block';
+        window.switchLibraryTab('catalogos');
       };
 
       closeBtn.onclick = () => modal.close();
