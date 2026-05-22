@@ -77,7 +77,7 @@
             <li><a class="nav-inicio" style="cursor:pointer;" onclick="goToSlide(0)">Inicio</a></li>
             <li><a class="nav-simulador active" style="cursor:pointer;" onclick="goToSlide(2)">Simulador</a></li>
             <li><a class="nav-proyectos" style="cursor:pointer;" onclick="goToSlide(5)">Proyectos</a></li>
-            <li><a class="nav-biblioteca" style="cursor:pointer;" onclick="goToSlide(7)">Biblioteca</a></li>
+            <li><a class="nav-biblioteca" style="cursor:pointer;" onclick="goToSlide(7)">Recursos</a></li>
             <li><a class="nav-plan" style="cursor:pointer;" onclick="goToSlide(12)">Plan</a></li>
             <li><a class="nav-ayuda" style="cursor:pointer;" onclick="goToSlide(6)">Ayuda</a></li>
         </ul>
@@ -131,14 +131,14 @@
                     <div class="opt-stack">
                         <div onclick="selectOption(2, 'tecnologia', 'Máxima Eficiencia')" class="opt-card wide">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                                <h3 class="opt-title" style="margin-bottom:0; color: var(--primary);">Máxima Eficiencia</h3>
+                                <h3 class="opt-title" style="margin-bottom:0; color: var(--primary);">Generación de energía</h3>
                                 <span class="opt-tag tag-blue">Ideal techos pequeños</span>
                             </div>
                             <p class="opt-subtitle">Genera la mayor cantidad de energía posible en espacios reducidos. Perfecta si tienes poco espacio en el techo.</p>
                         </div>
                         <div onclick="selectOption(2, 'tecnologia', 'Mejor Costo-Beneficio')" class="opt-card wide">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                                <h3 class="opt-title" style="margin-bottom:0; color: var(--primary);">Mejor Costo-Beneficio</h3>
+                                <h3 class="opt-title" style="margin-bottom:0; color: var(--primary);">Calentador de agua</h3>
                                 <span class="opt-tag tag-green">Más popular</span>
                             </div>
                             <p class="opt-subtitle">El equilibrio perfecto entre inversión y ahorro. Ideal si cuentas con una superficie amplia para instalar.</p>
@@ -151,13 +151,13 @@
                     <p class="step-desc">¿Qué tanta potencia necesitas que tenga tu sistema?</p>
                     <div class="opt-grid-2">
                         <div onclick="selectOption(3, 'modelo', 'Estándar')" class="opt-card" style="display: flex; flex-direction: column; justify-content: center;">
-                            <h3 class="opt-title">Estándar</h3>
+                            <h3 class="opt-title">En modulos FV</h3>
                             <p class="opt-subtitle" style="margin-bottom: 24px;">Cubre el consumo básico diario.</p>
                             <span style="font-size:12px; color:var(--ink-muted); background:var(--cream); padding:6px 12px; border-radius:6px; margin: 0 auto;">Módulos de 450W</span>
                         </div>
                         <div onclick="selectOption(3, 'modelo', 'Premium')" class="opt-card premium" style="display: flex; flex-direction: column; justify-content: center;">
                             <span class="premium-badge">Recomendado</span>
-                            <h3 class="opt-title" style="color: var(--sage-dark);">Premium</h3>
+                            <h3 class="opt-title" style="color: var(--sage-dark);">En inversores</h3>
                             <p class="opt-subtitle" style="margin-bottom: 24px; color: var(--ink-soft);">Diseñado para alto consumo (Aires acondicionados, etc).</p>
                             <span style="font-size:12px; color:var(--primary); background:white; padding:6px 12px; border-radius:6px; border:1px solid var(--border); margin: 0 auto;">Módulos Bifaciales 550W+</span>
                         </div>
@@ -168,22 +168,22 @@
                     <h2 class="step-title">4. Selecciona tu respaldo</h2>
                     <p class="step-desc">Trabajamos solo con marcas que ofrecen garantías sólidas.</p>
                     <div class="opt-grid-2">
-                        <div onclick="selectOption(4, 'marca', 'SunPower')" class="opt-card wide" style="display: flex; align-items: flex-start; gap: 16px;">
-                            <div style="width: 48px; height: 48px; border-radius: 12px; background: #fff7ed; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 24px; color: #ea580c; flex-shrink: 0;">S</div>
-                            <div>
-                                <h3 class="opt-title" style="margin-bottom:2px;">SunPower</h3>
+                        <div onclick="selectOption(4, 'marca', 'LONGi')" class="opt-card wide" style="display: flex; align-items: flex-start; gap: 16px;">
+                              <div>
+                              <div><img width=180px height=80px src="https://suncore.com.mx/wp-content/uploads/2021/04/logo-longi-solar.png"></div>
                                 <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 12px;">
                                     <span style="color:#eab308; font-size:14px;">★</span>
                                     <span style="font-size:12px; color:var(--ink-muted);">Calificación Experta</span>
                                 </div>
-                                <p class="opt-subtitle" style="font-size:13px; line-height: 1.8;">✓ 25 años de garantía<br>✓ Soporte local</p>
+                                <p class="opt-subtitle" style="font-size:13px; line-height: 1.8;">✓ 25 años de garantía<br>✓ Soporte local <br>Hi-MO 6
+                                </p>
                             </div>
                         </div>
                         <div onclick="selectOption(4, 'marca', 'CanadianSolar')" class="opt-card wide" style="display: flex; align-items: flex-start; gap: 16px;">
-                            <div style="width: 48px; height: 48px; border-radius: 12px; background: #f0f9ff; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 24px; color: #3b82f6; flex-shrink: 0;">C</div>
                             <div>
-                                <h3 class="opt-title" style="margin-bottom:2px;">CanadianSolar</h3>
-                                <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 12px;">
+                              <div><img width=180px height=80px src="https://www.tritec-energy.com/wp-content/uploads/2019/12/canadian-solar.png"></div>
+
+                              <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 12px;">
                                     <span style="color:#3b82f6; font-size:14px;">🛡️</span>
                                     <span style="font-size:12px; color:var(--ink-muted);">Alta Durabilidad</span>
                                 </div>

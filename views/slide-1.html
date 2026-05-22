@@ -13,7 +13,7 @@
       <li><a class="nav-simulador" onclick="goToSlide(2)" style="cursor: pointer;">Simulador</a></li>
       <li><a class="nav-proyectos" onclick="goToSlide(5)" style="cursor: pointer;">Proyectos</a></li>
 
-      <li><a class="nav-biblioteca" style="cursor:pointer;" onclick="goToSlide(7)">Biblioteca</a></li>
+      <li><a class="nav-biblioteca" style="cursor:pointer;" onclick="goToSlide(7)">Recursos</a></li>
       <li><a class="nav-plan" style="cursor:pointer;" onclick="goToSlide(12)">Plan</a></li>
       <li><a class="nav-ayuda" onclick="goToSlide(6)" style="cursor: pointer;">Ayuda</a></li>
     </ul>
@@ -33,13 +33,13 @@
 
         <div class="field" style="margin-top: 24px;">
           <label>Correo electrónico</label>
-          <div class="input-wrap"><input type="email" placeholder="tu@correo.com"></div>
+          <div class="input-wrap"><input id="login-email" type="email" placeholder="tu@correo.com"></div>
         </div>
         <div class="field">
           <label>Contraseña</label>
-          <div class="input-wrap"><input type="password" placeholder="Tu contraseña"></div>
+          <div class="input-wrap"><input id="login-password" type="password" placeholder="Tu contraseña"></div>
         </div>
-        <button class="btn-primary" onclick="goToSlide(5)" style="margin-top: 20px;">Ingresar al Dashboard</button>
+        <button class="btn-primary" onclick="handleLogin()" style="margin-top: 20px;">Ingresar al Dashboard</button>
       </div>
 
       <div class="card-body" id="view-register">
