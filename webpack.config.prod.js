@@ -23,15 +23,4 @@ module.exports = merge(common, {
       ],
     }),
   ],
-  module: {
-    rules: [
-      {
-        test: /\.html$/,
-        loader: 'html-loader',
-        options: {
-          sources: false, // Disables attribute resolving
-        },
-      },
-    ],
-  },
 });
