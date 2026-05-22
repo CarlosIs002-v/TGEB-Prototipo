@@ -1,0 +1,635 @@
+<div class="slide" id="slide-13">
+  <style>
+    #slide-13 {
+      background: #F8F9FA;
+      font-family: 'DM Sans', sans-serif;
+      height: 100vh;
+      display: flex;
+    }
+
+    .admin-sidebar {
+      width: 260px;
+      background: white;
+      border-right: 1px solid var(--border-color, #E5E7EB);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .admin-logo {
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid var(--border-color, #E5E7EB);
+      cursor: pointer;
+    }
+
+    .admin-logo-text {
+      font-weight: 700;
+      color: #064E3B; /* var(--primary) */
+      font-size: 18px;
+    }
+
+    .admin-nav {
+      flex: 1;
+      padding: 24px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .admin-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      color: #4B5563; /* text-muted */
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .admin-nav-item:hover, .admin-nav-item.active {
+      background: rgba(6, 78, 59, 0.05);
+      color: #064E3B;
+    }
+    .admin-nav-item.active {
+      background: #064E3B;
+      color: white;
+    }
+
+
+    .admin-main {
+      flex: 1;
+      overflow-y: auto;
+      padding: 32px 40px;
+    }
+
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 32px;
+    }
+
+    .admin-title h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0 0 4px 0;
+      color: #111827;
+      font-family: 'DM Serif Display', serif;
+    }
+    .admin-title p {
+      margin: 0;
+      color: #6B7280;
+      font-size: 14px;
+    }
+
+    .admin-actions {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .admin-search {
+      position: relative;
+    }
+    .admin-search input {
+      padding: 10px 16px 10px 36px;
+      border: 1px solid #E5E7EB;
+      border-radius: 8px;
+      outline: none;
+      width: 280px;
+    }
+    .admin-search svg {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #9CA3AF;
+    }
+
+    .admin-btn {
+      background: #064E3B;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Dashboard Cards */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .kpi-card {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid #E5E7EB;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .kpi-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .kpi-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+    }
+
+    .bg-blue { background: #EFF6FF; color: #3B82F6; }
+    .bg-green { background: #ECFDF5; color: #10B981; }
+    .bg-purple { background: #F5F3FF; color: #8B5CF6; }
+    .bg-orange { background: #FFF7ED; color: #F97316; }
+
+    .kpi-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #6B7280;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .kpi-value {
+      font-size: 32px;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 8px;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .kpi-trend {
+      font-size: 13px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .trend-up { color: #10B981; }
+    .trend-down { color: #EF4444; }
+
+    /* Layout for tables/content */
+    .admin-content-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 24px;
+    }
+
+    .admin-panel {
+      background: white;
+      border-radius: 12px;
+      border: 1px solid #E5E7EB;
+      padding: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .panel-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    /* Table styles */
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .admin-table th {
+      text-align: left;
+      padding: 12px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #6B7280;
+      text-transform: uppercase;
+      border-bottom: 1px solid #E5E7EB;
+    }
+    .admin-table td {
+      padding: 16px;
+      border-bottom: 1px solid #F3F4F6;
+      font-size: 14px;
+      color: #374151;
+      vertical-align: middle;
+    }
+    .admin-table tr:last-child td { border-bottom: none; }
+
+    .user-cell {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .user-avatar {
+      width: 32px;
+      height: 32px;
+      background: #E5E7EB;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 600;
+      color: #4B5563;
+      font-size: 12px;
+    }
+
+    .status-badge {
+      padding: 4px 10px;
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .status-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+    .status-active { background: #ECFDF5; color: #10B981; }
+    .status-active::before { background: #10B981; }
+    .status-pending { background: #FFF7ED; color: #F97316; }
+    .status-pending::before { background: #F97316; }
+
+    /* Activity Feed */
+    .activity-feed {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .activity-item {
+      display: flex;
+      gap: 16px;
+      position: relative;
+    }
+    .activity-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 32px;
+      bottom: -20px;
+      width: 2px;
+      background: #E5E7EB;
+    }
+    .activity-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #F3F4F6;
+      display: grid;
+      place-items: center;
+      color: #6B7280;
+      z-index: 1;
+    }
+    .activity-content h4 {
+      margin: 0 0 4px 0;
+      font-size: 14px;
+      color: #111827;
+      font-weight: 600;
+    }
+    .activity-content p {
+      margin: 0;
+      font-size: 13px;
+      color: #6B7280;
+    }
+    .activity-time {
+      font-size: 12px;
+      color: #9CA3AF;
+      margin-top: 4px;
+    }
+
+    /* Tab switcher for admin views */
+    .admin-views > div {
+        display: none;
+    }
+    .admin-views > div.active {
+        display: block;
+    }
+  </style>
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="admin-logo" onclick="goToSlide(0)">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="#064E3B" />
+      </svg>
+      <div class="admin-logo-text">TGEB Admin</div>
+    </div>
+    <nav class="admin-nav">
+      <a class="admin-nav-item active" onclick="switchAdminView('dashboard', this)">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        Resumen General
+      </a>
+      <a class="admin-nav-item" onclick="switchAdminView('users', this)">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        Usuarios y Permisos
+      </a>
+      <a class="admin-nav-item" onclick="switchAdminView('library', this)">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        Biblioteca y Socios
+      </a>
+      <a class="admin-nav-item" onclick="switchAdminView('settings', this)">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        Configuración de Sistema
+      </a>
+    </nav>
+    <div style="padding: 24px;">
+      <button class="btn-secondary" style="width: 100%; border-color: #E5E7EB; color:#4B5563;" onclick="goToSlide(5)">
+        ← Volver al Portal
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="admin-main">
+    <div class="admin-views">
+
+        <!-- DASHBOARD VIEW -->
+        <div id="admin-view-dashboard" class="active">
+            <div class="admin-header">
+                <div class="admin-title">
+                    <h1>Resumen del Sistema</h1>
+                    <p id="admin-date-display">Cargando fecha...</p>
+                </div>
+                <div class="admin-actions">
+                    <div class="admin-search">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                        <input type="text" placeholder="Buscar reportes o usuarios...">
+                    </div>
+                    <button class="admin-btn">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        Generar Reporte
+                    </button>
+                </div>
+            </div>
+
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-title">Usuarios Totales</div>
+                        <div class="kpi-icon bg-blue"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
+                    </div>
+                    <div class="kpi-value">1,245</div>
+                    <div class="kpi-trend trend-up">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                        +12% vs mes anterior
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-title">Simulaciones (Mes)</div>
+                        <div class="kpi-icon bg-green"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
+                    </div>
+                    <div class="kpi-value">8,432</div>
+                    <div class="kpi-trend" style="color: #6B7280;">
+                        Promedio 280/día
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-title">Empresas / Socios</div>
+                        <div class="kpi-icon bg-purple"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg></div>
+                    </div>
+                    <div class="kpi-value">128</div>
+                    <div class="kpi-trend trend-up">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                        +5 nuevas este mes
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <div class="kpi-title">Estado de Servidor</div>
+                        <div class="kpi-icon bg-orange"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg></div>
+                    </div>
+                    <div class="kpi-value" style="font-size: 24px; color: #10B981; display:flex; align-items:center; gap:8px;">
+                        <span style="width:12px; height:12px; background:#10B981; border-radius:50%; box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);"></span>
+                        Operacional
+                    </div>
+                    <div class="kpi-trend" style="color: #6B7280;">
+                        Latencia: 24ms (Media)
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-content-layout">
+                <div class="admin-panel">
+                    <div class="panel-header">
+                        <h2 class="panel-title">Actividad Reciente</h2>
+                        <a href="#" style="color: #064E3B; font-size: 13px; font-weight: 600; text-decoration: none;">Ver todo</a>
+                    </div>
+                    <div class="activity-feed">
+                        <div class="activity-item">
+                            <div class="activity-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg></div>
+                            <div class="activity-content">
+                                <h4>Admin Carlos subió nueva Matriz Excel</h4>
+                                <p>📑 Matriz_Eficiencia_2024-Q3.xlsx</p>
+                                <div class="activity-time">Hace 2 horas</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon bg-green"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
+                            <div class="activity-content">
+                                <h4>Nueva cuenta de Empresa Registrada</h4>
+                                <p>🏢 Constructora Sustentable del Norte S.A.</p>
+                                <div class="activity-time">Hace 5 horas</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon bg-blue"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></div>
+                            <div class="activity-content">
+                                <h4>Generación de reporte masivo</h4>
+                                <p>📊 Reporte de Simulaciones Mensuales - Mayo 2024</p>
+                                <div class="activity-time">Ayer, 18:45</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-panel" style="background: #064E3B; color: white;">
+                    <h2 class="panel-title" style="color: white; margin-bottom: 8px;">Control Rápido</h2>
+                    <p style="font-size: 13px; color: #A7F3D0; margin-bottom: 24px;">Acciones administrativas directas</p>
+
+                    <div style="background: rgba(255,255,255,0.1); padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                        <h4 style="margin: 0 0 8px 0; font-size: 14px;">Modo Mantenimiento</h4>
+                        <p style="margin: 0 0 12px 0; font-size: 12px; color: #D1FAE5;">Desactiva el simulador temporalmente y muestra pantalla de mantenimiento a usuarios.</p>
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="checkbox" style="width:16px; height:16px; accent-color:#10B981;">
+                            <span style="font-size: 13px; font-weight: 600;">Activar Modo Mantenimiento</span>
+                        </label>
+                    </div>
+
+                    <button style="width: 100%; padding: 12px; background: white; color: #064E3B; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 16px;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                        Forzar Sincronización CFE
+                    </button>
+
+                    <div style="font-size: 12px; color: #A7F3D0; display: flex; gap: 8px;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                        Última sincronización real de tarifas: Hoy a las 02:00 AM
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- USERS VIEW -->
+        <div id="admin-view-users">
+            <div class="admin-header">
+                <div class="admin-title">
+                    <h1>Gestión de Usuarios</h1>
+                    <p>Administra accesos y permisos de la plataforma</p>
+                </div>
+                <div class="admin-actions">
+                    <button class="admin-btn">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        Nuevo Usuario (Invitación)
+                    </button>
+                </div>
+            </div>
+
+            <div class="admin-panel" style="padding: 0; overflow: hidden;">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Usuario</th>
+                            <th>Email</th>
+                            <th>Rol</th>
+                            <th>Estado</th>
+                            <th>Contratos</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <div class="user-avatar" style="background: #FECACA; color: #DC2626;">A</div>
+                                    <div>
+                                        <div style="font-weight: 600; color: #111827;">Alejandro Martínez</div>
+                                        <div style="font-size: 12px; color: #6B7280;">ID: USR-001</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>a.martinez@energy.com</td>
+                            <td><span style="font-weight:600; color: #064E3B;">Administrador</span></td>
+                            <td><span class="status-badge status-active">Activo</span></td>
+                            <td>--</td>
+                            <td>
+                                <button style="background:none; border:none; color:#6B7280; cursor:pointer;" title="Editar"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <div class="user-avatar" style="background: #D1FAE5; color: #047857;">E</div>
+                                    <div>
+                                        <div style="font-weight: 600; color: #111827;">Elena Rodríguez</div>
+                                        <div style="font-size: 12px; color: #6B7280;">ID: USR-089</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>elena.rod@tgeb.org</td>
+                            <td>Especialista / Analista</td>
+                            <td><span class="status-badge status-active">Activo</span></td>
+                            <td>--</td>
+                            <td>
+                                <button style="background:none; border:none; color:#6B7280; cursor:pointer;"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-cell">
+                                    <div class="user-avatar" style="background: #E0E7FF; color: #4338CA;">J</div>
+                                    <div>
+                                        <div style="font-weight: 600; color: #111827;">Javier Rivera</div>
+                                        <div style="font-size: 12px; color: #6B7280;">ID: USR-210</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>jrivera@sustents.cl</td>
+                            <td>Cliente Final</td>
+                            <td><span class="status-badge status-pending">Inactivo / Pendiente</span></td>
+                            <td>2 Proyectos</td>
+                            <td>
+                                <button style="background:none; border:none; color:#6B7280; cursor:pointer;"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- LIBRARY VIEW -->
+        <div id="admin-view-library">
+            <div class="admin-header">
+                <div class="admin-title">
+                    <h1>Biblioteca y Anunciantes</h1>
+                    <p>Administra catálogos, certificaciones y empresas asociadas</p>
+                </div>
+            </div>
+            <div style="padding: 40px; text-align: center; background: white; border-radius: 12px; border: 1px dashed #D1D5DB; color: #6B7280;">
+                <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom:16px; color:#9CA3AF;"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                <h3>Módulo en construcción</h3>
+                <p>Aquí se listarán todos los catálogos PDF y empresas (como SolarTech Global) aprobadas en la plataforma.</p>
+            </div>
+        </div>
+
+        <!-- SETTINGS VIEW -->
+        <div id="admin-view-settings">
+            <div class="admin-header">
+                <div class="admin-title">
+                    <h1>Configuración General</h1>
+                </div>
+            </div>
+            <div style="padding: 40px; text-align: center; background: white; border-radius: 12px; border: 1px dashed #D1D5DB; color: #6B7280;">
+                <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom:16px; color:#9CA3AF;"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                <h3>Ajustes del Sistema</h3>
+                <p>Opciones de base de datos, API Keys de proveedores, y logs del servidor.</p>
+            </div>
+        </div>
+
+    </div>
+  </main>
+
+  <script>
+    function switchAdminView(viewId, element) {
+        // Update active class on nav items
+        document.querySelectorAll('.admin-nav-item').forEach(el => el.classList.remove('active'));
+        if(element) element.classList.add('active');
+
+        // Update views
+        document.querySelectorAll('.admin-views > div').forEach(el => el.classList.remove('active'));
+        document.getElementById('admin-view-' + viewId).classList.add('active');
+    }
+
+    // Auto update date
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateStr = new Date().toLocaleDateString('es-ES', options);
+    document.getElementById('admin-date-display').innerText = dateStr.charAt(0).toUpperCase() + dateStr.slice(1);
+  </script>
+</div>
