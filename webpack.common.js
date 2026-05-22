@@ -13,8 +13,7 @@ module.exports = {
     rules: [
       {
         test: /\.html$/i,
-        exclude: /index\.html$/,
-        type: 'asset/source',
+        loader: 'html-loader', // Use html-loader for all HTML files
       },
     ],
   },

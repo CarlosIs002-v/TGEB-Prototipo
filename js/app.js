@@ -2,13 +2,19 @@ window.goToSlide = goToSlide;
 window.nextSlide = nextSlide;
 window.prevSlide = prevSlide;
 window.switchAuthTab = switchAuthTab;
+window.handleLogin = handleLogin;
 
 let currSlide = 0;
-const totalSlides = 12;
+const totalSlides = 14; // Aumentado para incluir hasta slide-13
 
 function goToSlide(n) {
     document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
-    document.getElementById('slide-' + n).classList.add('active');
+
+    const targetSlide = document.getElementById('slide-' + n);
+    if(targetSlide) {
+        targetSlide.classList.add('active');
+    }
+
     currSlide = n;
 
     // Sincronizar el men superior activo
@@ -38,6 +44,25 @@ function switchAuthTab(mode) {
     document.getElementById('tab-register').classList.toggle('active', mode === 'register');
     document.getElementById('view-login').style.display = mode === 'login' ? 'block' : 'none';
     document.getElementById('view-register').style.display = mode === 'register' ? 'block' : 'none';
+}
+
+function handleLogin() {
+    const emailInput = document.getElementById('login-email');
+    const passwordInput = document.getElementById('login-password');
+
+    if(emailInput && passwordInput) {
+        const email = emailInput.value.trim();
+        const password = passwordInput.value;
+
+        // Mock Administrator login
+        if(email === 'admin@tgeb.com' && password === 'admin123') {
+            goToSlide(13); // Ir al panel de administrador
+        } else {
+            goToSlide(5); // Usuario normal va a sus proyectos
+        }
+    } else {
+        goToSlide(5);
+    }
 }
 
 window.toggleFaq = function (btn) {
@@ -129,6 +154,7 @@ window.saveUserSettings = function (event) {
     });
 
 
+    let message = '';
     if (newPass) message += `\nContraseña actualizada correctamente.`;
 
 
@@ -141,9 +167,11 @@ window.saveUserSettings = function (event) {
 };
 
 // Cerrar al hacer clic fuera del modal
-userModal.onclick = (e) => {
-    if (e.target === userModal) closeUserSettings();
-};
+if(userModal) {
+    userModal.onclick = (e) => {
+        if (e.target === userModal) closeUserSettings();
+    };
+}
 
 document.addEventListener('click', function (e) {
     if (e.target && e.target.id === 'strategyModal') {
