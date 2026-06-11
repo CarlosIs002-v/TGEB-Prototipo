@@ -3,11 +3,20 @@ window.nextSlide = nextSlide;
 window.prevSlide = prevSlide;
 window.switchAuthTab = switchAuthTab;
 window.handleLogin = handleLogin;
+window.handleRegister = handleRegister;
+window.mockLogin = mockLogin;
+window.mockLogout = mockLogout;
+window.mockRegister = mockRegister;
 
 let currSlide = 0;
-const totalSlides = 14; // Aumentado para incluir hasta slide-13
+const totalSlides = 14; 
 
 function goToSlide(n) {
+    const isAuth = sessionStorage.getItem('tgeb_auth') === 'true';
+    if (!isAuth && n !== 1) {
+        n = 1; // Fuerza la vista de login si no hay sesión
+    }
+
     document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
 
     const targetSlide = document.getElementById('slide-' + n);
@@ -17,7 +26,7 @@ function goToSlide(n) {
 
     currSlide = n;
 
-    // Sincronizar el men superior activo
+    // Sincronizar el menú superior activo
     document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
     if (n === 0) document.querySelectorAll('.nav-inicio').forEach(a => a.classList.add('active'));
     if (n === 8 || (n >= 2 && n <= 4)) document.querySelectorAll('.nav-simulador').forEach(a => a.classList.add('active'));
@@ -50,18 +59,122 @@ function handleLogin() {
     const emailInput = document.getElementById('login-email');
     const passwordInput = document.getElementById('login-password');
 
-    if(emailInput && passwordInput) {
+    if (emailInput && passwordInput) {
         const email = emailInput.value.trim();
         const password = passwordInput.value;
+        window.mockLogin(email, password);
+    }
+}
 
-        // Mock Administrator login
-        if(email === 'admin@tgeb.com' && password === 'admin123') {
-            goToSlide(13); // Ir al panel de administrador
-        } else {
-            goToSlide(5); // Usuario normal va a sus proyectos
-        }
+function handleRegister() {
+    const nameInput = document.getElementById('register-name');
+    const emailInput = document.getElementById('register-email');
+    const passwordInput = document.getElementById('register-password');
+
+    const name = nameInput ? nameInput.value.trim() : '';
+    const email = emailInput ? emailInput.value.trim() : '';
+    const password = passwordInput ? passwordInput.value : '';
+
+    if (!name || !email || !password) {
+        alert('Por favor, completa todos los campos.');
+        return;
+    }
+
+    window.mockRegister(name, email, password);
+}
+
+function mockLogin(email, password) {
+    if (email === 'osvaldo@jasoenergy.com' && password === 'OsvaldoSolorio') {
+        sessionStorage.setItem('tgeb_auth', 'true');
+        sessionStorage.setItem('tgeb_user_name', 'Osvaldo Solorio');
+        sessionStorage.setItem('tgeb_user_email', email);
+        updateAuthUI();
+        goToSlide(0); // Redirigir a Landing Page
+        return true;
+    } else if (email === 'admin@tgeb.com' && password === 'admin123') {
+        sessionStorage.setItem('tgeb_auth', 'true');
+        sessionStorage.setItem('tgeb_user_name', 'Administrador');
+        sessionStorage.setItem('tgeb_user_email', email);
+        updateAuthUI();
+        goToSlide(13); // Redirigir a Panel de Administrador
+        return true;
     } else {
-        goToSlide(5);
+        alert('Credenciales incorrectas.\n\nPara iniciar sesión usa:\nCorreo: osvaldo@jasoenergy.com\nContraseña: OsvaldoSolorio');
+        return false;
+    }
+}
+
+function mockRegister(name, email, password) {
+    sessionStorage.setItem('tgeb_auth', 'true');
+    sessionStorage.setItem('tgeb_user_name', name || 'Osvaldo Solorio');
+    sessionStorage.setItem('tgeb_user_email', email || 'osvaldo@jasoenergy.com');
+    updateAuthUI();
+    goToSlide(0); // Redirigir a Landing Page
+}
+
+function mockLogout() {
+    sessionStorage.removeItem('tgeb_auth');
+    sessionStorage.removeItem('tgeb_user_name');
+    sessionStorage.removeItem('tgeb_user_email');
+    
+    // Limpiar campos de login
+    const emailInput = document.getElementById('login-email');
+    const passwordInput = document.getElementById('login-password');
+    if (emailInput) emailInput.value = '';
+    if (passwordInput) passwordInput.value = '';
+
+    updateAuthUI();
+    goToSlide(1); // Redirigir a Login
+}
+
+function updateAuthUI() {
+    const isAuth = sessionStorage.getItem('tgeb_auth') === 'true';
+    const name = sessionStorage.getItem('tgeb_user_name') || 'Osvaldo Solorio';
+    const initial = name.charAt(0).toUpperCase();
+
+    // Ocultar cabecera en el login (slide-1)
+    const loginHeader = document.querySelector('#slide-1 .app-header');
+    if (loginHeader) {
+        loginHeader.style.display = 'none';
+    }
+
+    // Actualizar avatares en todos los slides
+    document.querySelectorAll('.avatar').forEach(av => {
+        if (!av.style.backgroundImage) {
+            av.innerText = initial;
+        }
+    });
+
+    // Actualizar contenedor de cabecera en Landing Page (slide-0)
+    const authContainer = document.getElementById('auth-header-container');
+    if (authContainer) {
+        if (isAuth) {
+            authContainer.innerHTML = `
+                <div class="user-controls" style="display: flex; gap: 1rem; align-items: center;">
+                    <div class="avatar" onclick="openUserSettings()" style="cursor: pointer; width: 40px; height: 40px; border-radius: 12px; background-color: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1rem; box-shadow: 0 4px 12px rgba(6, 78, 59, 0.15);">${initial}</div>
+                    <button class="btn-outline" onclick="mockLogout()" style="padding: 10px 20px; border-radius: 12px; cursor: pointer; font-size: 14px; font-weight: 700; background: transparent; border: 1.5px solid var(--primary); color: var(--primary);">Salir</button>
+                </div>
+            `;
+        } else {
+            authContainer.innerHTML = `
+                <a onclick="switchAuthTab('login'); goToSlide(1);" class="nav__link" style="cursor: pointer; font-weight: 600;">Entrar</a>
+                <a onclick="switchAuthTab('register'); goToSlide(1);" class="nav__cta" style="cursor: pointer;">Registrarse</a>
+            `;
+        }
+    }
+
+    // Actualizar modal de configuración de usuario
+    const userNameDisplay = document.getElementById('userNameDisplay');
+    if (userNameDisplay) {
+        userNameDisplay.innerText = name;
+    }
+    const editNameInput = document.getElementById('editName');
+    if (editNameInput) {
+        editNameInput.value = name;
+    }
+    const editEmailInput = document.getElementById('editEmail');
+    if (editEmailInput) {
+        editEmailInput.value = sessionStorage.getItem('tgeb_user_email') || 'osvaldo@jasoenergy.com';
     }
 }
 
@@ -117,7 +230,6 @@ window.handleAvatarChange = function (event) {
         const reader = new FileReader();
         reader.onload = function (e) {
             document.getElementById('userAvatarPreview').src = e.target.result;
-            // También actualizar los avatares en la app (opcional para el prototipo)
             document.querySelectorAll('.avatar').forEach(av => {
                 av.style.backgroundImage = `url(${e.target.result})`;
                 av.style.backgroundSize = 'cover';
@@ -147,17 +259,16 @@ window.saveUserSettings = function (event) {
         }
     }
 
+    // Guardar en sessionStorage
+    sessionStorage.setItem('tgeb_user_name', newName);
+    sessionStorage.setItem('tgeb_user_email', newEmail);
+
     // Actualizar UI
-    document.getElementById('userNameDisplay').innerText = newName;
-    document.querySelectorAll('.avatar').forEach(av => {
-        if (!av.style.backgroundImage) av.innerText = newName.charAt(0).toUpperCase();
-    });
+    updateAuthUI();
 
-
-    let message = '';
+    let message = 'Perfil actualizado correctamente.';
     if (newPass) message += `\nContraseña actualizada correctamente.`;
-
-
+    alert(message);
 
     // Limpiar campos de contraseña
     document.getElementById('editPass').value = '';
@@ -188,5 +299,7 @@ scrollStyles.innerHTML = `
 `;
 document.head.appendChild(scrollStyles);
 
-// Inicializar en Landing
-goToSlide(0);
+// Inicializar en base a la sesión
+updateAuthUI();
+const isAuthInit = sessionStorage.getItem('tgeb_auth') === 'true';
+goToSlide(isAuthInit ? 0 : 1);

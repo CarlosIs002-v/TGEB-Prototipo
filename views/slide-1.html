@@ -48,20 +48,20 @@
 
         <div class="field" style="margin-top: 24px;">
           <label>Nombre completo</label>
-          <div class="input-wrap"><input type="text" placeholder="Tu nombre"></div>
+          <div class="input-wrap"><input id="register-name" type="text" placeholder="Tu nombre"></div>
         </div>
         <div class="field">
           <label>Correo electrónico</label>
-          <div class="input-wrap"><input type="email" placeholder="tu@correo.com"></div>
+          <div class="input-wrap"><input id="register-email" type="email" placeholder="tu@correo.com"></div>
         </div>
         <div class="field">
           <label>Contraseña</label>
-          <div class="input-wrap"><input type="password" placeholder="Mínimo 8 caracteres"></div>
+          <div class="input-wrap"><input id="register-password" type="password" placeholder="Mínimo 8 caracteres"></div>
         </div>
         <div class="field">
           <label>Sector de interés</label>
           <div class="input-wrap">
-            <select>
+            <select id="register-sector">
               <option>Selecciona tu sector</option>
               <option>Energía Solar</option>
               <option>Construcción Verde</option>
@@ -69,7 +69,7 @@
             </select>
           </div>
         </div>
-        <button class="btn-primary" onclick="goToSlide(5)" style="margin-top: 20px;">Crear mi cuenta</button>
+        <button class="btn-primary" onclick="handleRegister()" style="margin-top: 20px;">Crear mi cuenta</button>
       </div>
     </div>
   </div>
