@@ -1,4 +1,4 @@
-﻿<div class="slide" id="slide-7">
+<div class="slide" id="slide-7">
   <header class="app-header" style="background: white; position: relative; z-index: 10;">
     <a class="nav-logo" style="cursor:pointer;" onclick="goToSlide(0)">
       <div class="nav-logo-icon">
@@ -162,30 +162,30 @@
                 </span>
                 <span class="sp-meta-item">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                  Desde 2015
+                  <span id="sp-hero-founded">Desde 2015</span>
                 </span>
               </div>
             </div>
             <div class="sp-hero-right">
-              <div class="sp-hero-banner" style="background: linear-gradient(135deg, rgba(6,78,59,0.15) 0%, rgba(6,78,59,0.05) 100%);">
-                <div class="sp-hero-banner-overlay">
+              <div class="sp-hero-banner" id="sp-hero-banner" style="background: linear-gradient(135deg, rgba(6,78,59,0.15) 0%, rgba(6,78,59,0.05) 100%);">
+                <div class="sp-hero-banner-overlay" id="sp-hero-banner-overlay">
                   <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(6,78,59,0.3)" stroke-width="1"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- B. KPIs ROW (Solo 2 tarjetas) -->
+          <!-- B. KPIs ROW -->
           <div class="sp-kpi-row">
             <div class="sp-kpi-card">
               <div class="sp-kpi-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
               </div>
               <div class="sp-kpi-data">
-                <span class="sp-kpi-number">0.0</span>
+                <span class="sp-kpi-number" id="sp-kpi-rating">0.0</span>
                 <span class="sp-kpi-label">Calificación promedio</span>
-                <div class="sp-stars">★★★★★</div>
-                <span class="sp-kpi-sub">(128 evaluaciones)</span>
+                <div class="sp-stars" id="sp-kpi-stars">★★★★★</div>
+                <span class="sp-kpi-sub" id="sp-kpi-reviews">(128 evaluaciones)</span>
               </div>
             </div>
             <div class="sp-kpi-card">
@@ -193,170 +193,54 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
               </div>
               <div class="sp-kpi-data">
-                <span class="sp-kpi-number">0</span>
+                <span class="sp-kpi-number" id="sp-kpi-visits">0</span>
                 <span class="sp-kpi-label">Visitas al perfil</span>
-                <span class="sp-kpi-growth">↑ 5% <small>últimos 30 días</small></span>
+                <span class="sp-kpi-growth" id="sp-kpi-growth">↑ 5% <small>últimos 30 días</small></span>
               </div>
             </div>
           </div>
 
-          <!-- C. PRODUCTOS + NOVEDADES -->
-          <div class="sp-dual-row">
-            <!-- Productos destacados -->
-            <div class="sp-section-card">
-              <div class="sp-section-header">
-                <h3>Productos destacados en simulaciones TGEB</h3>
-                <a href="#" class="sp-link-small">Ver todos</a>
-              </div>
-              <div class="sp-products-grid">
-                <div class="sp-product-item">
-                  <div class="sp-product-thumb">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
-                  </div>
-                  <span class="sp-product-name">Panel Solar</span>
-                  <span class="sp-product-model">SMX-550W</span>
-                  <span class="sp-product-spec">550 W</span>
-                </div>
-                <div class="sp-product-item">
-                  <div class="sp-product-thumb">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><circle cx="12" cy="16" r="2"/></svg>
-                  </div>
-                  <span class="sp-product-name">Inversor</span>
-                  <span class="sp-product-model">SMX-80K</span>
-                  <span class="sp-product-spec">60 kW</span>
-                </div>
-                <div class="sp-product-item">
-                  <div class="sp-product-thumb">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="1.5"><path d="M4 21V7l8-5 8 5v14"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="12" y1="2" x2="12" y2="21"/></svg>
-                  </div>
-                  <span class="sp-product-name">Estructura</span>
-                  <span class="sp-product-model">SMX-AL-01</span>
-                  <span class="sp-product-spec">Aluminio</span>
-                </div>
-                <div class="sp-product-item">
-                  <div class="sp-product-thumb">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="1.5"><rect x="6" y="4" width="12" height="16" rx="2"/><line x1="10" y1="4" x2="10" y2="20"/><line x1="14" y1="4" x2="14" y2="20"/><path d="M6 8h12"/><path d="M6 16h12"/></svg>
-                  </div>
-                  <span class="sp-product-name">Batería</span>
-                  <span class="sp-product-model">SMX-10KWH</span>
-                  <span class="sp-product-spec">18.4 kWh</span>
-                </div>
-                <div class="sp-product-item">
-                  <div class="sp-product-thumb">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                  </div>
-                  <span class="sp-product-name">Cargador EV</span>
-                  <span class="sp-product-model">SMG-3.4KW</span>
-                  <span class="sp-product-spec">7.4 kW</span>
-                </div>
-              </div>
+          <!-- C. PRODUCTOS DESTACADOS (Ancho completo) -->
+          <div class="sp-section-card" style="margin-bottom: 24px;">
+            <div class="sp-section-header">
+              <h3>Productos destacados en simulaciones TGEB</h3>
+              <a href="#" class="sp-link-small">Ver todos</a>
             </div>
-
-            <!-- Novedades -->
-            <div class="sp-section-card">
-              <div class="sp-section-header">
-                <h3>Novedades y Lanzamientos</h3>
-                <a href="#" class="sp-link-small">Ver todos</a>
-              </div>
-              <div class="sp-news-feed">
-                <div class="sp-news-item">
-                  <div class="sp-news-icon sp-news-icon--launch">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 3 0 3 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-3 0-3"/></svg>
-                  </div>
-                  <div class="sp-news-content">
-                    <span class="sp-news-date">22 de 2024</span>
-                    <p class="sp-news-title">Lanzamiento Inversor SMX-120K - Nuevas capacidades de potencia.</p>
-                  </div>
-                </div>
-                <div class="sp-news-item">
-                  <div class="sp-news-icon sp-news-icon--video">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-                  </div>
-                  <div class="sp-news-content">
-                    <span class="sp-news-date">15 de 2024</span>
-                    <p class="sp-news-title">Webinar: Optimización Fotovoltaica 2024 - Registro abierto.</p>
-                  </div>
-                </div>
-                <div class="sp-news-item">
-                  <div class="sp-news-icon sp-news-icon--update">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                  </div>
-                  <div class="sp-news-content">
-                    <span class="sp-news-date">23 de 2024</span>
-                    <p class="sp-news-title">Actualización: Nuevas Garantías SMX - Mayor cobertura y rapidez.</p>
-                  </div>
-                </div>
-              </div>
+            <div class="sp-products-grid" id="sp-products-grid">
+              <!-- Se carga dinámicamente -->
             </div>
           </div>
 
-          <!-- D. CERTIFICACIONES + CASOS DE ÉXITO -->
-          <div class="sp-dual-row">
-            <!-- Certificaciones -->
-            <div class="sp-section-card">
-              <div class="sp-section-header">
-                <h3>Certificaciones y cumplimiento</h3>
-                <a href="#" class="sp-link-small">Ver todos</a>
-              </div>
-              <div class="sp-certs-grid">
-                <div class="sp-cert-item">
-                  <div class="sp-cert-logo">UL</div>
-                  <span>CERTIFIED</span>
-                </div>
-                <div class="sp-cert-item">
-                  <div class="sp-cert-logo">IEC</div>
-                  <span>IEC 61215</span>
-                </div>
-                <div class="sp-cert-item">
-                  <div class="sp-cert-logo">NOM</div>
-                  <span>NOM-001-SEDE</span>
-                </div>
-                <div class="sp-cert-item">
-                  <div class="sp-cert-logo">ISO</div>
-                  <span>ISO 9001:2025</span>
-                </div>
-                <div class="sp-cert-item">
-                  <div class="sp-cert-logo">CFE</div>
-                  <span>Interconexión</span>
-                </div>
-                <div class="sp-cert-item">
-                  <div class="sp-cert-logo">✓</div>
-                  <span>Cumplimiento</span>
-                </div>
-              </div>
+          <!-- D. CERTIFICACIONES (Ancho completo) -->
+          <div class="sp-section-card" style="margin-bottom: 24px;">
+            <div class="sp-section-header">
+              <h3>Certificaciones y cumplimiento</h3>
+              <a href="#" class="sp-link-small">Ver todos</a>
             </div>
-
-            <!-- Casos de éxito -->
-            <div class="sp-section-card">
-              <div class="sp-section-header">
-                <h3>Casos de éxito</h3>
-                <a href="#" class="sp-link-small">Ver todos</a>
+            <div class="sp-certs-grid" id="sp-certs-grid">
+              <div class="sp-cert-item">
+                <div class="sp-cert-logo">UL</div>
+                <span>CERTIFIED</span>
               </div>
-              <div class="sp-cases-grid">
-                <div class="sp-case-item">
-                  <div class="sp-case-thumb" style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9);">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                  </div>
-                  <span class="sp-case-name">Hotel Cancún</span>
-                  <span class="sp-case-location">Cancún, Q. Roo</span>
-                  <span class="sp-case-power">507 MWp</span>
-                </div>
-                <div class="sp-case-item">
-                  <div class="sp-case-thumb" style="background: linear-gradient(135deg, #e3f2fd, #bbdefb);">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M12 7V3"/><path d="M8 7V5"/><path d="M16 7V5"/></svg>
-                  </div>
-                  <span class="sp-case-name">Nave Industrial</span>
-                  <span class="sp-case-location">Monterrey, NL</span>
-                  <span class="sp-case-power">1.2 MWp</span>
-                </div>
-                <div class="sp-case-item">
-                  <div class="sp-case-thumb" style="background: linear-gradient(135deg, #fff3e0, #ffe0b2);">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="1.5"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/></svg>
-                  </div>
-                  <span class="sp-case-name">Plaza Comercial</span>
-                  <span class="sp-case-location">Guadalajara, Jal.</span>
-                  <span class="sp-case-power">300 MWp</span>
-                </div>
+              <div class="sp-cert-item">
+                <div class="sp-cert-logo">IEC</div>
+                <span>IEC 61215</span>
+              </div>
+              <div class="sp-cert-item">
+                <div class="sp-cert-logo">NOM</div>
+                <span>NOM-001-SEDE</span>
+              </div>
+              <div class="sp-cert-item">
+                <div class="sp-cert-logo">ISO</div>
+                <span>ISO 9001:2025</span>
+              </div>
+              <div class="sp-cert-item">
+                <div class="sp-cert-logo">CFE</div>
+                <span>Interconexión</span>
+              </div>
+              <div class="sp-cert-item">
+                <div class="sp-cert-logo">✓</div>
+                <span>Cumplimiento</span>
               </div>
             </div>
           </div>
@@ -399,67 +283,27 @@
         <!-- ── COLUMNA DERECHA (1fr) ── -->
         <div class="sp-col-side">
 
-          <!-- A. MURO DE TESTIMONIOS -->
-          <div class="sp-section-card sp-testimonials-section">
-            <h3 class="sp-testimonials-title">Muro de Testimonios Técnicos<br><small>(Peer-to-Peer)</small></h3>
-            <div class="sp-testimonials-stack">
-              <div class="sp-testimonial-card">
-                <div class="sp-testimonial-header">
-                  <div class="sp-testimonial-avatar">RL</div>
-                  <div>
-                    <span class="sp-testimonial-name">Ing. Roberto L.</span>
-                    <div class="sp-testimonial-rating">★★★★★ <strong>5.0</strong></div>
-                  </div>
-                </div>
-                <p class="sp-testimonial-text">Excelente soporte técnico durante la instalación. Muy eficiente.</p>
-                <span class="sp-testimonial-author">- Ing. Roberto L.</span>
-              </div>
-              <div class="sp-testimonial-card">
-                <div class="sp-testimonial-header">
-                  <div class="sp-testimonial-avatar">CM</div>
-                  <div>
-                    <span class="sp-testimonial-name">Arq. Carla M.</span>
-                    <div class="sp-testimonial-rating">★★★★★ <strong>5.0</strong></div>
-                  </div>
-                </div>
-                <p class="sp-testimonial-text">Inversores de alta durabilidad. Mis clientes están satisfechos.</p>
-                <span class="sp-testimonial-author">- Arq. Carla M.</span>
-              </div>
-              <div class="sp-testimonial-card">
-                <div class="sp-testimonial-header">
-                  <div class="sp-testimonial-avatar">MH</div>
-                  <div>
-                    <span class="sp-testimonial-name">Téc. Miguel H.</span>
-                    <div class="sp-testimonial-rating">★★★★★ <strong>5.0</strong></div>
-                  </div>
-                </div>
-                <p class="sp-testimonial-text">Mejora mi eficiencia y tiempos de diseño. Soporte de primer nivel. Garantías claras y rápidas. Fiable en el campo.</p>
-                <span class="sp-testimonial-author">- Ing. Silvia G.</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- B. CONTACTO A SOPORTE -->
+          <!-- CONTACTO A SOPORTE -->
           <div class="sp-section-card sp-contact-card">
             <h3 class="sp-contact-title">Contacto a Soporte</h3>
             <div class="sp-contact-profile">
-              <div class="sp-contact-avatar">AL</div>
+              <div class="sp-contact-avatar" id="sp-contact-avatar">AL</div>
               <div>
-                <span class="sp-contact-name">Andrea López</span>
-                <span class="sp-contact-role">Account Manager</span>
+                <span class="sp-contact-name" id="sp-contact-name">Andrea López</span>
+                <span class="sp-contact-role" id="sp-contact-role">Account Manager</span>
               </div>
             </div>
             <div class="sp-contact-details">
-              <a href="tel:+528112345378" class="sp-contact-link">
+              <a href="#" class="sp-contact-link" id="sp-contact-phone">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="#064E3B" stroke="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                +52 81 1234 5378
+                <span id="sp-contact-phone-text">+52 81 1234 5378</span>
               </a>
-              <a href="mailto:andrea.lopez2@tgeb.com" class="sp-contact-link">
+              <a href="#" class="sp-contact-link" id="sp-contact-email">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                andrea.lopez2@tgeb.com
+                <span id="sp-contact-email-text">andrea.lopez2@tgeb.com</span>
               </a>
             </div>
-            <button class="sp-cta-btn" onclick="alert('Función de contacto en desarrollo')">Contactar Soporte</button>
+            <button class="sp-cta-btn" id="sp-contact-btn">Contactar Soporte</button>
           </div>
 
         </div>
@@ -543,10 +387,10 @@
     }
 
     .sponsor-card__logo-wrap {
-      width: 56px;
+      width: 110px;
       height: 56px;
       border-radius: 12px;
-      background: var(--page-bg);
+      background: #ffffff;
       border: 1.5px solid var(--border);
       display: grid;
       place-items: center;
@@ -556,14 +400,13 @@
 
     .sponsor-card:hover .sponsor-card__logo-wrap {
       border-color: var(--primary-hover);
-      background: white;
     }
 
     .sponsor-card__logo-wrap img {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      padding: 8px;
+      padding: 6px 8px;
     }
 
     .sponsor-card__name {
@@ -922,15 +765,16 @@
     }
 
     .sp-hero-logo {
-      width: 64px;
+      width: 130px;
       height: 64px;
       border-radius: 14px;
-      background: #f0fdf4;
+      background: #ffffff;
       border: 1.5px solid #e2e8f0;
       display: grid;
       place-items: center;
       overflow: hidden;
       flex-shrink: 0;
+      padding: 4px 10px;
     }
 
     .sp-hero-name {
@@ -1241,7 +1085,7 @@
 
     .sp-certs-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 12px;
     }
 
@@ -1677,13 +1521,34 @@
     (function() {
       const sponsorsData = [
         {
-          id: 'longi',
-          nombre: 'LONGi Solar',
-          logo: 'https://placehold.co/200x200/f7f5f0/1e2d26?text=LONGi',
-          origen: 'China',
-          especialidad: 'Módulos fotovoltaicos monocristalinos de alta eficiencia.',
-          descripcion: 'LONGi es el líder mundial en tecnología solar, especializado en la fabricación de obleas y celdas monocristalinas que establecen estándares de eficiencia en la industria.',
-          tags: ['Energía Solar', 'I+D Avanzado', 'Escala Global']
+          id: 'ralux',
+          nombre: 'Ralux Solar®',
+          logo: '/img/Logotipos.jpg',
+          origen: 'Italia',
+          especialidad: ' Estructuras de montaje para proyectos fotovoltaicos.',
+          descripcion: 'Ralux Solar® es un fabricante italiano de estructuras de montaje para proyectos fotovoltaicos con importante presencia en Italia, Estados Unidos, México, Colombia y República Dominicana. Consolidada gracias a los muchos años de experiencia de sus ingenieros y al uso de maquinaria de última generación, Ralux Solar® ofrece soluciones técnicas de vanguardia para todas las instalaciones de escala residencial, comercial y de servicios públicos.',
+          tags: ['Energía Solar', 'I+D Avanzado', 'Escala Global'],
+          web: 'https://raluxsolar.com/',
+          fundado: 'Desde 2000',
+          calificacion: '4.9',
+          evaluaciones: '154',
+          visitas: '1,000',
+          growth: '↑ 8%',
+          banner: '/img/trabajos.jpg',
+          contacto: {
+            avatar: 'AL',
+            nombre: 'Support Team',
+            cargo: 'LATAM Account Manager',
+            tel: '+39 02 00 68 12 38',
+            email: 'sales@raluxsolar.com'
+          },
+          productos: [
+            { tipo: 'estructura', modelo: 'Ralux Ground Fit™', spec: 'Hincada / Acero Magnelis', nombre: 'Estructura de Suelo' },
+            { tipo: 'estructura', modelo: 'Ralux Roof Fit™', spec: 'Coplanar / Al AL6005-T5', nombre: 'Sistema sobre Techo' },
+            { tipo: 'estructura', modelo: 'Ralux Carport Fit™', spec: 'Diseño Modular / Acero Galv.', nombre: 'Carport Solar' },
+            { tipo: 'estructura', modelo: 'Ralux Tile Hook™', spec: 'Anclajes SUS304 Regulables', nombre: 'Estructura para Teja' },
+            { tipo: 'estructura', modelo: 'Ralux Tilt Fit™', spec: 'Triángulo Inclinado 10°-30°', nombre: 'Soporte Ajustable' }
+          ]
         },
         {
           id: 'canadian',
@@ -1692,7 +1557,28 @@
           origen: 'Canadá',
           especialidad: 'Soluciones solares integradas y almacenamiento BESS.',
           descripcion: 'Reconocida por su calidad superior, Canadian Solar ofrece desde paneles de alto rendimiento hasta sistemas complejos de almacenamiento de energía.',
-          tags: ['Almacenamiento', 'Infraestructura', 'Sostenibilidad']
+          tags: ['Almacenamiento', 'Infraestructura', 'Sostenibilidad'],
+          web: 'www.canadiansolar.com',
+          fundado: 'Desde 2001',
+          calificacion: '4.8',
+          evaluaciones: '112',
+          visitas: '1,950',
+          growth: '↑ 4%',
+          banner: '/img/solar_banner.png',
+          contacto: {
+            avatar: 'DC',
+            nombre: 'David Chen',
+            cargo: 'Sales Director México',
+            tel: '+52 55 9876 5432',
+            email: 'david.chen@canadiansolar.com'
+          },
+          productos: [
+            { tipo: 'panel', modelo: 'BiHiKu7', spec: '650 W', nombre: 'Panel Solar Bifacial' },
+            { tipo: 'bateria', modelo: 'EP Cube', spec: '19.9 kWh', nombre: 'Batería Residencial' },
+            { tipo: 'inversor', modelo: 'CSI-50K-T400', spec: '50 kW', nombre: 'Inversor Comercial' },
+            { tipo: 'panel', modelo: 'HiKu6', spec: '450 W', nombre: 'Panel Solar Mono' },
+            { tipo: 'bateria', modelo: 'SolBank', spec: '2.8 MWh', nombre: 'Almacenamiento Industrial' }
+          ]
         },
         {
           id: 'huawei',
@@ -1701,7 +1587,28 @@
           origen: 'China',
           especialidad: 'Inversores inteligentes y digitalización energética.',
           descripcion: 'Líder en la digitalización de la energía solar, Huawei integra IA para optimizar la generación y el consumo en plantas industriales y residenciales.',
-          tags: ['IA', 'Digitalización', 'Eficiencia']
+          tags: ['IA', 'Digitalización', 'Eficiencia'],
+          web: 'solar.huawei.com',
+          fundado: 'Desde 2013',
+          calificacion: '4.7',
+          evaluaciones: '215',
+          visitas: '3,420',
+          growth: '↑ 12%',
+          banner: '',
+          contacto: {
+            avatar: 'CR',
+            nombre: 'Carlos Ruiz',
+            cargo: 'Technical Solution Manager',
+            tel: '+52 55 4321 8765',
+            email: 'carlos.ruiz@huawei.com'
+          },
+          productos: [
+            { tipo: 'inversor', modelo: 'SUN2000-100KTL-M2', spec: '100 kW', nombre: 'Inversor Comercial' },
+            { tipo: 'bateria', modelo: 'LUNA2000-15-S0', spec: '15 kWh', nombre: 'Batería Residencial' },
+            { tipo: 'panel', modelo: 'MERC-600W-P', spec: '600 W', nombre: 'Optimizador Inteligente' },
+            { tipo: 'inversor', modelo: 'SUN2000-10KTL-M1', spec: '10 kW', nombre: 'Inversor Residencial' },
+            { tipo: 'inversor', modelo: 'SUN2000-330KTL', spec: '330 kW', nombre: 'Inversor Centralizado' }
+          ]
         },
         {
           id: 'fronius',
@@ -1710,7 +1617,28 @@
           origen: 'Austria',
           especialidad: 'Electrónica de potencia e inversores de alta gama.',
           descripcion: 'Con ingeniería europea de precisión, Fronius es sinónimo de durabilidad y conectividad inteligente para sistemas fotovoltaicos modernos.',
-          tags: ['Calidad Europea', 'Conectividad', 'Residencial']
+          tags: ['Calidad Europea', 'Conectividad', 'Residencial'],
+          web: 'www.fronius.com',
+          fundado: 'Desde 1945',
+          calificacion: '4.9',
+          evaluaciones: '198',
+          visitas: '2,210',
+          growth: '↑ 6%',
+          banner: '',
+          contacto: {
+            avatar: 'SM',
+            nombre: 'Sophie Mayer',
+            cargo: 'Technical Support Lead',
+            tel: '+52 81 8765 4321',
+            email: 'sophie.mayer@fronius.com'
+          },
+          productos: [
+            { tipo: 'inversor', modelo: 'Symo Advanced', spec: '24 kW', nombre: 'Inversor Trifásico' },
+            { tipo: 'cargador', modelo: 'Wattpilot Go 22J', spec: '22 kW', nombre: 'Cargador Inteligente EV' },
+            { tipo: 'inversor', modelo: 'Primo GEN24 Plus', spec: '6 kW', nombre: 'Inversor Híbrido' },
+            { tipo: 'inversor', modelo: 'Symo 15.0-3-M', spec: '15 kW', nombre: 'Inversor Comercial' },
+            { tipo: 'cargador', modelo: 'Smart Meter TS 65A', spec: 'Trifásico', nombre: 'Medidor Inteligente' }
+          ]
         }
       ];
 
@@ -1770,6 +1698,21 @@
         document.getElementById('content-catalogos').style.display = tab === 'catalogos' ? 'block' : 'none';
         document.getElementById('content-plan').style.display = tab === 'plan' ? 'block' : 'none';
       };
+
+      function getProductIcon(tipo) {
+        switch(tipo) {
+          case 'panel':
+            return `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>`;
+          case 'inversor':
+            return `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><circle cx="12" cy="16" r="2"/></svg>`;
+          case 'estructura':
+            return `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="1.5"><path d="M4 21V7l8-5 8 5v14"/><line x1="4" y1="10" x2="20" y2="10"/><line x1="12" y1="2" x2="12" y2="21"/></svg>`;
+          case 'bateria':
+            return `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="1.5"><rect x="6" y="4" width="12" height="16" rx="2"/><line x1="10" y1="4" x2="10" y2="20"/><line x1="14" y1="4" x2="14" y2="20"/><path d="M6 8h12"/><path d="M6 16h12"/></svg>`;
+          default:
+            return `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#064E3B" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>`;
+        }
+      }
 
       function render() {
         grid.innerHTML = sponsorsData.map(s => `
@@ -1854,11 +1797,77 @@
         const s = sponsorsData.find(x => x.id === id);
         if(!s) return;
 
+        // Breadcrumb y Títulos del Hero
         document.getElementById('sp-breadcrumb-name').textContent = s.nombre;
         document.getElementById('sp-hero-name').innerHTML = s.nombre + ' <svg width="18" height="18" viewBox="0 0 24 24" fill="#064E3B"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>';
         document.getElementById('sp-hero-desc').innerHTML = s.descripcion;
         document.getElementById('sp-hero-location').textContent = 'Sede: ' + s.origen;
+        
+        // Logo
+        document.getElementById('sp-hero-logo').innerHTML = `<img src="${s.logo}" alt="${s.nombre}" style="width: 100%; height: 100%; object-fit: contain; padding: 4px; border-radius: 8px;">`;
 
+        // Banner de trabajos realizados
+        const bannerEl = document.getElementById('sp-hero-banner');
+        const overlayEl = document.getElementById('sp-hero-banner-overlay');
+        if (s.banner) {
+          bannerEl.style.backgroundImage = `url('${s.banner}')`;
+          bannerEl.style.backgroundSize = 'cover';
+          bannerEl.style.backgroundPosition = 'center';
+          overlayEl.style.display = 'none'; // ocultar el sol svg
+        } else {
+          bannerEl.style.backgroundImage = 'linear-gradient(135deg, rgba(6,78,59,0.15) 0%, rgba(6,78,59,0.05) 100%)';
+          overlayEl.style.display = 'flex'; // mostrar el sol svg
+        }
+
+        // Sitio Web y Fundación
+        const webLink = document.getElementById('sp-hero-web');
+        if (webLink) {
+          webLink.textContent = s.web;
+          webLink.href = s.web.startsWith('http') ? s.web : 'https://' + s.web;
+        }
+        document.getElementById('sp-hero-founded').textContent = s.fundado;
+
+        // KPIs
+        document.getElementById('sp-kpi-rating').textContent = s.calificacion;
+        document.getElementById('sp-kpi-reviews').textContent = `(${s.evaluaciones} evaluaciones)`;
+        
+        // Rellenar estrellas según la calificación
+        const score = Math.round(parseFloat(s.calificacion));
+        document.getElementById('sp-kpi-stars').textContent = '★'.repeat(score) + '☆'.repeat(5 - score);
+
+        document.getElementById('sp-kpi-visits').textContent = s.visitas;
+        document.getElementById('sp-kpi-growth').innerHTML = `${s.growth} <small>últimos 30 días</small>`;
+
+        // Productos Destacados
+        document.getElementById('sp-products-grid').innerHTML = s.productos.map(p => `
+          <div class="sp-product-item">
+            <div class="sp-product-thumb">
+              ${getProductIcon(p.tipo)}
+            </div>
+            <span class="sp-product-name">${p.nombre}</span>
+            <span class="sp-product-model">${p.modelo}</span>
+            <span class="sp-product-spec">${p.spec}</span>
+          </div>
+        `).join('');
+
+        // Contacto Soporte
+        document.getElementById('sp-contact-avatar').textContent = s.contacto.avatar;
+        document.getElementById('sp-contact-name').textContent = s.contacto.nombre;
+        document.getElementById('sp-contact-role').textContent = s.contacto.cargo;
+        
+        const phoneLink = document.getElementById('sp-contact-phone');
+        phoneLink.href = `tel:${s.contacto.tel.replace(/\s+/g, '')}`;
+        document.getElementById('sp-contact-phone-text').textContent = s.contacto.tel;
+
+        const emailLink = document.getElementById('sp-contact-email');
+        emailLink.href = `mailto:${s.contacto.email}`;
+        document.getElementById('sp-contact-email-text').textContent = s.contacto.email;
+
+        document.getElementById('sp-contact-btn').onclick = () => {
+          alert(`Enviando mensaje de consulta a ${s.contacto.nombre} (${s.nombre}).`);
+        };
+
+        // Mostrar vista
         document.getElementById('library-main-view').style.display = 'none';
         document.getElementById('sponsor-profile-view').style.display = 'block';
         document.getElementById('slide-7').scrollTop = 0;
