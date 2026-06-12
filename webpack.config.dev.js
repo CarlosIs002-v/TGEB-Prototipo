@@ -7,13 +7,19 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   devServer: {
     liveReload: true,
-    hot: true,
+    hot: false,
     open: true,
-    static: ['./'],
+    static: {
+      directory: './',
+      watch: {
+        ignored: ['**/node_modules/**', '**/dist/**', '**/.git/**'],
+      },
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html',
+      inject: 'body',
     }),
   ],
 });

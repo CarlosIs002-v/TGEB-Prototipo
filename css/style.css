@@ -778,6 +778,354 @@ body {
   margin-top: 12px;
 }
 
+/* ─── NEW PREMIUM LOGIN PAGE ─── */
+.login-page {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Left Brand Panel */
+.login-brand {
+  flex: 0 0 45%;
+  position: relative;
+  background: linear-gradient(160deg, #064E3B 0%, #0f766e 40%, #115e59 70%, #134e4a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  overflow: hidden;
+}
+
+.login-brand__bg-shapes {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.login-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.08;
+  background: white;
+}
+
+.login-shape--1 {
+  width: 500px;
+  height: 500px;
+  top: -150px;
+  right: -100px;
+  animation: loginFloat1 20s ease-in-out infinite;
+}
+
+.login-shape--2 {
+  width: 300px;
+  height: 300px;
+  bottom: -80px;
+  left: -60px;
+  animation: loginFloat2 25s ease-in-out infinite;
+}
+
+.login-shape--3 {
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: loginFloat3 18s ease-in-out infinite;
+}
+
+@keyframes loginFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, 30px) scale(1.05); }
+}
+
+@keyframes loginFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, -20px) scale(1.08); }
+}
+
+@keyframes loginFloat3 {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.06; }
+  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.12; }
+}
+
+.login-brand__content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 420px;
+}
+
+.login-brand__logo {
+  height: 70px;
+  margin-bottom: 40px;
+  filter: brightness(0) invert(1);
+}
+
+.login-brand__title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.login-brand__desc {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.75;
+  margin-bottom: 40px;
+}
+
+.login-brand__features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-brand__feature {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.login-brand__feature-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.login-brand__feature-icon svg {
+  color: #6ee7b7;
+}
+
+/* Right Form Panel */
+.login-form-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: var(--cream);
+  overflow-y: auto;
+}
+
+.login-form-wrapper {
+  width: 100%;
+  max-width: 440px;
+}
+
+.login-mobile-logo {
+  display: none;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* Tab Switcher */
+.login-tabs {
+  display: flex;
+  gap: 8px;
+  background: rgba(95, 138, 110, 0.08);
+  border-radius: 16px;
+  padding: 6px;
+  margin-bottom: 36px;
+}
+
+.login-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  background: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.login-tab:hover {
+  color: var(--ink-soft);
+}
+
+.login-tab.active {
+  background: white;
+  color: var(--primary);
+  box-shadow: 0 4px 16px rgba(6, 78, 59, 0.1);
+}
+
+.login-tab svg {
+  flex-shrink: 0;
+}
+
+/* Login Header */
+.login-header {
+  margin-bottom: 28px;
+}
+
+.login-header h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.login-header p {
+  font-size: 14px;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+
+/* Form Fields */
+.login-field {
+  margin-bottom: 20px;
+}
+
+.login-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+  letter-spacing: 0.01em;
+}
+
+.login-input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.login-input-icon {
+  position: absolute;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-muted);
+  pointer-events: none;
+  transition: color 0.2s;
+  z-index: 1;
+}
+
+.login-input-group input,
+.login-input-group select {
+  width: 100%;
+  height: 52px;
+  padding: 0 16px 0 48px;
+  border: 1.5px solid rgba(95, 138, 110, 0.2);
+  border-radius: 14px;
+  background: white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.login-input-group input::placeholder {
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+
+.login-input-group input:focus,
+.login-input-group select:focus {
+  border-color: var(--sage);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(95, 138, 110, 0.08);
+}
+
+.login-input-group:focus-within .login-input-icon {
+  color: var(--sage);
+}
+
+/* Login Button */
+.login-btn {
+  width: 100%;
+  height: 54px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #064E3B 0%, #0f766e 50%, #115e59 100%);
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 8px 24px rgba(6, 78, 59, 0.25);
+  letter-spacing: 0.02em;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(6, 78, 59, 0.35);
+  background: linear-gradient(135deg, #065f46 0%, #0d9488 50%, #0f766e 100%);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+/* Footer */
+.login-footer-text {
+  text-align: center;
+  font-size: 12px;
+  color: var(--ink-muted);
+  margin-top: 32px;
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .login-page {
+    flex-direction: column;
+  }
+
+  .login-brand {
+    flex: 0 0 auto;
+    padding: 40px 24px;
+    min-height: 200px;
+  }
+
+  .login-brand__title {
+    font-size: 24px;
+  }
+
+  .login-brand__features {
+    display: none;
+  }
+
+  .login-form-panel {
+    padding: 32px 24px;
+  }
+
+  .login-mobile-logo {
+    display: block;
+  }
+}
+
 /* =========================================
        SLIDE 2: MAPA DE MÉXICO
        ========================================= */
