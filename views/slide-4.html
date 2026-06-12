@@ -1,79 +1,189 @@
 <div class="slide" id="slide-4">
-  <header class="app-header" style="background: white; position: relative; z-index: 10;">
-    <a class="nav-logo" style="cursor:pointer;" onclick="goToSlide(0)">
-      
-      <div class="nav-logo-text"><img src="img/tgeb-logo.png" alt="TGEB" style="height: 60px; vertical-align: middle;"></div>
+  <header
+    class="app-header"
+    style="background: white; position: relative; z-index: 10"
+  >
+    <a class="nav-logo" style="cursor: pointer" onclick="goToSlide(0)">
+      <div class="nav-logo-text">
+        <img
+          src="img/tgeb-logo.png"
+          alt="TGEB"
+          style="height: 60px; vertical-align: middle"
+        />
+      </div>
     </a>
     <ul class="nav-links">
-      <li><a class="nav-inicio active" style="cursor:pointer;" onclick="goToSlide(0)">Inicio</a></li>
-      <li><a class="nav-simulador" style="cursor:pointer;" onclick="goToSlide(2)">Simulador</a></li>
-      <li><a class="nav-proyectos" style="cursor:pointer;" onclick="goToSlide(5)">Proyectos</a></li>
-
-      <li><a class="nav-biblioteca" style="cursor:pointer;" onclick="goToSlide(7)">Recursos</a></li>
-      <li><a class="nav-plan" style="cursor:pointer;" onclick="goToSlide(12)">Plan</a></li>
-      <li><a class="nav-ayuda" style="cursor:pointer;" onclick="goToSlide(6)">Ayuda</a></li>
+      <li>
+        <a
+          class="nav-inicio active"
+          style="cursor: pointer"
+          onclick="goToSlide(0)"
+          >Inicio</a
+        >
+      </li>
+      <li>
+        <a class="nav-simulador" style="cursor: pointer" onclick="goToSlide(2)"
+          >Simulador</a
+        >
+      </li>
+      <li>
+        <a class="nav-proyectos" style="cursor: pointer" onclick="goToSlide(5)"
+          >Proyectos</a
+        >
+      </li>
+      <li>
+        <a class="nav-biblioteca" style="cursor: pointer" onclick="goToSlide(7)"
+          >Recursos</a
+        >
+      </li>
+      <li>
+        <a class="nav-plan" style="cursor: pointer" onclick="goToSlide(12)"
+          >Plan</a
+        >
+      </li>
+      <li>
+        <a class="nav-ayuda" style="cursor: pointer" onclick="goToSlide(6)"
+          >Ayuda</a
+        >
+      </li>
     </ul>
     <div class="user-controls">
       <div class="bell">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        <svg
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
       </div>
       <div class="avatar" onclick="openUserSettings()">U</div>
     </div>
   </header>
-
   <div class="app-content">
     <h2 class="section-title">Resultados de Estrategia - Sombreado en Techo</h2>
-    <p class="section-subtitle">Tipo de edificio: Casa habitación | Ciudad: Seleccionada | Cobertura: 70%</p>
-
+    <p class="section-subtitle">
+      Tipo de edificio: Casa habitación | Ciudad: Seleccionada | Cobertura: 70%
+    </p>
     <div class="results-layout">
       <div class="res-left">
         <div class="res-image">🏡☀️</div>
-
         <div class="savings-box">
           <div class="save-item">
-            <h5>18.6%</h5><p>Ahorro de Energía</p>
+            <h5>18.6%</h5>
+            <p>Ahorro de Energía</p>
           </div>
           <div class="save-item">
-            <h5>18.3%</h5><p>Ahorro en Costo</p>
+            <h5>18.3%</h5>
+            <p>Ahorro en Costo</p>
           </div>
           <div class="save-item">
-            <h5>18.4%</h5><p>Reducción CO₂</p>
+            <h5>18.4%</h5>
+            <p>Reducción CO₂</p>
           </div>
         </div>
-
-        <p style="font-size: 14px; color: var(--ink-soft); line-height: 1.6; padding: 16px; background: var(--cream); border-radius: 12px; border: 1px solid var(--border);">
-          <strong>Sombreado en techo:</strong> Alargando aleros para proteger ventanas y terraza del sol, reduciendo la ganancia térmica y mejorando el confort interior.
+        <p
+          style="
+            font-size: 14px;
+            color: var(--ink-soft);
+            line-height: 1.6;
+            padding: 16px;
+            background: var(--cream);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+          "
+        >
+          <strong>Sombreado en techo:</strong> Alargando aleros para proteger
+          ventanas y terraza del sol, reduciendo la ganancia térmica y mejorando
+          el confort interior.
         </p>
       </div>
-
       <div class="res-right">
-        <h3 style="font-size: 18px; margin-bottom: 16px;">Impacto Energético</h3>
+        <h3 style="font-size: 18px; margin-bottom: 16px">Impacto Energético</h3>
         <table class="data-table">
           <thead>
-          <tr><th>Fuente</th><th>Indicador</th><th>Sin sombreado</th><th>Con estrategia</th><th>Ahorro</th></tr>
+            <tr>
+              <th>Fuente</th>
+              <th>Indicador</th>
+              <th>Sin sombreado</th>
+              <th>Con estrategia</th>
+              <th>Ahorro</th>
+            </tr>
           </thead>
           <tbody>
-          <tr><td>Electricidad</td><td>Consumo (KWH)</td><td>27,390</td><td>22,312</td><td><span class="highlight-green">18.6%</span></td></tr>
-          <tr><td>Electricidad</td><td>Costo anual (MXN)</td><td>$411,903</td><td>$336,112</td><td><span class="highlight-green">18.3%</span></td></tr>
-          <tr><td>Gas</td><td>Emisiones CO₂ (ton)</td><td>13.66</td><td>11.14</td><td><span class="highlight-green">18.4%</span></td></tr>
+            <tr>
+              <td>Electricidad</td>
+              <td>Consumo (KWH)</td>
+              <td>27,390</td>
+              <td>22,312</td>
+              <td><span class="highlight-green">18.6%</span></td>
+            </tr>
+            <tr>
+              <td>Electricidad</td>
+              <td>Costo anual (MXN)</td>
+              <td>$411,903</td>
+              <td>$336,112</td>
+              <td><span class="highlight-green">18.3%</span></td>
+            </tr>
+            <tr>
+              <td>Gas</td>
+              <td>Emisiones CO₂ (ton)</td>
+              <td>13.66</td>
+              <td>11.14</td>
+              <td><span class="highlight-green">18.4%</span></td>
+            </tr>
           </tbody>
         </table>
-
-        <h3 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px;">Opciones Tecnológicas</h3>
+        <h3 style="font-size: 18px; margin-top: 32px; margin-bottom: 16px">
+          Opciones Tecnológicas
+        </h3>
         <table class="data-table">
           <thead>
-          <tr><th>Marca</th><th>Producto</th><th>Reducción Calor</th><th>Inversión est.</th></tr>
+            <tr>
+              <th>Marca</th>
+              <th>Producto</th>
+              <th>Reducción Calor</th>
+              <th>Inversión est.</th>
+            </tr>
           </thead>
           <tbody>
-          <tr><td><strong>Kingspan</strong></td><td>Alero metálico</td><td>12%</td><td>$75,000</td></tr>
-          <tr><td><strong>Kalzip</strong></td><td>Alero metálico</td><td>15%</td><td>$78,000</td></tr>
-          <tr><td><strong>Thermote</strong></td><td>Parasoles</td><td>18%</td><td>$85,000</td></tr>
+            <tr>
+              <td><strong>Kingspan</strong></td>
+              <td>Alero metálico</td>
+              <td>12%</td>
+              <td>$75,000</td>
+            </tr>
+            <tr>
+              <td><strong>Kalzip</strong></td>
+              <td>Alero metálico</td>
+              <td>15%</td>
+              <td>$78,000</td>
+            </tr>
+            <tr>
+              <td><strong>Thermote</strong></td>
+              <td>Parasoles</td>
+              <td>18%</td>
+              <td>$85,000</td>
+            </tr>
           </tbody>
         </table>
-
-        <div style="display: flex; gap: 16px; margin-top: 32px;">
-          <button class="btn-outline" style="flex: 1;" onclick="goToSlide(5)">Guardar en Proyectos</button>
-          <button class="btn-primary" style="flex: 1; margin: 0;" onclick="goToSlide(2)">Nueva Simulación</button>
+        <div style="display: flex; gap: 16px; margin-top: 32px">
+          <button class="btn-outline" style="flex: 1" onclick="goToSlide(5)">
+            Guardar en Proyectos
+          </button>
+          <button
+            class="btn-primary"
+            style="flex: 1; margin: 0"
+            onclick="goToSlide(2)"
+          >
+            Nueva Simulación
+          </button>
         </div>
       </div>
     </div>

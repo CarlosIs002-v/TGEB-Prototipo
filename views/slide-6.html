@@ -1,88 +1,227 @@
 <div class="slide" id="slide-6">
-  <header class="app-header" style="background: white; position: relative; z-index: 10;">
-    <a class="nav-logo" style="cursor:pointer;" onclick="goToSlide(0)">
-      
-      <div class="nav-logo-text"><img src="img/tgeb-logo.png" alt="TGEB" style="height: 60px; vertical-align: middle;"></div>
+  <header
+    class="app-header"
+    style="background: white; position: relative; z-index: 10"
+  >
+    <a class="nav-logo" style="cursor: pointer" onclick="goToSlide(0)">
+      <div class="nav-logo-text">
+        <img
+          src="img/tgeb-logo.png"
+          alt="TGEB"
+          style="height: 60px; vertical-align: middle"
+        />
+      </div>
     </a>
     <ul class="nav-links">
-      <li><a class="nav-inicio active" style="cursor:pointer;" onclick="goToSlide(0)">Inicio</a></li>
-      <li><a class="nav-simulador" style="cursor:pointer;" onclick="goToSlide(2)">Simulador</a></li>
-      <li><a class="nav-proyectos" style="cursor:pointer;" onclick="goToSlide(5)">Proyectos</a></li>
-
-      <li><a class="nav-biblioteca" style="cursor:pointer;" onclick="goToSlide(7)">Recursos</a></li>
-      <li><a class="nav-plan" style="cursor:pointer;" onclick="goToSlide(12)">Plan</a></li>
-      <li><a class="nav-ayuda" style="cursor:pointer;" onclick="goToSlide(6)">Ayuda</a></li>
+      <li>
+        <a
+          class="nav-inicio active"
+          style="cursor: pointer"
+          onclick="goToSlide(0)"
+          >Inicio</a
+        >
+      </li>
+      <li>
+        <a class="nav-simulador" style="cursor: pointer" onclick="goToSlide(2)"
+          >Simulador</a
+        >
+      </li>
+      <li>
+        <a class="nav-proyectos" style="cursor: pointer" onclick="goToSlide(5)"
+          >Proyectos</a
+        >
+      </li>
+      <li>
+        <a class="nav-biblioteca" style="cursor: pointer" onclick="goToSlide(7)"
+          >Recursos</a
+        >
+      </li>
+      <li>
+        <a class="nav-plan" style="cursor: pointer" onclick="goToSlide(12)"
+          >Plan</a
+        >
+      </li>
+      <li>
+        <a class="nav-ayuda" style="cursor: pointer" onclick="goToSlide(6)"
+          >Ayuda</a
+        >
+      </li>
     </ul>
     <div class="user-controls">
       <div class="bell">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+        <svg
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+        </svg>
       </div>
       <div class="avatar" onclick="openUserSettings()">U</div>
     </div>
   </header>
-
   <div class="app-content">
     <h2 class="section-title">Preguntas Frecuentes</h2>
-    <p class="section-subtitle">Encuentra respuestas rápidas sobre cómo funciona TGEB y sus simulaciones.</p>
-
+    <p class="section-subtitle">
+      Encuentra respuestas rápidas sobre cómo funciona TGEB y sus simulaciones.
+    </p>
     <div class="faq-container">
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
           <span>¿Qué es TGEB y cómo funciona el simulador?</span>
-          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          <svg
+            class="faq-icon"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
         </button>
         <div class="faq-answer">
-          <p>TGEB (The Green Energy Box) es una plataforma que permite simular el comportamiento energético de diferentes tipos de edificios. Utiliza datos climáticos interactivos para proyectar cómo diferentes estrategias (fotovoltaico, sombreado, envolvente, etc.) pueden reducir el consumo eléctrico y las emisiones de carbono en la vida real.</p>
+          <p>
+            TGEB (The Green Energy Box) es una plataforma que permite simular el
+            comportamiento energético de diferentes tipos de edificios. Utiliza
+            datos climáticos interactivos para proyectar cómo diferentes
+            estrategias (fotovoltaico, sombreado, envolvente, etc.) pueden
+            reducir el consumo eléctrico y las emisiones de carbono en la vida
+            real.
+          </p>
         </div>
       </div>
-
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
           <span>¿Qué tipos de estrategias ecológicas puedo evaluar?</span>
-          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          <svg
+            class="faq-icon"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
         </button>
         <div class="faq-answer">
-          <p>Actualmente el simulador soporta el despliegue de Sistemas Fotovoltaicos (Paneles Solares), Calentadores Solares, diseño pasivo por Sombreado, Optimización del Aislamiento Térmico (Envolvente), equipos de Aire Acondicionado de alta eficiencia e Iluminación eficiente LED.</p>
+          <p>
+            Actualmente el simulador soporta el despliegue de Sistemas
+            Fotovoltaicos (Paneles Solares), Calentadores Solares, diseño pasivo
+            por Sombreado, Optimización del Aislamiento Térmico (Envolvente),
+            equipos de Aire Acondicionado de alta eficiencia e Iluminación
+            eficiente LED.
+          </p>
         </div>
       </div>
-
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
           <span>¿Cuáles son las opciones de precio del simulador TGEB?</span>
-          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          <svg
+            class="faq-icon"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
         </button>
         <div class="faq-answer">
-          <p>Ofrecemos diferentes planes que se adaptan a tus necesidades, desde acceso básico gratuito para simulaciones individuales hasta planes corporativos con análisis avanzados y gestión de múltiples proyectos.</p>
+          <p>
+            Ofrecemos diferentes planes que se adaptan a tus necesidades, desde
+            acceso básico gratuito para simulaciones individuales hasta planes
+            corporativos con análisis avanzados y gestión de múltiples
+            proyectos.
+          </p>
         </div>
       </div>
-
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
-          <span>¿Los costos y el clima provienen de bases de datos reales?</span>
-          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          <span
+            >¿Los costos y el clima provienen de bases de datos reales?</span
+          >
+          <svg
+            class="faq-icon"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
         </button>
         <div class="faq-answer">
-          <p>Sí. Toda nuestra base meteorológica se alimenta de datos y estaciones promediadas locales estandarizados a nivel geográfico. En el apartado eléctrico (Costos/Ahorro), adaptamos las proyecciones aproximando el tarifario de CFE.</p>
+          <p>
+            Sí. Toda nuestra base meteorológica se alimenta de datos y
+            estaciones promediadas locales estandarizados a nivel geográfico. En
+            el apartado eléctrico (Costos/Ahorro), adaptamos las proyecciones
+            aproximando el tarifario de CFE.
+          </p>
         </div>
       </div>
-
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
           <span>¿Se pueden guardar los resultados generados?</span>
-          <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          <svg
+            class="faq-icon"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
         </button>
         <div class="faq-answer">
-          <p>Totalmente. Siempre que estés registrado con tu cuenta al completar un cálculo, podrás archivar tu análisis directamente en tu "Dashboard/Mis Proyectos" y consultarlo, compartirlo en PDF, o compararlo con un catálogo de equipamiento en segundos.</p>
+          <p>
+            Totalmente. Siempre que estés registrado con tu cuenta al completar
+            un cálculo, podrás archivar tu análisis directamente en tu
+            "Dashboard/Mis Proyectos" y consultarlo, compartirlo en PDF, o
+            compararlo con un catálogo de equipamiento en segundos.
+          </p>
         </div>
       </div>
     </div>
-
-    <div style="margin-top: 40px; text-align: center;">
-      <p style="font-size: 14px; color: var(--ink-muted); margin-bottom: 12px;">¿No respondimos tu pregunta o deseas reportar un error?</p>
-      <button class="btn-outline" onclick="alert('Funcionalidad de tickets de soporte en construcción.')">
-        <svg style="vertical-align: middle; margin-right: 6px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> Contactar al Soporte TGEB
+    <div style="margin-top: 40px; text-align: center">
+      <p style="font-size: 14px; color: var(--ink-muted); margin-bottom: 12px">
+        ¿No respondimos tu pregunta o deseas reportar un error?
+      </p>
+      <button
+        class="btn-outline"
+        onclick="alert('Funcionalidad de tickets de soporte en construcción.')"
+      >
+        <svg
+          style="vertical-align: middle; margin-right: 6px"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+          ></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        Contactar al Soporte TGEB
       </button>
     </div>
-
   </div>
 </div>

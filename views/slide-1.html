@@ -1,47 +1,96 @@
 <div class="slide active" id="slide-1">
   <div class="center-layout">
-    <div class="card" style="box-shadow: 0 20px 60px rgba(17, 24, 39, 0.1);">
-      <div style="text-align: center; padding: 32px 40px 16px;">
-        <img src="img/tgeb-logo.png" alt="The Green Energy Box" style="height: 60px;">
+    <div class="card" style="box-shadow: 0 20px 60px rgba(17, 24, 39, 0.1)">
+      <div style="text-align: center; padding: 32px 40px 16px">
+        <img
+          src="img/tgeb-logo.png"
+          alt="The Green Energy Box"
+          style="height: 60px"
+        />
       </div>
       <div class="card-tabs">
-        <button class="tab" id="tab-login" onclick="switchAuthTab('login')">Iniciar Sesión</button>
-        <button class="tab active" id="tab-register" onclick="switchAuthTab('register')">Crear Cuenta</button>
+        <button class="tab" id="tab-login" onclick="switchAuthTab('login')">
+          Iniciar Sesión
+        </button>
+        <button
+          class="tab active"
+          id="tab-register"
+          onclick="switchAuthTab('register')"
+        >
+          Crear Cuenta
+        </button>
       </div>
-
-      <div class="card-body" id="view-login" style="display:none;">
+      <div class="card-body" id="view-login" style="display: none">
         <h1 class="card-heading">Bienvenido de nuevo</h1>
         <p class="card-sub">Ingresa tus credenciales para continuar.</p>
-
-        <div class="field" style="margin-top: 24px;">
+        <div class="field" style="margin-top: 24px">
           <label>Correo electrónico</label>
-          <div class="input-wrap"><input id="login-email" type="email" placeholder="tu@correo.com"></div>
+          <div class="input-wrap">
+            <input id="login-email" type="email" placeholder="tu@correo.com" />
+          </div>
         </div>
         <div class="field">
           <label>Contraseña</label>
-          <div class="input-wrap"><input id="login-password" type="password" placeholder="Tu contraseña"></div>
+          <div class="input-wrap">
+            <input
+              id="login-password"
+              type="password"
+              placeholder="Tu contraseña"
+            />
+          </div>
         </div>
-        
-        <div id="login-error" style="color: #e11d48; background: #ffe4e6; padding: 12px; border-radius: 8px; font-size: 13px; font-weight: 600; text-align: center; margin-top: 16px; display: none;"></div>
-        
-        <button class="btn-primary" onclick="handleLogin()" style="margin-top: 20px;">Ingresar al Dashboard</button>
+        <div
+          id="login-error"
+          style="
+            color: #e11d48;
+            background: #ffe4e6;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 16px;
+            display: none;
+          "
+        ></div>
+        <button
+          class="btn-primary"
+          onclick="handleLogin()"
+          style="margin-top: 20px"
+        >
+          Ingresar al Dashboard
+        </button>
       </div>
-
       <div class="card-body" id="view-register">
         <h1 class="card-heading">Únete a TGEB</h1>
-        <p class="card-sub">Forma parte de la red líder en energía sustentable.</p>
-
-        <div class="field" style="margin-top: 24px;">
+        <p class="card-sub">
+          Forma parte de la red líder en energía sustentable.
+        </p>
+        <div class="field" style="margin-top: 24px">
           <label>Nombre completo</label>
-          <div class="input-wrap"><input id="register-name" type="text" placeholder="Tu nombre"></div>
+          <div class="input-wrap">
+            <input id="register-name" type="text" placeholder="Tu nombre" />
+          </div>
         </div>
         <div class="field">
           <label>Correo electrónico</label>
-          <div class="input-wrap"><input id="register-email" type="email" placeholder="tu@correo.com"></div>
+          <div class="input-wrap">
+            <input
+              id="register-email"
+              type="email"
+              placeholder="tu@correo.com"
+            />
+          </div>
         </div>
         <div class="field">
           <label>Contraseña</label>
-          <div class="input-wrap"><input id="register-password" type="password" placeholder="Mínimo 8 caracteres"></div>
+          <div class="input-wrap">
+            <input
+              id="register-password"
+              type="password"
+              placeholder="Mínimo 8 caracteres"
+            />
+          </div>
         </div>
         <div class="field">
           <label>Sector de interés</label>
@@ -54,10 +103,27 @@
             </select>
           </div>
         </div>
-
-        <div id="register-error" style="color: #e11d48; background: #ffe4e6; padding: 12px; border-radius: 8px; font-size: 13px; font-weight: 600; text-align: center; margin-top: 16px; display: none;"></div>
-
-        <button class="btn-primary" onclick="handleRegister()" style="margin-top: 20px;">Crear mi cuenta</button>
+        <div
+          id="register-error"
+          style="
+            color: #e11d48;
+            background: #ffe4e6;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 16px;
+            display: none;
+          "
+        ></div>
+        <button
+          class="btn-primary"
+          onclick="handleRegister()"
+          style="margin-top: 20px"
+        >
+          Crear mi cuenta
+        </button>
       </div>
     </div>
   </div>

@@ -1,58 +1,111 @@
 <div class="slide" id="slide-0">
-  <!-- Navigation (Adapted for Slide System) -->
-  <header class="app-header" style="background: white; border-bottom: 1px solid var(--border);">
-    <a class="nav-logo" onclick="goToSlide(0)" style="cursor: pointer;">
-
-      <div class="nav-logo-text"><img src="img/tgeb-logo.png" alt="TGEB" style="height: 60px; vertical-align: middle;">
+  <header
+    class="app-header"
+    style="background: white; border-bottom: 1px solid var(--border)"
+  >
+    <a class="nav-logo" onclick="goToSlide(0)" style="cursor: pointer">
+      <div class="nav-logo-text">
+        <img
+          src="img/tgeb-logo.png"
+          alt="TGEB"
+          style="height: 60px; vertical-align: middle"
+        />
       </div>
     </a>
     <ul class="nav-links">
-      <li><a class="nav-inicio" onclick="goToSlide(0)" style="cursor: pointer;">Inicio</a></li>
-      <li><a class="nav-simulador" onclick="goToSlide(2)" style="cursor: pointer;">Simulador</a></li>
-      <li><a class="nav-proyectos" onclick="goToSlide(5)" style="cursor: pointer;">Proyectos</a></li>
-
-
-      <li><a class="nav-biblioteca" style="cursor:pointer;" onclick="goToSlide(7)">Recursos</a></li>
-      <li><a class="nav-plan" style="cursor:pointer;" onclick="goToSlide(12)">Plan</a></li>
-      <li><a class="nav-ayuda" onclick="goToSlide(6)" style="cursor: pointer;">Ayuda</a></li>
+      <li>
+        <a class="nav-inicio" onclick="goToSlide(0)" style="cursor: pointer"
+          >Inicio</a
+        >
+      </li>
+      <li>
+        <a class="nav-simulador" onclick="goToSlide(2)" style="cursor: pointer"
+          >Simulador</a
+        >
+      </li>
+      <li>
+        <a class="nav-proyectos" onclick="goToSlide(5)" style="cursor: pointer"
+          >Proyectos</a
+        >
+      </li>
+      <li>
+        <a class="nav-biblioteca" style="cursor: pointer" onclick="goToSlide(7)"
+          >Recursos</a
+        >
+      </li>
+      <li>
+        <a class="nav-plan" style="cursor: pointer" onclick="goToSlide(12)"
+          >Plan</a
+        >
+      </li>
+      <li>
+        <a class="nav-ayuda" onclick="goToSlide(6)" style="cursor: pointer"
+          >Ayuda</a
+        >
+      </li>
     </ul>
-    <div id="auth-header-container" style="display: flex; gap: 1rem; align-items: center;">
-      <a onclick="switchAuthTab('login'); goToSlide(1);" class="nav__link"
-        style="cursor: pointer; font-weight: 600;">Entrar</a>
-
-      <a onclick="switchAuthTab('register'); goToSlide(1);" class="nav__cta" style="cursor: pointer;">Registrarse</a>
+    <div
+      id="auth-header-container"
+      style="display: flex; gap: 1rem; align-items: center"
+    >
+      <a
+        onclick="
+          switchAuthTab('login');
+          goToSlide(1);
+        "
+        class="nav__link"
+        style="cursor: pointer; font-weight: 600"
+        >Entrar</a
+      >
+      <a
+        onclick="
+          switchAuthTab('register');
+          goToSlide(1);
+        "
+        class="nav__cta"
+        style="cursor: pointer"
+        >Registrarse</a
+      >
     </div>
-
-
   </header>
-
-  <div style="flex: 1; overflow-y: auto; width: 100%;">
-    <!-- Hero Section -->
+  <div style="flex: 1; overflow-y: auto; width: 100%">
     <section class="hero" id="inicio-redesign">
-      <div class="container" style="width: 100%; position: relative;">
+      <div class="container" style="width: 100%; position: relative">
         <div class="hero__content">
           <span class="hero__eyebrow">Tecnología de Vanguardia</span>
-          <h1 class="hero__title">Hoy diseñamos <br>con <span>estrategia</span><br> la mejor <span>energía</span> <br> y
-            <span> construcción</span> <br>del <span> mañana</span>.
+          <h1 class="hero__title">
+            Hoy diseñamos <br />con <span>estrategia</span><br />
+            la mejor <span>energía</span> <br />
+            y <span> construcción</span> <br />del <span> mañana</span>.
           </h1>
-          <p class="hero__desc">Optimiza el rendimiento energético de tus proyectos con nuestra plataforma de simulación
-            avanzada. Tecnología líder para edificios de alto impacto.</p>
+          <p class="hero__desc">
+            Optimiza el rendimiento energético de tus proyectos con nuestra
+            plataforma de simulación avanzada. Tecnología líder para edificios
+            de alto impacto.
+          </p>
           <div class="hero__actions">
             <button class="btn btn--primary" onclick="goToSlide(2)">
               Explorar Simulador
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </button>
-            <button class="btn btn--outline" onclick="goToSlide(7)">Ver Catálogo</button>
+            <button class="btn btn--outline" onclick="goToSlide(7)">
+              Ver Catálogo
+            </button>
           </div>
         </div>
-
-        <!-- Visual Element (CSS Only Orbit) -->
         <div class="hero__visual">
-
           <div class="orbit-main">
             <div class="orbit-node node-1" title="Fotovoltaico">☀️</div>
             <div class="orbit-node node-2" title="Sombreado">🌳</div>
@@ -66,8 +119,6 @@
         </div>
       </div>
     </section>
-
-    <!-- Stats Bar -->
     <div class="stats">
       <div class="container">
         <div class="stats__grid">
@@ -90,99 +141,199 @@
         </div>
       </div>
     </div>
-
-    <!-- Simulation Section -->
     <section id="simulador-redesign" class="solutions">
-      <div style="max-width: 1200px; margin: 0 auto; padding: 60px 24px;">
+      <div style="max-width: 1200px; margin: 0 auto; padding: 60px 24px">
         <h2
-          style="font-family:'DM Sans', sans-serif; font-weight:300; font-size:32px; color:var(--teal); margin-bottom: 30px;">
-          Soluciones</h2>
-
-        <div style="display:flex; gap:24px; flex-wrap:wrap;">
-          <!-- Tarjeta 1 -->
+          style="
+            font-family: &quot;DM Sans&quot;, sans-serif;
+            font-weight: 300;
+            font-size: 32px;
+            color: var(--teal);
+            margin-bottom: 30px;
+          "
+        >
+          Soluciones
+        </h2>
+        <div style="display: flex; gap: 24px; flex-wrap: wrap">
           <div
-            style="flex:1; min-width:300px; height: 260px; background:white; position:relative; overflow:hidden; border-radius:12px; cursor:pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s;"
-            onclick="goToSlide(2)" onmouseover="this.style.transform='translateY(-6px)'"
-            onmouseout="this.style.transform='none'">
-            <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=600"
-              style="width:100%; height:140px; object-fit:cover;">
-            <div style="padding: 20px;">
+            style="
+              flex: 1;
+              min-width: 300px;
+              height: 260px;
+              background: white;
+              position: relative;
+              overflow: hidden;
+              border-radius: 12px;
+              cursor: pointer;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+              transition: transform 0.2s;
+            "
+            onclick="goToSlide(2)"
+            onmouseover="this.style.transform = 'translateY(-6px)'"
+            onmouseout="this.style.transform = 'none'"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=600"
+              style="width: 100%; height: 140px; object-fit: cover"
+            />
+            <div style="padding: 20px">
               <p
-                style="font-size:12px; color:var(--sage); font-weight:700; text-transform:uppercase; margin-bottom:4px;">
-                SIMULA</p>
-              <h3 style="font-size: 20px; font-family:'DM Serif Display'; color:var(--ink);">Evalúa antes de invertir
+                style="
+                  font-size: 12px;
+                  color: var(--sage);
+                  font-weight: 700;
+                  text-transform: uppercase;
+                  margin-bottom: 4px;
+                "
+              >
+                SIMULA
+              </p>
+              <h3
+                style="
+                  font-size: 20px;
+                  font-family: &quot;DM Serif Display&quot;;
+                  color: var(--ink);
+                "
+              >
+                Evalúa antes de invertir
               </h3>
             </div>
           </div>
-
-          <!-- Tarjeta 2 -->
           <div
-            style="flex:1; min-width:300px; height: 260px; background:white; position:relative; overflow:hidden; border-radius:12px; cursor:pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s;"
-            onclick="window.location.href='https://www.capacitacion-ekc.com/'" onmouseout="this.style.transform='none'">
+            style="
+              flex: 1;
+              min-width: 300px;
+              height: 260px;
+              background: white;
+              position: relative;
+              overflow: hidden;
+              border-radius: 12px;
+              cursor: pointer;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+              transition: transform 0.2s;
+            "
+            onclick="window.location.href = 'https://www.capacitacion-ekc.com/'"
+            onmouseout="this.style.transform = 'none'"
+          >
             <img
               src="https://static.wixstatic.com/media/f8d1a1_c869f6defb61456bafd0e3bceecee52b~mv2.jpg/v1/fill/w_681,h_322,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/f8d1a1_c869f6defb61456bafd0e3bceecee52b~mv2.jpg"
-              style="width:100%; height:140px; object-fit:cover;">
-            <div style="padding: 20px;">
+              style="width: 100%; height: 140px; object-fit: cover"
+            />
+            <div style="padding: 20px">
               <p
-                style="font-size:12px; color:var(--sage); font-weight:700; text-transform:uppercase; margin-bottom:4px;">
-                Certifica</p>
-              <h3 style="font-size: 20px; font-family:'DM Serif Display'; color:var(--ink);">Encuentra expertos
-                verificados</h3>
+                style="
+                  font-size: 12px;
+                  color: var(--sage);
+                  font-weight: 700;
+                  text-transform: uppercase;
+                  margin-bottom: 4px;
+                "
+              >
+                Certifica
+              </p>
+              <h3
+                style="
+                  font-size: 20px;
+                  font-family: &quot;DM Serif Display&quot;;
+                  color: var(--ink);
+                "
+              >
+                Encuentra expertos verificados
+              </h3>
             </div>
           </div>
-
-          <!-- Tarjeta 3 -->
           <div
-            style="flex:1; min-width:300px; height: 260px; background:white; position:relative; overflow:hidden; border-radius:12px; cursor:pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s;"
-            onclick="goToSlide(7)" onmouseover="this.style.transform='translateY(-6px)'"
-            onmouseout="this.style.transform='none'">
+            style="
+              flex: 1;
+              min-width: 300px;
+              height: 260px;
+              background: white;
+              position: relative;
+              overflow: hidden;
+              border-radius: 12px;
+              cursor: pointer;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+              transition: transform 0.2s;
+            "
+            onclick="goToSlide(7)"
+            onmouseover="this.style.transform = 'translateY(-6px)'"
+            onmouseout="this.style.transform = 'none'"
+          >
             <img
               src="https://www.hilcoglobal.mx/wp-content/uploads/2024/10/%C2%BFEn-que-consiste-una-venta-negociada-de-activos_.jpg"
-              style="width:100%; height:140px; object-fit:cover;">
-
-            <div style="padding: 20px;">
+              style="width: 100%; height: 140px; object-fit: cover"
+            />
+            <div style="padding: 20px">
               <p
-                style="font-size:12px; color:var(--sage); font-weight:700; text-transform:uppercase; margin-bottom:4px;">
-                Conecta</p>
-              <h3 style="font-size: 20px; font-family:'DM Serif Display'; color:var(--ink);">Conecta con fabricantes y
-                distribuidores</h3>
+                style="
+                  font-size: 12px;
+                  color: var(--sage);
+                  font-weight: 700;
+                  text-transform: uppercase;
+                  margin-bottom: 4px;
+                "
+              >
+                Conecta
+              </p>
+              <h3
+                style="
+                  font-size: 20px;
+                  font-family: &quot;DM Serif Display&quot;;
+                  color: var(--ink);
+                "
+              >
+                Conecta con fabricantes y distribuidores
+              </h3>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Energy Types & Benefits -->
     <section id="energias-redesign" class="features">
       <div class="container">
         <div class="features__grid">
           <div class="features__text">
-            <div class="section-header" style="text-align: left; margin: 0 0 3rem;">
-              <h2 class="section-header__title">Tipos de Energía & Beneficios</h2>
-              <p class="section-header__desc">Integramos las fuentes más eficientes del mercado para asegurar la
-                rentabilidad de tu inversión.</p>
+            <div
+              class="section-header"
+              style="text-align: left; margin: 0 0 3rem"
+            >
+              <h2 class="section-header__title">
+                Tipos de Energía & Beneficios
+              </h2>
+              <p class="section-header__desc">
+                Integramos las fuentes más eficientes del mercado para asegurar
+                la rentabilidad de tu inversión.
+              </p>
             </div>
-
             <div class="features__list">
               <div class="feature-item">
                 <div class="feature-item__icon">✔</div>
                 <div class="feature-item__text">
                   <h3>Energía Solar Fotovoltaica</h3>
-                  <p>Reducción drástica en facturación eléctrica desde el primer día de operación.</p>
+                  <p>
+                    Reducción drástica en facturación eléctrica desde el primer
+                    día de operación.
+                  </p>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Footer -->
-    <footer style="padding: 4rem 0; text-align: center; border-top: 1px solid #E2E8F0; background: var(--white);">
+    <footer
+      style="
+        padding: 4rem 0;
+        text-align: center;
+        border-top: 1px solid #e2e8f0;
+        background: var(--white);
+      "
+    >
       <div class="container">
-        <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 TGEB - The Green Energy Box. Todos
-          los derechos reservados.</p>
+        <p style="color: var(--text-muted); font-size: 0.9rem">
+          &copy; 2026 TGEB - The Green Energy Box. Todos los derechos
+          reservados.
+        </p>
       </div>
     </footer>
   </div>

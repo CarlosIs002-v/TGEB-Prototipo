@@ -1,107 +1,148 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prototipo TGEB - Flujo Completo</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/redesign.css">
-</head>
-<body>
-
-<div class="bg-canvas"></div>
-
-
-<%= require('./views/slide-0.html') %>
-
-<%= require('./views/slide-1.html') %>
-
-<%= require('./views/slide-2.html') %>
-
-<%= require('./views/slide-3.html') %>
-
-<%= require('./views/slide-4.html') %>
-
-<%= require('./views/slide-5.html') %>
-
-<%= require('./views/slide-6.html') %>
-
-<%= require('./views/slide-7.html') %>
-
-<%= require('./views/slide-8.html') %>
-
-<%= require('./views/slide-9.html') %>
-
-<%= require('./views/tecnico-detail.html') %>
-
-<%= require('./views/slide-12.html') %>
-
-<%= require('./views/slide-13.html') %>
-
-
-<!-- JS is injected automatically by Webpack -->
-
-  <!-- Modal de Configuración de Usuario -->
-  <dialog id="userSettingsModal" class="side-panel">
-    <header class="panel__header">
-      <span class="panel__eyebrow">Configuración de Cuenta</span>
-      <button class="panel__close" onclick="closeUserSettings()" aria-label="Cerrar panel">✕</button>
-    </header>
-    <div class="panel__body">
-      <div class="settings-profile">
-        <div class="avatar-edit-container">
-          <img src="/img/avatar-default.png" alt="Profile" id="userAvatarPreview" class="settings-avatar">
-          <label for="avatarInput" class="avatar-edit-badge" title="Cambiar foto">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-            <input type="file" id="avatarInput" hidden accept="image/*" onchange="handleAvatarChange(event)">
-          </label>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototipo TGEB - Flujo Completo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/redesign.css" />
+  </head>
+  <body>
+    <div class="bg-canvas"></div>
+    <%= require('./views/slide-0.html') %> <%= require('./views/slide-1.html')
+    %> <%= require('./views/slide-2.html') %> <%=
+    require('./views/slide-3.html') %> <%= require('./views/slide-4.html') %>
+    <%= require('./views/slide-5.html') %> <%= require('./views/slide-6.html')
+    %> <%= require('./views/slide-7.html') %> <%=
+    require('./views/slide-8.html') %> <%= require('./views/slide-9.html') %>
+    <%= require('./views/tecnico-detail.html') %> <%=
+    require('./views/slide-12.html') %> <%= require('./views/slide-13.html') %>
+    <dialog id="userSettingsModal" class="side-panel">
+      <header class="panel__header">
+        <span class="panel__eyebrow">Configuración de Cuenta</span>
+        <button
+          class="panel__close"
+          onclick="closeUserSettings()"
+          aria-label="Cerrar panel"
+        >
+          ✕
+        </button>
+      </header>
+      <div class="panel__body">
+        <div class="settings-profile">
+          <div class="avatar-edit-container">
+            <img
+              src="/img/avatar-default.png"
+              alt="Profile"
+              id="userAvatarPreview"
+              class="settings-avatar"
+            />
+            <label
+              for="avatarInput"
+              class="avatar-edit-badge"
+              title="Cambiar foto"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
+                ></path>
+                <circle cx="12" cy="13" r="4"></circle>
+              </svg>
+              <input
+                type="file"
+                id="avatarInput"
+                hidden
+                accept="image/*"
+                onchange="handleAvatarChange(event)"
+              />
+            </label>
+          </div>
+          <div class="settings-user-info">
+            <h3 id="userNameDisplay">Usuario Estándar</h3>
+            <span class="badge-role">Rol: Estándar</span>
+          </div>
         </div>
-        <div class="settings-user-info">
-          <h3 id="userNameDisplay">Usuario Estándar</h3>
-          <span class="badge-role">Rol: Estándar</span>
-        </div>
+        <form class="settings-form" onsubmit="saveUserSettings(event)">
+          <div class="field">
+            <label for="editName">Nombre Completo</label>
+            <div class="input-wrap">
+              <input
+                type="text"
+                id="editName"
+                value="Usuario Estándar"
+                required
+                placeholder="Ej. Juan Pérez"
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label for="editEmail">Correo Electrónico</label>
+            <div class="input-wrap">
+              <input
+                type="email"
+                id="editEmail"
+                value="usuario@tgeb.mx"
+                required
+                placeholder="ejemplo@correo.com"
+              />
+            </div>
+          </div>
+          <div class="settings-separator"></div>
+          <span class="panel__label">Seguridad de la Cuenta</span>
+          <div class="field">
+            <label for="editPass">Nueva Contraseña</label>
+            <div class="input-wrap">
+              <input
+                type="password"
+                id="editPass"
+                placeholder="Mínimo 8 caracteres"
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label for="confirmPass">Confirmar Contraseña</label>
+            <div class="input-wrap">
+              <input
+                type="password"
+                id="confirmPass"
+                placeholder="Repite la contraseña"
+              />
+            </div>
+          </div>
+          <div class="settings-actions">
+            <button
+              type="button"
+              class="btn-text"
+              onclick="closeUserSettings()"
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="btn-outline"
+              onclick="mockLogout()"
+              style="border-color: #ef4444; color: #ef4444; margin: 0 10px"
+            >
+              Cerrar Sesión
+            </button>
+            <button type="submit" class="btn-primary">Actualizar Perfil</button>
+          </div>
+        </form>
       </div>
-
-      <form class="settings-form" onsubmit="saveUserSettings(event)">
-        <div class="field">
-          <label for="editName">Nombre Completo</label>
-          <div class="input-wrap">
-            <input type="text" id="editName" value="Usuario Estándar" required placeholder="Ej. Juan Pérez">
-          </div>
-        </div>
-        <div class="field">
-          <label for="editEmail">Correo Electrónico</label>
-          <div class="input-wrap">
-            <input type="email" id="editEmail" value="usuario@tgeb.mx" required placeholder="ejemplo@correo.com">
-          </div>
-        </div>
-
-        <div class="settings-separator"></div>
-        <span class="panel__label">Seguridad de la Cuenta</span>
-
-        <div class="field">
-          <label for="editPass">Nueva Contraseña</label>
-          <div class="input-wrap">
-            <input type="password" id="editPass" placeholder="Mínimo 8 caracteres">
-          </div>
-        </div>
-        <div class="field">
-          <label for="confirmPass">Confirmar Contraseña</label>
-          <div class="input-wrap">
-            <input type="password" id="confirmPass" placeholder="Repite la contraseña">
-          </div>
-        </div>
-
-        <div class="settings-actions">
-          <button type="button" class="btn-text" onclick="closeUserSettings()">Cancelar</button>
-          <button type="button" class="btn-outline" onclick="mockLogout()" style="border-color: #EF4444; color: #EF4444; margin: 0 10px;">Cerrar Sesión</button>
-          <button type="submit" class="btn-primary">Actualizar Perfil</button>
-        </div>
-      </form>
-    </div>
-  </dialog>
-
-</body>
+    </dialog>
+  </body>
 </html>
