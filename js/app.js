@@ -58,11 +58,27 @@ function switchAuthTab(mode) {
 function handleLogin() {
     const emailInput = document.getElementById('login-email');
     const passwordInput = document.getElementById('login-password');
+    const errorDiv = document.getElementById('login-error');
+
+    if (errorDiv) errorDiv.style.display = 'none';
 
     if (emailInput && passwordInput) {
         const email = emailInput.value.trim();
         const password = passwordInput.value;
-        window.mockLogin(email, password);
+        
+        if (!email || !password) {
+            if (errorDiv) {
+                errorDiv.textContent = 'Por favor, completa todos los campos.';
+                errorDiv.style.display = 'block';
+            }
+            return;
+        }
+
+        const success = window.mockLogin(email, password);
+        if (!success && errorDiv) {
+            errorDiv.textContent = 'Credenciales incorrectas. Verifica tu correo y contraseña e inténtalo de nuevo.';
+            errorDiv.style.display = 'block';
+        }
     }
 }
 
@@ -70,13 +86,19 @@ function handleRegister() {
     const nameInput = document.getElementById('register-name');
     const emailInput = document.getElementById('register-email');
     const passwordInput = document.getElementById('register-password');
+    const errorDiv = document.getElementById('register-error');
+
+    if (errorDiv) errorDiv.style.display = 'none';
 
     const name = nameInput ? nameInput.value.trim() : '';
     const email = emailInput ? emailInput.value.trim() : '';
     const password = passwordInput ? passwordInput.value : '';
 
     if (!name || !email || !password) {
-        alert('Por favor, completa todos los campos.');
+        if (errorDiv) {
+            errorDiv.textContent = 'Por favor, completa todos los campos.';
+            errorDiv.style.display = 'block';
+        }
         return;
     }
 
@@ -99,7 +121,6 @@ function mockLogin(email, password) {
         goToSlide(13); // Redirigir a Panel de Administrador
         return true;
     } else {
-        alert('Credenciales incorrectas.\n\nPara iniciar sesión usa:\nCorreo: osvaldo@jasoenergy.com\nContraseña: OsvaldoSolorio');
         return false;
     }
 }

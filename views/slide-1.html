@@ -21,6 +21,9 @@
           <label>Contraseña</label>
           <div class="input-wrap"><input id="login-password" type="password" placeholder="Tu contraseña"></div>
         </div>
+        
+        <div id="login-error" style="color: #e11d48; background: #ffe4e6; padding: 12px; border-radius: 8px; font-size: 13px; font-weight: 600; text-align: center; margin-top: 16px; display: none;"></div>
+        
         <button class="btn-primary" onclick="handleLogin()" style="margin-top: 20px;">Ingresar al Dashboard</button>
       </div>
 
@@ -51,6 +54,9 @@
             </select>
           </div>
         </div>
+
+        <div id="register-error" style="color: #e11d48; background: #ffe4e6; padding: 12px; border-radius: 8px; font-size: 13px; font-weight: 600; text-align: center; margin-top: 16px; display: none;"></div>
+
         <button class="btn-primary" onclick="handleRegister()" style="margin-top: 20px;">Crear mi cuenta</button>
       </div>
     </div>
