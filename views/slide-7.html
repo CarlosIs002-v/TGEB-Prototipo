@@ -832,25 +832,40 @@
       border-color: var(--primary-hover);
     }
     .sponsor-card__logo-wrap {
-      width: 110px;
-      height: 56px;
-      border-radius: 12px;
-      background: #ffffff;
-      border: 1.5px solid var(--border);
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      transition: all 0.3s;
-    }
+       width: 110px;
+       height: 56px;
+       border-radius: 12px;
+       background: #ffffff;
+       border: 1.5px solid var(--border);
+       display: grid;
+       place-items: center;
+       overflow: hidden;
+       transition: all 0.3s;
+     }
+     /* Estilos para avatares circulares de técnicos */
+     .sponsor-card__logo-wrap[style*="border-radius: 50%"] {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       flex-shrink: 0;
+     }
     .sponsor-card:hover .sponsor-card__logo-wrap {
       border-color: var(--primary-hover);
     }
     .sponsor-card__logo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      padding: 6px 8px;
-    }
+       width: 100%;
+       height: 100%;
+       object-fit: contain;
+       padding: 6px 8px;
+     }
+     /* Imágenes circulares para técnicos */
+     .sponsor-card__logo-wrap[style*="border-radius: 50%"] img {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       border-radius: 50%;
+       padding: 0;
+     }
     .sponsor-card__name {
       font-family: "DM Sans", sans-serif;
       font-weight: 700;
@@ -2119,6 +2134,19 @@
       ];
       const tecnicosData = [
         {
+          id: "tecnico2",
+          nombre: "ARQ. JESÚS OSVALDO SOLORIO RUIZ",
+          foto: "/img/Jesus.jpeg",
+          titulo: "Arquitecto",
+          especialidad: "Almacenamiento de energía y sistemas híbridos BESS.",
+          descripcion:
+            "Arquitecto con alta especialización en el diseño, dimensionamiento e implementación de proyectos sustentables. Con 10 años de experiencia en la industria, ha liderado proyectos de gran envergadura para el sector comercial e industrial.",
+          certificaciones: [
+            "Especialista en BESS",
+            "Normativas Eléctricas Internacionales",
+            "Gestión de Proyectos PMP",
+          ],
+        },{
           id: "tecnico1",
           nombre: "Ing. Dafne",
           foto: "https://placehold.co/200x200/f7f5f0/1e2d26?text=CM",
@@ -2131,20 +2159,6 @@
             "Certificación NABCEP",
             "Auditor Energético ISO 50001",
             "Especialista en Sistemas Interconectados",
-          ],
-        },
-        {
-          id: "tecnico2",
-          nombre: "ARQ. JESÚS OSVALDO SOLORIO RUIZ",
-          foto: "/img/Jesus.jpeg",
-          titulo: "Arquitecto",
-          especialidad: "Almacenamiento de energía y sistemas híbridos BESS.",
-          descripcion:
-            "Arquitecto con alta especialización en el diseño, dimensionamiento e implementación de proyectos sustentables. Con 10 años de experiencia en la industria, ha liderado proyectos de gran envergadura para el sector comercial e industrial.",
-          certificaciones: [
-            "Especialista en BESS",
-            "Normativas Eléctricas Internacionales",
-            "Gestión de Proyectos PMP",
           ],
         },
         {
